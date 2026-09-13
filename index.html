@@ -144,6 +144,21 @@ main.container.only-presets > #presets{display:block !important;}
 main.container.only-prompts > *{display:none !important;}
 main.container.only-prompts > #prompts{display:block !important;}
 main.container.only-home > *{display:block;}
+
+/* : show every homepage collection together. */
+main.container.view-all-mode > *{display:block !important;}
+main.container.view-all-mode #promptRow{
+  display:grid !important;
+  grid-template-columns:repeat(6,minmax(0,1fr)) !important;
+  max-height:none !important;
+  overflow:visible !important;
+}
+@media(max-width:800px){
+  main.container.view-all-mode #promptRow{
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    gap:9px !important;
+  }
+}
 </style>
 
 
@@ -313,6 +328,42 @@ main.container.only-prompts .prompt-card button{margin-top:auto!important;}
 .drawer-links a{padding:10px 11px!important;border-radius:11px!important;font-size:13px!important;gap:10px!important;}
 .drawer-icon{width:27px!important;height:27px!important;border-radius:8px!important;}
 </style>
+
+<style id="minhaj-image-download-protection">
+/* Image protection: discourage casual saving/dragging of site images */
+img, picture, svg {
+  -webkit-user-drag: none !important;
+  user-drag: none !important;
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  user-select: none !important;
+}
+</style>
+<script id="minhaj-image-download-protection-js">
+(function(){
+  function isImageTarget(el){
+    return !!(el && (el.closest('img, picture, svg') || el.tagName === 'IMG' || el.tagName === 'PICTURE' || el.tagName === 'SVG'));
+  }
+  document.addEventListener('contextmenu', function(e){
+    if(isImageTarget(e.target)) e.preventDefault();
+  }, true);
+  document.addEventListener('dragstart', function(e){
+    if(isImageTarget(e.target)) e.preventDefault();
+  }, true);
+  document.addEventListener('selectstart', function(e){
+    if(isImageTarget(e.target)) e.preventDefault();
+  }, true);
+  document.addEventListener('copy', function(e){
+    if(isImageTarget(document.activeElement) || isImageTarget(e.target)) e.preventDefault();
+  }, true);
+  document.addEventListener('keydown', function(e){
+    var k=(e.key||'').toLowerCase();
+    if((e.ctrlKey||e.metaKey) && (k==='s' || k==='u')) e.preventDefault();
+    if(e.ctrlKey && e.shiftKey && ['i','j','c'].includes(k)) e.preventDefault();
+  }, true);
+})();
+</script>
+
 </head>
 <body>
 <div class="prompt-modal-backdrop" id="promptModal" aria-hidden="true">
@@ -401,7 +452,6 @@ main.container.only-prompts .prompt-card button{margin-top:auto!important;}
     <section id="prompts">
       <div class="section-head">
         <h2>AI Prompt <small>(12)</small></h2>
-        <a href="#prompts" id="promptViewAll" aria-expanded="false">View All ›</a>
       </div>
       <div class="prompt-row" id="promptRow"></div>
     </section>
@@ -835,19 +885,6 @@ document.addEventListener("pointerdown",startPress,{passive:true});
 ["pointerup","pointercancel","pointerleave"].forEach(ev=>document.addEventListener(ev,()=>{clearTimeout(pressTimer);clearPress(activePress);},{passive:true}));
 document.addEventListener("click",e=>{const el=e.target.closest(pressSelector);if(el)setTimeout(()=>clearPress(el),35);});
 
-const promptViewAll=document.getElementById("promptViewAll");
-if(promptViewAll){
-  promptViewAll.addEventListener("click",e=>{
-    e.preventDefault();
-    const expanded=promptRow.classList.toggle("show-all");
-    promptViewAll.setAttribute("aria-expanded",expanded?"true":"false");
-    promptViewAll.textContent=expanded?"Show Less ‹":"View All ›";
-    if(expanded){
-      promptRow.scrollIntoView({behavior:"smooth",block:"start"});
-    }
-  });
-}
-
 renderPrompts();
 renderTrending();
 renderApps(apps);
@@ -891,7 +928,7 @@ window.addEventListener('popstate',function(){if(infoModal.classList.contains('s
   function applySection(hash){
     var main=document.querySelector('main.container');
     if(!main) return;
-    main.classList.remove('only-home','only-apps','only-presets','only-prompts');
+    main.classList.remove('only-home','only-apps','only-presets','only-prompts','view-all-mode');
     if(hash==='#apps') main.classList.add('only-apps');
     else if(hash==='#presets') main.classList.add('only-presets');
     else if(hash==='#prompts') main.classList.add('only-prompts');
@@ -920,6 +957,7 @@ window.addEventListener('popstate',function(){if(infoModal.classList.contains('s
   document.addEventListener('click',function(e){
     var link=e.target.closest('a[href="#home"],a[href="#apps"],a[href="#presets"],a[href="#prompts"]');
     if(!link) return;
+    //  is a special homepage action: let its own handler show all collections.
     e.preventDefault();
     e.stopImmediatePropagation();
     applySection(link.getAttribute('href'));
@@ -939,20 +977,29 @@ window.addEventListener('popstate',function(){if(infoModal.classList.contains('s
 </script>
 
 
+
+
 <script id="minhaj-mobile-back-fix">
 (function(){
-  // Keep normal browser history behavior on Home. App/modal states get handled first.
   window.addEventListener('popstate', function(){
-    if (appModal && appModal.classList.contains('show')) {
-      closeApp(true);
-      return;
-    }
-    if (location.hash === '#home' || location.hash === '') {
-      setActiveNav('#home');
-      // Do not trap the user on Home with another history entry.
-    }
+    try{
+      if (typeof appModal !== 'undefined' && appModal && appModal.classList.contains('show')) {
+        closeApp(true);
+        return;
+      }
+    }catch(e){}
+
+    // Do not push/replace another history entry on Home.
+    // This allows the mobile browser's Back button to leave the website
+    // when the user is already on the Home page.
+    try{
+      if (typeof setActiveNav === 'function' && (location.hash === '#home' || location.hash === '')) {
+        setActiveNav('#home');
+      }
+    }catch(e){}
   });
 })();
 </script>
+
 </body>
-  </html>
+</html>ihahasha
