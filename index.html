@@ -911,6 +911,7 @@ footer{background:#fff!important;border-top:1px solid #e7ebf1!important}
 </style>
 <style id="minhaj-search-cleanup">
 /* Search mode: show only the section that contains the matching result. */
+/* Search mode hides unrelated content, but keeps the section that owns the active search input mounted. */
 main.container.search-mode > #prompts,
 main.container.search-mode > #trending,
 main.container.search-mode > #apps,
@@ -918,7 +919,25 @@ main.container.search-mode > #presets{display:none!important;}
 main.container.search-mode.search-show-prompts > #prompts,
 main.container.search-mode.search-show-apps > #apps,
 main.container.search-mode.search-show-games > #presets{display:block!important;}
-main.container.search-mode .section-search-wrap{display:none!important;}
+main.container.search-mode.search-source-prompts > #prompts,
+main.container.search-mode.search-source-apps > #apps,
+main.container.search-mode.search-source-games > #presets{display:block!important;}
+/* Section search boxes stay visible while typing. */
+main.container.search-mode .section-search-wrap{display:flex!important;visibility:visible!important;opacity:1!important;}
+/* When a search started in one section finds another category, keep ONLY that
+   section's search field visible; never show a misleading (0) heading or cards. */
+main.container.search-mode.search-source-apps.search-show-games > #apps .section-head .section-title-with-icon,
+main.container.search-mode.search-source-apps.search-show-prompts > #apps .section-head .section-title-with-icon,
+main.container.search-mode.search-source-games.search-show-apps > #presets .section-head .section-title-with-icon,
+main.container.search-mode.search-source-games.search-show-prompts > #presets .section-head .section-title-with-icon,
+main.container.search-mode.search-source-prompts.search-show-apps > #prompts .section-head .section-title-with-icon,
+main.container.search-mode.search-source-prompts.search-show-games > #prompts .section-head .section-title-with-icon{display:none!important;}
+main.container.search-mode.search-source-apps.search-show-games > #apps .section-head,
+main.container.search-mode.search-source-apps.search-show-prompts > #apps .section-head,
+main.container.search-mode.search-source-games.search-show-apps > #presets .section-head,
+main.container.search-mode.search-source-games.search-show-prompts > #presets .section-head,
+main.container.search-mode.search-source-prompts.search-show-apps > #prompts .section-head,
+main.container.search-mode.search-source-prompts.search-show-games > #prompts .section-head{display:flex!important;}
 main.container.search-mode .section-head{display:flex;}
 .section-title-with-icon{display:flex;align-items:center;gap:7px;}
 .section-title-icon{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;flex:0 0 22px;}
@@ -1238,6 +1257,81 @@ main.container.search-mode .section-head{display:flex;}
 .minhaj-rating svg{width:12px!important;height:12px!important;}
 @media(max-width:760px){.minhaj-rating{font-size:10px!important;gap:3px!important}.minhaj-rating svg{width:11px!important;height:11px!important}}
 </style>
+
+<style id="minhaj-search-final-fix">
+/* FINAL SEARCH FIX: section search bars never disappear while typing */
+main.container.search-mode .section-search-wrap{
+  display:flex!important;
+  visibility:visible!important;
+  opacity:1!important;
+}
+main.container.search-mode.search-show-apps #apps .section-search-wrap,
+main.container.search-mode.search-show-games #presets .section-search-wrap,
+main.container.search-mode.search-show-prompts #prompts .section-search-wrap{
+  display:flex!important;
+}
+</style>
+<style id="minhaj-section-search-always-visible-final">
+/* FINAL FIX: Apps/Game/AI Prompt section search boxes never disappear while typing. */
+main.container .section-search-wrap{
+  display:flex!important;
+  visibility:visible!important;
+  opacity:1!important;
+}
+main.container.search-mode .section-search-wrap{
+  display:flex!important;
+  visibility:visible!important;
+  opacity:1!important;
+}
+</style>
+<style id="minhaj-section-search-keyboard-final">
+/* FINAL: section search inputs stay mounted and visible while typing. */
+main.container .section-search-wrap{visibility:visible!important;opacity:1!important;}
+main.container .section-search-wrap:focus-within{visibility:visible!important;opacity:1!important;}
+</style>
+<style id="minhaj-cross-category-search-heading-final">
+/* Cross-category search: keep the active search field, hide the source category heading/count. */
+main.container.search-mode.search-source-apps.search-show-games > #apps .section-head .section-title-with-icon,
+main.container.search-mode.search-source-apps.search-show-prompts > #apps .section-head .section-title-with-icon,
+main.container.search-mode.search-source-games.search-show-apps > #presets .section-head .section-title-with-icon,
+main.container.search-mode.search-source-games.search-show-prompts > #presets .section-head .section-title-with-icon,
+main.container.search-mode.search-source-prompts.search-show-apps > #prompts .section-head .section-title-with-icon,
+main.container.search-mode.search-source-prompts.search-show-games > #prompts .section-head .section-title-with-icon{display:none!important;}
+</style>
+
+<style id="minhaj-cross-category-searchbar-final">
+/* FINAL: when a section search finds another category, show only the original search box. */
+main.container.search-mode.search-source-apps.search-show-games > #presets .section-search-wrap,
+main.container.search-mode.search-source-apps.search-show-prompts > #prompts .section-search-wrap,
+main.container.search-mode.search-source-games.search-show-apps > #apps .section-search-wrap,
+main.container.search-mode.search-source-games.search-show-prompts > #prompts .section-search-wrap,
+main.container.search-mode.search-source-prompts.search-show-apps > #apps .section-search-wrap,
+main.container.search-mode.search-source-prompts.search-show-games > #presets .section-search-wrap{
+  display:none!important;
+}
+/* Keep the search box where the user started typing. */
+main.container.search-mode.search-source-apps > #apps .section-search-wrap,
+main.container.search-mode.search-source-games > #presets .section-search-wrap,
+main.container.search-mode.search-source-prompts > #prompts .section-search-wrap{
+  display:flex!important;
+  visibility:visible!important;
+  opacity:1!important;
+}
+</style>
+
+<style id="minhaj-searchbar-top-final">
+/* FINAL: The active section search bar always stays at the top of search results. */
+#activeSectionSearchHost{display:none;width:100%;margin:0 0 14px;}
+#activeSectionSearchHost .section-search-wrap{display:flex!important;visibility:visible!important;opacity:1!important;margin:0 0 14px!important;}
+main.container.search-mode .section-search-wrap{display:none!important;visibility:hidden!important;opacity:0!important;}
+main.container.search-mode #activeSectionSearchHost{display:block!important;}
+main.container.search-mode #activeSectionSearchHost .section-search-wrap{display:flex!important;visibility:visible!important;opacity:1!important;}
+#activeSectionSearchHost .section-search{display:block!important;}
+</style>
+<style id="minhaj-remove-section-search-final">
+/* Apps / Game / AI Prompt section search controls removed. */
+.section-search-wrap,.section-search{display:none !important;}
+</style>
 </head>
 <body>
 <div class="prompt-modal-backdrop" id="promptModal" aria-hidden="true">
@@ -1325,12 +1419,9 @@ main.container.search-mode .section-head{display:flex;}
       <span class="notice-track">ঘোষণা — MINHAJ APPS-এ আপনার প্রয়োজনীয় Apps, Game, এবং AI Prompt একসাথে পাবেন 🚨</span>
     </div>
 
-    <section id="prompts">
-      <div class="section-search-wrap" aria-label="Search">
-  <span class="section-search-logo" aria-hidden="true"><svg viewBox="0 0 24 24" role="img"><circle cx="10.8" cy="10.8" r="6.8" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M16 16l5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span>
-  <input class="section-search" type="search" placeholder="Search Apps, Games & AI Prompts...." autocomplete="off">
-</div>
-      <div class="section-head">
+    <div id="activeSectionSearchHost" aria-live="polite"></div>
+<section id="prompts">
+<div class="section-head">
         <h2 class="section-title-with-icon"><span class="section-title-icon ai-title-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none"><path d="m12 2.8 1.8 5.5 5.4 1.9-5.4 1.8-1.8 5.6-1.8-5.6-5.4-1.8 5.4-1.9z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="m19 15.2.8 2.3 2.2.8-.8.3-1.4.5-.8 2.3-.8-2.3-2.2-.8 2.2-.8.8-2.3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></span>AI Prompt <small id="promptCount">(0)</small></h2>
       </div>
       <div class="prompt-row" id="promptRow"></div>
@@ -1344,11 +1435,7 @@ main.container.search-mode .section-head{display:flex;}
     </section>
 
     <section id="apps">
-      <div class="section-search-wrap" aria-label="Search">
-  <span class="section-search-logo" aria-hidden="true"><svg viewBox="0 0 24 24" role="img"><circle cx="10.8" cy="10.8" r="6.8" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M16 16l5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span>
-  <input class="section-search" type="search" placeholder="Search Apps, Games & AI Prompts...." autocomplete="off">
-</div>
-      <div class="section-head">
+<div class="section-head">
         <h2 class="section-title-with-icon"><span class="section-title-icon latest-title-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none"><circle cx="12" cy="12" r="8.2" stroke="currentColor" stroke-width="1.8"/><path d="M12 7.5v5l3.2 1.9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Latest Updates <small id="countLabel">(0)</small></h2>
       </div>
       <div class="app-grid" id="appGrid"></div>
@@ -1356,11 +1443,7 @@ main.container.search-mode .section-head{display:flex;}
     </section>
 
     <section id="presets">
-      <div class="section-search-wrap" aria-label="Search">
-  <span class="section-search-logo" aria-hidden="true"><svg viewBox="0 0 24 24" role="img"><circle cx="10.8" cy="10.8" r="6.8" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M16 16l5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span>
-  <input class="section-search" type="search" placeholder="Search Apps, Games & AI Prompts...." autocomplete="off">
-</div>
-      <div class="section-head">
+<div class="section-head">
         <h2 class="section-title-with-icon"><span class="section-title-icon game-title-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none"><path d="M7.5 8h9a4 4 0 0 1 3.8 2.8l1.2 4.1a2.7 2.7 0 0 1-5 2.1l-1.2-1.7H8.7l-1.2 1.7a2.7 2.7 0 0 1-5-2.1l1.2-4.1A4 4 0 0 1 7.5 8Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M8 11v4M6 13h4M16 12.5h.01M18 14.5h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>Game Updates <small id="gameCount">(0)</small></h2>
       </div>
       <div class="app-grid game-grid" id="gameGrid"></div>
@@ -1418,9 +1501,9 @@ const downloadLinks = {
 };
 
 const apps = [
-  {name:"Toji Motion",size:"269 MB",image:"https://i.postimg.cc/wTXWqWzc/Picsart-26-09-15-19-32-57-450.jpg",version:"4.1.3",rating:"2.0",icon:"",downloads:"2.5K",playLink:"https://play.google.com/store/apps/details?id=com.lemon.lvoverseas",url:downloadLinks["Toji Motion"]},
-  {name:"ZArchiver",size:"14 MB",image:"https://i.postimg.cc/BZDpphXy/Picsart-26-09-15-19-32-30-365.jpg",version:"2.3.7",rating:"1.1",icon:"",downloads:"1.9K",playLink:"https://play.google.com/store/apps/details?id=com.lemon.lvoverseas",url:downloadLinks["ZArchiver"]},
-  {name:"Efiko",size:"31 MB",image:"https://i.postimg.cc/yNPy7Vd4/Picsart-26-09-15-14-29-23-751.jpg",version:"1.4.2",rating:"2.8",icon:"",downloads:"4.7K",playLink:"https://play.google.com/store/apps/details?id=com.lemon.lvoverseas",url:downloadLinks["Efiko"]},
+  {name:"Toji Motion",size:"269 MB",image:"https://i.postimg.cc/wTXWqWzc/Picsart-26-09-15-19-32-57-450.jpg",version:"4.1.3",rating:"2.0",icon:"",downloads:"2.5K",playLink:"https://t.me/minhajafrad/291",url:downloadLinks["Toji Motion"]},
+  {name:"ZArchiver",size:"14 MB",image:"https://i.postimg.cc/BZDpphXy/Picsart-26-09-15-19-32-30-365.jpg",version:"2.3.7",rating:"1.1",icon:"",downloads:"1.9K",playLink:"https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver",url:downloadLinks["ZArchiver"]},
+  {name:"Efiko",size:"31 MB",image:"https://i.postimg.cc/yNPy7Vd4/Picsart-26-09-15-14-29-23-751.jpg",version:"1.4.2",rating:"2.8",icon:"",downloads:"4.7K",playLink:"https://t.me/minhajafrad/295",url:downloadLinks["Efiko"]},
   {name:"CapCut Pro",size:"180 MB",image:"https://i.postimg.cc/TwQpjHLG/Picsart-26-09-13-09-54-43-546.png",version:"2.3.7",rating:"4.8",icon:"",downloads:"6.0K",playLink:"https://play.google.com/store/apps/details?id=com.lemon.lvoverseas",url:downloadLinks["CapCut Pro"]},
   {name:"Canva",size:"90 MB",image:"https://i.postimg.cc/VkRvPVgF/Picsart-26-09-13-09-45-19-745.jpg",version:"6.2.1",rating:"4.8",icon:"",downloads:"4.2K",playLink:"https://play.google.com/store/apps/details?id=com.canva.editor",url:downloadLinks["Canva"]},
   {name:"YouTube Pro",size:"28 MB",image:"https://i.postimg.cc/c4GLgS5L/Picsart-26-09-13-09-45-56-620.jpg",version:"1.4.0",rating:"4.7",icon:"",downloads:"3.8K",playLink:"https://play.google.com/store/apps/details?id=com.google.android.youtube",url:downloadLinks["YouTube Pro"]},
@@ -1802,6 +1885,10 @@ function runSearch(){
   const setGameCount=function(n){
     if(gameCountEl) gameCountEl.textContent="("+Math.max(0, Number(n)||0)+")";
   };
+  const promptCountEl=document.getElementById("promptCount");
+  const setPromptCount=function(n){
+    if(promptCountEl) promptCountEl.textContent="("+Math.max(0, Number(n)||0)+")";
+  };
   if(!q){
     main.classList.remove("search-mode","search-show-apps","search-show-games","search-show-prompts");
     if(resultTitle) resultTitle.style.display="none";
@@ -1812,6 +1899,7 @@ function runSearch(){
     renderPrompts();
     renderGames(games);
     setGameCount(games.length);
+    setPromptCount(prompts.length);
     bindGameClicks();
     return;
   }
@@ -1831,8 +1919,14 @@ function runSearch(){
     return text.includes(q);
   });
 
+  // Exact name matches get priority so a search from any section returns the real category.
+  const exactApps=apps.filter(a=>a.name.toLowerCase()===q);
+  const exactGames=games.filter(g=>g.name.toLowerCase()===q);
+  const exactPrompts=prompts.filter(p=>p.name.toLowerCase()===q);
+  const prioritizedType = exactApps.length ? 'apps' : exactGames.length ? 'games' : exactPrompts.length ? 'prompts' : (appResults.length ? 'apps' : gameResults.length ? 'games' : promptResults.length ? 'prompts' : 'none');
+
   // Search shows ONLY the matching category. It never shows all Apps + all Prompts together.
-  if(appResults.length){
+  if(prioritizedType==='apps'){
     main.classList.add("search-show-apps");
     if(resultTitle){resultTitle.style.display="block";resultTitle.textContent=`Search Results for “${search.value.trim()}”`;}
     if(appHead) appHead.style.display="flex";
@@ -1840,9 +1934,10 @@ function runSearch(){
     renderApps(appResults);
     renderGames([]);
     setGameCount(0);
+    setPromptCount(0);
     bindGameClicks();
     promptRow.innerHTML="";
-  }else if(gameResults.length){
+  }else if(prioritizedType==='games'){
     main.classList.add("search-show-games");
     if(resultTitle){resultTitle.style.display="block";resultTitle.textContent=`Search Results for “${search.value.trim()}”`;}
     if(appHead) appHead.style.display="none";
@@ -1853,8 +1948,9 @@ function runSearch(){
     promptRow.innerHTML="";
     renderGames(gameResults);
     setGameCount(gameResults.length);
+    setPromptCount(0);
     bindGameClicks();
-  }else if(promptResults.length){
+  }else if(prioritizedType==='prompts'){
     main.classList.add("search-show-prompts");
     if(resultTitle){resultTitle.style.display="block";resultTitle.textContent=`Search Results for “${search.value.trim()}”`;}
     if(appHead) appHead.style.display="none";
@@ -1864,6 +1960,7 @@ function runSearch(){
     if(emptyAppMessage) emptyAppMessage.hidden=true;
     renderGames([]);
     setGameCount(0);
+    setPromptCount(promptResults.length);
     bindGameClicks();
     promptRow.innerHTML=promptResults.map(p=>`<article class="prompt-card" data-prompt="${p.name.replace(/"/g,'&quot;')}"><div class="prompt-icon">${p.image ? `<img class="prompt-image" src="${p.image}" alt="${p.name}" loading="lazy" onerror="this.style.display='none';this.parentElement.insertAdjacentText('beforeend',p.icon||'')">` : (p.icon||'')}</div><b>${p.name}</b><div class="muted">AI creative prompt</div><button type="button" onclick='copyPrompt(${JSON.stringify(p.name)})'>▼ Copy Prompt</button></article>`).join("");
   }else{
@@ -1874,41 +1971,166 @@ function runSearch(){
     renderApps([]);
     renderGames([]);
     setGameCount(0);
+    setPromptCount(0);
     bindGameClicks();
     promptRow.innerHTML=`<div class="empty" style="grid-column:1/-1">কোনো matching result পাওয়া যায়নি।</div>`;
   }
 }
 
 const sectionSearchInputs=document.querySelectorAll('.section-search');
-sectionSearchInputs.forEach(input=>{
-  input.addEventListener('input',()=>{
-    search.value=input.value;
-    sectionSearchInputs.forEach(other=>{ if(other!==input) other.value=input.value; });
-    runSearch();
+
+/*
+   SECTION SEARCH — independent, cross-category, keyboard-safe.
+   Apps/Game/AI Prompt-এর যেকোনো search box থেকে App, Game বা AI Prompt খোঁজা যাবে।
+   Source section সবসময় visible থাকবে, তাই typing-এর সময় focus/keyboard হারাবে না।
+   অন্য search box-গুলোতে value copy করা হবে না।
+*/
+function sectionNameFromInput(input){
+  const section=input.closest('section');
+  if(!section) return 'apps';
+  if(section.id==='presets') return 'games';
+  if(section.id==='prompts') return 'prompts';
+  return 'apps';
+}
+
+function showSection(id,show){
+  const el=document.getElementById(id);
+  if(el) el.style.display=show ? '' : 'none';
+}
+
+function runSectionSearch(input){
+  const q=(input.value||'').trim().toLowerCase();
+  const main=document.querySelector('main.container');
+  const promptSection=document.getElementById('prompts');
+  const appSection=document.getElementById('apps');
+  const gameSection=document.getElementById('presets');
+  const promptHead=promptSection ? promptSection.querySelector('.section-head') : null;
+  const appHead=appSection ? appSection.querySelector('.section-head') : null;
+  const gameHead=gameSection ? gameSection.querySelector('.section-head') : null;
+  const appEmpty=document.getElementById('empty');
+  const promptRow=document.getElementById('promptRow');
+  const gameCount=document.getElementById('gameCount');
+  const promptCount=document.getElementById('promptCount');
+  const setCount=(el,n)=>{if(el) el.textContent='('+Math.max(0,Number(n)||0)+')';};
+
+  // Empty search: restore the normal page and keep the current input focused.
+  if(!q){
+    main.classList.remove('search-mode','search-show-apps','search-show-games','search-show-prompts','search-source-apps','search-source-games','search-source-prompts');
+    if(promptHead) promptHead.style.display='flex';
+    if(appHead) appHead.style.display='flex';
+    if(gameHead) gameHead.style.display='flex';
+    renderApps(apps);
+    renderPrompts();
+    renderGames(games);
+    setCount(gameCount,games.length);
+    setCount(promptCount,prompts.length);
+    if(appEmpty) appEmpty.hidden=true;
+    bindGameClicks();
+    return;
+  }
+
+  const appResults=apps.filter(a=>{
+    const text=[a.name,a.version,a.rating,a.downloads,a.description,a.developer].filter(Boolean).join(' ').toLowerCase();
+    return text.includes(q);
   });
-  input.addEventListener('search',()=>{
-    search.value=input.value;
-    runSearch();
+  const gameResults=games.filter(g=>{
+    const text=[g.name,g.version,g.rating,g.downloads,g.description,g.developer].filter(Boolean).join(' ').toLowerCase();
+    return text.includes(q);
+  });
+  const promptResults=prompts.filter(p=>{
+    const text=[p.name,p.prompt].filter(Boolean).join(' ').toLowerCase();
+    return text.includes(q);
+  });
+
+  // Exact name first; otherwise use the same category priority everywhere.
+  const exactApps=apps.filter(a=>a.name.toLowerCase()===q);
+  const exactGames=games.filter(g=>g.name.toLowerCase()===q);
+  const exactPrompts=prompts.filter(p=>p.name.toLowerCase()===q);
+  const type=exactApps.length?'apps':exactGames.length?'games':exactPrompts.length?'prompts':
+    (appResults.length?'apps':gameResults.length?'games':promptResults.length?'prompts':'none');
+
+  main.classList.add('search-mode');
+  main.classList.remove('search-show-apps','search-show-games','search-show-prompts','search-source-apps','search-source-games','search-source-prompts');
+  const source=sectionNameFromInput(input);
+  main.classList.add('search-source-'+(source==='games'?'games':source==='prompts'?'prompts':'apps'));
+
+  if(type==='apps'){
+    main.classList.add('search-show-apps');
+    if(appHead) appHead.style.display='flex';
+    if(gameHead) gameHead.style.display='none';
+    if(promptHead) promptHead.style.display='none';
+    renderApps(appResults);
+    renderGames([]);
+    if(promptRow) promptRow.innerHTML='';
+    setCount(gameCount,0); setCount(promptCount,0);
+    if(appEmpty) appEmpty.hidden=appResults.length>0;
+  }else if(type==='games'){
+    // IMPORTANT: searching Free Fire from Apps OR AI Prompt must show the Game result.
+    main.classList.add('search-show-games');
+    if(appHead) appHead.style.display='none';
+    if(gameHead) gameHead.style.display='flex';
+    if(promptHead) promptHead.style.display='none';
+    renderApps([]);
+    if(promptRow) promptRow.innerHTML='';
+    renderGames(gameResults);
+    setCount(gameCount,gameResults.length); setCount(promptCount,0);
+    if(appEmpty) appEmpty.hidden=true;
+  }else if(type==='prompts'){
+    main.classList.add('search-show-prompts');
+    if(appHead) appHead.style.display='none';
+    if(gameHead) gameHead.style.display='none';
+    if(promptHead) promptHead.style.display='flex';
+    renderApps([]); renderGames([]);
+    setCount(gameCount,0); setCount(promptCount,promptResults.length);
+    if(promptRow) promptRow.innerHTML=promptResults.map(p=>`<article class="prompt-card" data-prompt="${p.name.replace(/"/g,'&quot;')}"><div class="prompt-icon">${p.image ? `<img class="prompt-image" src="${p.image}" alt="${p.name}" loading="lazy" onerror="this.style.display='none';this.parentElement.insertAdjacentText('beforeend',p.icon||'')">` : (p.icon||'')}</div><b>${p.name}</b><div class="muted">AI creative prompt</div><button type="button" onclick='copyPrompt(${JSON.stringify(p.name)})'>▼ Copy Prompt</button></article>`).join('');
+    if(appEmpty) appEmpty.hidden=true;
+  }else{
+    // Wrong query: keep the search box visible and show a harmless empty state.
+    if(appHead) appHead.style.display='flex';
+    if(gameHead) gameHead.style.display='none';
+    if(promptHead) promptHead.style.display='none';
+    main.classList.add('search-show-apps');
+    renderApps([]); renderGames([]);
+    if(promptRow) promptRow.innerHTML='<div class="empty" style="grid-column:1/-1">কোনো App, Game বা AI Prompt পাওয়া যায়নি।</div>';
+    setCount(gameCount,0); setCount(promptCount,0);
+    if(appEmpty) appEmpty.hidden=true;
+  }
+  bindGameClicks();
+  // Rendering cards can replace DOM nodes; restore focus to the same search input.
+  if(document.activeElement!==input){ try{input.focus({preventScroll:true});}catch(_){input.focus();} }
+}
+
+sectionSearchInputs.forEach(input=>{
+  input.setAttribute('type','text');
+  input.removeAttribute('name');
+  input.setAttribute('enterkeyhint','search');
+  input.addEventListener('input',()=>{ if(window.minhajMoveActiveSearchTop) minhajMoveActiveSearchTop(input); runSectionSearch(input); });
+  // Do not blur, submit, navigate, or switch away from the source search box.
+  input.addEventListener('keydown',e=>{
+    if(e.key==='Enter'){
+      e.preventDefault();
+      if(window.minhajMoveActiveSearchTop) minhajMoveActiveSearchTop(input);
+      runSectionSearch(input);
+    }
   });
 });
 search.addEventListener("input",()=>{ sectionSearchInputs.forEach(input=>input.value=search.value); runSearch(); });
 // Android keyboard "Go/Search" support: the search event is fired by type=search.
-search.addEventListener("search",e=>{
-  e.preventDefault();
+search.addEventListener("search",()=>{
   runSearch();
-  search.blur();
 });
 search.addEventListener("keydown",e=>{
   if(e.key==="Enter" || e.keyCode===13){
     e.preventDefault();
     runSearch();
-    search.blur();
+    // Keep focus so Android keyboards do not close unexpectedly.
+    try{search.focus({preventScroll:true});}catch(_){search.focus();}
   }
 });
 // Also handle IME action/submit on mobile keyboards.
 const searchWrap=document.querySelector(".search-wrap");
 if(searchWrap){
-  searchWrap.addEventListener("submit",e=>{e.preventDefault();runSearch();search.blur();});
+  searchWrap.addEventListener("submit",e=>{e.preventDefault();runSearch();try{search.focus({preventScroll:true});}catch(_){search.focus();}});
 }
 
 
@@ -2255,6 +2477,32 @@ window.addEventListener('popstate',function(){if(infoModal.classList.contains('s
   }
   if(document.readyState === "loading") document.addEventListener("DOMContentLoaded", updateSectionCounts);
   else updateSectionCounts();
+})();
+</script>
+
+<script id="minhaj-searchbar-top-final-js">
+(function(){
+  const host=document.getElementById('activeSectionSearchHost');
+  const inputs=document.querySelectorAll('.section-search');
+  if(!host || !inputs.length) return;
+  inputs.forEach(function(input){
+    const wrap=input.closest('.section-search-wrap');
+    if(!wrap) return;
+    if(!wrap.dataset.originalParent){
+      wrap.dataset.originalParent=wrap.parentElement ? wrap.parentElement.id || '' : '';
+      wrap.dataset.originalNext=wrap.nextElementSibling ? (wrap.nextElementSibling.id || '') : '';
+    }
+    input.addEventListener('focus',function(){
+      if(!document.querySelector('main.container.search-mode')) return;
+      if(wrap.parentElement!==host) host.appendChild(wrap);
+    },true);
+  });
+  window.minhajMoveActiveSearchTop=function(input){
+    const wrap=input && input.closest('.section-search-wrap');
+    if(!wrap || !host) return;
+    if(wrap.parentElement!==host) host.appendChild(wrap);
+    host.style.display='block';
+  };
 })();
 </script>
 </body>
