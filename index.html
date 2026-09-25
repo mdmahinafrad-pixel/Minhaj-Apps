@@ -1,1 +1,3320 @@
-t
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>MINHAJ APPS</title>
+  <meta name="description" content="MINHAJ APPS — Android apps directory">
+  <style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#fff;color:#151515;font-family:"Poppins","Noto Sans Bengali",sans-serif}.topbar{height:64px;border-bottom:1px solid #ececec;display:flex;align-items:center;padding:0 24px;gap:28px;position:sticky;top:0;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);z-index:10}.brand{font-size:21px;font-weight:800;white-space:nowrap;display:flex;align-items:center;gap:8px}.brand-logo{width:34px;height:34px;border-radius:50%;object-fit:cover;display:block}.brand-dot{display:none}.brand-dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:#111;margin-right:7px}.topbar nav{display:flex;gap:22px;align-items:center;font-size:14px}.topbar nav a{color:#666;text-decoration:none}.topbar nav a.active,.topbar nav a:hover{color:#111;font-weight:700}.menu{display:none;margin-left:auto;border:0;background:#f3f3f3;border-radius:10px;padding:9px 12px;font-size:18px}.container{max-width:1120px;margin:auto;padding:26px 20px 90px}.hero-title{font-size:15px;color:#777;margin-bottom:16px}.hero-title span{float:right;color:#aaa}.search-wrap{height:46px;border:1px solid #ddd;border-radius:10px;display:flex;align-items:center;padding:0 14px;gap:9px;margin-bottom:14px}.search-wrap span{font-size:23px;color:#777}.search-wrap input{border:0;outline:0;width:100%;font-size:15px}.notice{display:block;background:#f7f7f7;border:1px solid #ececec;border-radius:9px;padding:12px 14px;color:#333;text-decoration:none;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:28px}.section-head{display:flex;align-items:center;justify-content:space-between;margin:24px 0 13px}.section-head h2{font-size:17px;margin:0}.section-head small{color:#999;font-weight:500}.section-head>a{font-size:13px;color:#777;text-decoration:none}.section-head select{border:1px solid #ddd;border-radius:8px;padding:7px 10px;background:white;color:#555}.prompt-row{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;overflow:hidden;max-height:246px;transition:max-height .35s ease}.prompt-row.show-all{max-height:10000px}.prompt-card{min-height:108px;border:1px solid #e9e9e9;border-radius:10px;padding:12px;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.03)}.prompt-icon{height:54px;border-radius:8px;background:linear-gradient(135deg,#f2f2f2,#fafafa);display:flex;align-items:center;justify-content:center;font-size:27px;margin-bottom:9px}.prompt-icon img{width:100%;height:100%;object-fit:cover;display:block}.prompt-card b{display:block;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.prompt-card button{border:0;background:transparent;color:#888;font-size:12px;padding:3px 0;cursor:pointer}.trending-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.trend-card{min-height:104px}.trend-card .logo{width:58px;height:58px;flex-basis:58px}.trend-card .muted{font-size:12px}.trend-download{padding:8px 12px}.trend-card{border:1px solid #e8e8e8;border-radius:11px;padding:12px;display:flex;align-items:center;gap:12px;position:relative;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;overflow:hidden}.trend-card:hover{transform:translateY(-2px);border-color:#bdbdbd;box-shadow:0 0 18px rgba(0,0,0,.14)}.trend-card .trend-info{flex:1;min-width:0}.trend-download{flex:0 0 auto;align-self:center;display:inline-flex;align-items:center;justify-content:center;margin-top:0;padding:6px 10px;border-radius:8px;background:#111;color:#fff;text-decoration:none;font-size:11px;font-weight:700;box-shadow:0 0 10px rgba(0,0,0,.22);transition:transform .15s ease,box-shadow .15s ease}.trend-download.press{transform:scale(.94);box-shadow:0 0 18px rgba(0,0,0,.38)}.download{position:relative;overflow:hidden;transition:transform .15s ease,box-shadow .18s ease,border-color .18s ease}.download:hover{box-shadow:0 0 14px rgba(0,0,0,.18);border-color:#aaa}.download.press{transform:scale(.94);box-shadow:0 0 20px rgba(0,0,0,.35)}.menu{position:relative;overflow:hidden;transition:transform .15s ease,box-shadow .18s ease}.menu.press{transform:scale(.92);box-shadow:0 0 18px rgba(0,0,0,.28)}.ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,.55);transform:scale(0);animation:rippleAnim .6s ease-out;pointer-events:none}@keyframes rippleAnim{to{transform:scale(2.8);opacity:0}}.logo{width:52px;height:52px;flex:0 0 52px;border-radius:12px;object-fit:cover;background:#f0f0f0;display:flex;align-items:center;justify-content:center;font-size:24px;color:#777}.trend-card b,.app-card b{font-size:14px;display:block}.muted{font-size:12px;color:#999;margin-top:4px}.app-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.app-card{border:1px solid #e8e8e8;border-radius:11px;padding:12px;background:#fff;min-width:0}
+/* Latest Updates: keep Download buttons anchored at the bottom of every app card */
+.app-grid .app-card{display:flex;flex-direction:column;height:100%;box-sizing:border-box}
+.app-grid .app-card .app-top{flex:0 0 auto}
+.app-grid .app-card .download{width:100%;box-sizing:border-box;margin-top:auto;padding:8px;text-align:center}
+@media(max-width:800px){.app-grid .app-card .download{margin-top:auto}}.app-card .app-top{display:flex;gap:11px;align-items:center}.app-card .logo{width:58px;height:58px;flex-basis:58px}.app-card .meta{min-width:0}.app-card .meta b{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.rating{font-size:12px;color:#777;margin-top:5px}.download{display:block;text-align:center;margin-top:12px;border:1px solid #ddd;border-radius:8px;padding:8px;text-decoration:none;color:#222;font-size:12px}
+/* Game logos: graphic-only, no emoji or text */
+.game-icon{overflow:hidden;position:relative;background:#fff;border:1px solid #e8e8e8}
+.game-icon.subway-logo{background:linear-gradient(135deg,#ffd400 0 42%,#111 42% 58%,#fff 58%);}
+.game-icon.subway-logo:before{content:"";position:absolute;width:24px;height:30px;left:17px;top:13px;border-radius:7px 7px 10px 10px;background:#e53935;transform:skew(-7deg);box-shadow:0 9px 0 -3px #111}
+.game-icon.subway-logo:after{content:"";position:absolute;width:8px;height:8px;left:25px;top:7px;border-radius:50%;background:#111;box-shadow:-11px 30px 0 1px #111,11px 30px 0 1px #111}
+.game-icon.hill-logo{background:linear-gradient(145deg,#68c33a 0 50%,#2f7d32 50% 100%);}
+.game-icon.hill-logo:before{content:"";position:absolute;width:38px;height:18px;left:10px;top:24px;border-radius:14px 15px 5px 5px;background:#f44336;transform:skew(-8deg);box-shadow:0 -9px 0 -4px #ffcc00}
+.game-icon.hill-logo:after{content:"";position:absolute;width:9px;height:9px;left:14px;top:35px;border-radius:50%;background:#222;box-shadow:29px 0 0 #222}
+.game-card{margin-top:14px;border:1px solid #e8e8e8;border-radius:11px;padding:12px;background:#fff;display:flex;flex-direction:column;align-items:stretch;gap:10px}.game-icon{width:58px;height:58px;flex:0 0 58px;border-radius:12px;background:#f2f2f2;display:flex;align-items:center;justify-content:center;font-size:28px}.game-info{width:100%;min-width:0}.game-info b{display:block;font-size:14px}.game-info span{display:block;color:#999;font-size:12px;margin-top:4px}.game-download{display:block!important;width:100%!important;box-sizing:border-box!important;text-align:center!important;margin-top:0!important;height:auto!important;min-height:0!important;padding:8px!important;border:1px solid #ddd!important;border-radius:8px!important;background:#fff!important;color:#222!important;text-decoration:none;font-size:12px!important;line-height:normal!important;font-weight:400!important;box-shadow:0 4px 14px rgba(0,0,0,.055)!important;position:relative!important;overflow:hidden}.game-download:hover{box-shadow:0 0 0 1px #ddd,0 0 18px rgba(0,0,0,.1)!important}@media(max-width:520px){.game-card{align-items:stretch}.game-download{width:100%!important;padding:8px!important;font-size:12px!important}}.info-card{margin-top:26px;border:1px solid #e8e8e8;border-radius:11px;padding:18px;background:#fafafa}.info-card h2{font-size:17px;margin:0 0 7px}.info-card p{font-size:13px;line-height:1.6;color:#666;margin:0}footer{border-top:1px solid #eee;text-align:center;padding:28px 20px 90px;color:#777}.footer-brand{font-weight:800;color:#222}footer p{font-size:12px}.footer-links{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;font-size:12px}.footer-links a{color:#777;text-decoration:none}.bottom-nav{display:none}.empty{text-align:center;padding:30px;color:#999;font-size:14px}.search-mode .hero-title,.search-mode .notice,.search-mode #trending,.search-mode #info,.search-mode footer{display:none!important}.search-mode .section-head:first-of-type{margin-top:10px}.search-mode #prompts{margin-top:18px}.search-mode #promptRow{display:grid;grid-template-columns:repeat(4,1fr);max-height:none;overflow:visible}.search-mode .search-results-title{display:block!important}@media(max-width:800px){.search-mode #promptRow{grid-template-columns:repeat(2,1fr);display:grid;overflow:visible}}@media(max-width:800px){.topbar{height:58px;padding:0 14px}.topbar nav{display:none}.menu{display:block}.container{padding:20px 12px 82px}.prompt-row{display:flex;overflow-x:auto;padding-bottom:4px;max-height:none}.prompt-row.show-all{display:grid;grid-template-columns:repeat(2,1fr);overflow:visible;max-height:10000px}.prompt-row.show-all .prompt-card{min-width:0}.prompt-card{min-width:118px}.trending-grid{grid-template-columns:1fr}.app-grid{grid-template-columns:repeat(2,1fr);gap:9px}.app-card{padding:9px}.app-card .logo{width:48px;height:48px;flex-basis:48px}.notice{font-size:12px}.bottom-nav{display:flex;position:fixed;left:0;right:0;bottom:0;height:62px;background:rgba(255,255,255,.97);border-top:1px solid #e8e8e8;z-index:20;justify-content:space-around}.bottom-nav a{flex:1;text-align:center;text-decoration:none;color:#888;font-size:19px;padding-top:8px}.bottom-nav a span{display:block;font-size:10px;margin-top:3px}.bottom-nav a.active{color:#111;font-weight:700}}@media(max-width:390px){.app-grid{grid-template-columns:1fr 1fr}.app-card b{font-size:12px}}
+
+/* MINHAJ interactive polish */
+body.menu-open{overflow:hidden}.menu{position:relative;overflow:hidden;transition:transform .16s ease,box-shadow .25s ease,background .25s ease}.menu.is-open{box-shadow:0 0 0 1px rgba(0,0,0,.06),0 0 22px rgba(0,0,0,.16);background:#111;color:#fff}.menu.press,.drawer-close.press,.download.press,.trend-download.press,.prompt-card button.press,.drawer-links a.press,.bottom-nav a.press,.section-head>a.press,.footer-links a.press{transform:scale(.94)!important}.side-overlay{position:fixed;inset:0;background:rgba(15,15,15,.28);backdrop-filter:blur(3px);opacity:0;visibility:hidden;transition:opacity .28s ease;z-index:40}.side-overlay.show{opacity:1;visibility:visible}.side-drawer{position:fixed;top:0;right:0;width:min(82vw,320px);height:100dvh;background:rgba(255,255,255,.98);box-shadow:-18px 0 50px rgba(0,0,0,.16);transform:translateX(105%);transition:transform .34s cubic-bezier(.22,.9,.25,1);z-index:41;padding:20px 16px 24px;display:flex;flex-direction:column}.side-drawer.show{transform:translateX(0)}.drawer-head{display:flex;align-items:center;justify-content:space-between;padding:4px 4px 18px;border-bottom:1px solid #eee}.drawer-brand{font-size:19px;font-weight:800}.drawer-close{border:0;background:#f2f2f2;border-radius:11px;width:42px;height:42px;font-size:22px;cursor:pointer;transition:.18s}.drawer-close:active{transform:scale(.9)}.drawer-links{padding:18px 0;display:grid;gap:9px}.drawer-links a{display:flex;align-items:center;gap:12px;padding:14px 13px;border-radius:13px;text-decoration:none;color:#222;font-size:14px;font-weight:650;transition:transform .18s ease,background .2s ease,box-shadow .2s ease}.drawer-links a:hover{background:#f5f5f5;transform:translateX(-3px)}.drawer-links a.active{background:#111;color:#fff;box-shadow:0 8px 22px rgba(0,0,0,.14)}.drawer-icon{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;background:#f0f0f0;color:#222}.drawer-links a.active .drawer-icon{background:rgba(255,255,255,.14);color:#fff}.drawer-note{margin-top:auto;border:1px solid #e8e8e8;border-radius:14px;padding:14px;background:#fafafa;color:#777;font-size:12px;line-height:1.55}.ripple{position:absolute;border-radius:50%;transform:scale(0);animation:mnRipple .55s ease-out;background:rgba(255,255,255,.5);pointer-events:none}.download,.prompt-card button,.section-head>a,.footer-links a,.bottom-nav a,.drawer-links a{transition:transform .16s ease,box-shadow .2s ease,background .2s ease,color .2s ease}.download:active,.prompt-card button:active,.section-head>a:active,.footer-links a:active,.bottom-nav a:active,.drawer-links a:active{transform:scale(.95)}.download{position:relative;overflow:hidden;box-shadow:0 0 0 0 rgba(0,0,0,0)}.download:hover{box-shadow:0 0 0 1px #ddd,0 0 16px rgba(0,0,0,.08)}.app-card,.trend-card,.prompt-card{transition:transform .2s ease,box-shadow .25s ease}.app-card:hover,.trend-card:hover,.prompt-card:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(0,0,0,.07)}@keyframes mnRipple{to{transform:scale(3.5);opacity:0}}@media(max-width:800px){.trend-card{min-height:88px;padding:10px;gap:10px}.trend-card .logo{width:50px;height:50px;flex-basis:50px}.trend-download{padding:8px 10px;font-size:11px;white-space:nowrap}.side-drawer{width:min(84vw,320px)}.menu{display:block!important}}.prompt-card{position:relative;overflow:hidden;box-shadow:0 3px 14px rgba(0,0,0,.055)}.prompt-card:before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;box-shadow:inset 0 0 0 1px rgba(255,255,255,.55)}.prompt-icon{background:linear-gradient(135deg,#f4f4f4,#fff);border:1px solid #ededed}.prompt-card button{position:relative;overflow:hidden;border:1px solid #e4e4e4;border-radius:8px;padding:7px 12px;margin-top:6px;background:#fff;color:#333;box-shadow:0 4px 12px rgba(0,0,0,.05)}.prompt-card button:hover{box-shadow:0 0 0 1px #ddd,0 0 18px rgba(0,0,0,.1)}.app-card{box-shadow:0 3px 15px rgba(0,0,0,.055),0 1px 3px rgba(0,0,0,.04)}.app-card:hover{box-shadow:0 12px 28px rgba(0,0,0,.09),0 0 0 1px rgba(0,0,0,.03)}.trend-card{box-shadow:0 3px 14px rgba(0,0,0,.055)}.trend-download{display:inline-block;position:relative;overflow:hidden;margin-top:8px;border:1px solid #ddd;border-radius:8px;padding:7px 11px;text-decoration:none;color:#222;font-size:11px;background:#fff;box-shadow:0 4px 12px rgba(0,0,0,.05);transition:transform .16s ease,box-shadow .2s ease,background .2s ease}.trend-download:hover{box-shadow:0 0 0 1px #ddd,0 0 16px rgba(0,0,0,.1)}.download{box-shadow:0 4px 14px rgba(0,0,0,.055)}.download:hover{box-shadow:0 0 0 1px #ddd,0 0 18px rgba(0,0,0,.1)}.press-ripple{position:absolute;border-radius:50%;transform:scale(0);background:rgba(0,0,0,.12);pointer-events:none;animation:mnRipple .55s ease-out}@keyframes mnGlow{0%,100%{box-shadow:0 0 0 rgba(0,0,0,0)}50%{box-shadow:0 0 18px rgba(0,0,0,.12)}}.drawer-links a{box-shadow:0 2px 9px rgba(0,0,0,.025)}.drawer-links a.active{box-shadow:0 8px 22px rgba(0,0,0,.14)}@media(prefers-reduced-motion:reduce){.side-drawer,.side-overlay,.menu,.app-card,.trend-card,.prompt-card,.drawer-links a{transition:none!important}.ripple{animation:none}}
+
+/* Poloja-style touch feedback — transient only, never sticks */
+button,a,.app-card,.trend-card,.prompt-card{ -webkit-tap-highlight-color:transparent; touch-action:manipulation; }
+.app-card.press,.trend-card.press,.prompt-card.press{transform:scale(.985);box-shadow:0 6px 18px rgba(0,0,0,.10);}
+.press-ripple{position:absolute;border-radius:999px;background:rgba(0,0,0,.10);transform:scale(0);animation:pressRipple .45s ease-out;pointer-events:none;z-index:5;}
+@keyframes pressRipple{to{transform:scale(2.6);opacity:0}}
+@media (prefers-reduced-motion:reduce){.press-ripple{animation:none;opacity:0}.app-card.press,.trend-card.press,.prompt-card.press,.download.press,.trend-download.press,.menu.press{transform:none}}
+
+/* AI Prompt cards - Poloja-inspired horizontal design */
+.prompt-row{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;overflow:hidden}
+.prompt-card{position:relative;min-height:112px;border:1px solid #e8e8e8;border-radius:12px;padding:10px;background:#fff;box-shadow:0 3px 12px rgba(0,0,0,.045);overflow:hidden;transition:transform .16s ease,box-shadow .16s ease,border-color .16s ease}
+.prompt-card:active{transform:scale(.965);box-shadow:0 2px 7px rgba(0,0,0,.08)}
+.prompt-icon{height:auto;aspect-ratio:1/1;overflow:hidden;border-radius:9px;background:linear-gradient(135deg,#f1f1f1,#fafafa);display:flex;align-items:center;justify-content:center;font-size:27px;margin-bottom:7px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.025)}
+.prompt-icon img{width:100%;height:100%;object-fit:cover;display:block}.prompt-card b{display:block;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:3px}
+.prompt-card button{display:inline-flex;align-items:center;gap:4px;border:0;background:transparent;color:#777;font-size:12px;padding:4px 0;cursor:pointer;touch-action:manipulation;transition:transform .12s ease,color .12s ease}
+.prompt-card button:active{transform:scale(.94);color:#111}
+.prompt-card button::after{content:'▼';font-size:8px;margin-left:2px}
+@media(max-width:800px){.prompt-row{display:flex;overflow-x:auto;gap:10px;padding:2px 2px 7px;scroll-snap-type:x proximity;scrollbar-width:none}.prompt-row::-webkit-scrollbar{display:none}.prompt-card{min-width:118px;scroll-snap-align:start}}
+/* universal touch feedback */
+.touchable,.download,.menu,.topbar nav a,.bottom-nav a,.prompt-card button{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.touching{transform:scale(.965)!important;transition:transform .08s ease!important}
+.ripple{position:absolute;border-radius:50%;transform:scale(0);background:rgba(0,0,0,.10);pointer-events:none;animation:promptRipple .42s ease-out forwards}
+@keyframes promptRipple{to{transform:scale(1);opacity:0}}
+
+.prompt-modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.28);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;padding:18px;z-index:100}.prompt-modal-backdrop.show{display:flex}.prompt-modal{width:min(100%,430px);background:#fff;border:1px solid #e8e8e8;border-radius:16px;padding:18px;box-shadow:0 18px 55px rgba(0,0,0,.18);animation:promptPop .18s ease-out}.prompt-modal h3{margin:0 0 10px;font-size:17px}.prompt-modal-image{width:100%;max-height:230px;object-fit:cover;border-radius:12px;display:none;margin:0 0 12px;border:1px solid #e9e9e9;background:#f5f5f5}.prompt-text{font-size:13px;line-height:1.6;color:#555;background:#f7f7f7;border:1px solid #e9e9e9;border-radius:11px;padding:12px;max-height:180px;overflow:auto}.prompt-actions{display:flex;gap:9px;margin-top:12px}.prompt-actions button{flex:1;border:1px solid #ddd;border-radius:9px;padding:10px;background:#fff;color:#222;font-weight:700;cursor:pointer}.prompt-actions .copy-main{background:#111;color:#fff;border-color:#111}.prompt-actions button:active{transform:scale(.96)}@keyframes promptPop{from{opacity:0;transform:scale(.96) translateY(5px)}to{opacity:1;transform:scale(1) translateY(0)}}
+
+/* App + Prompt detail popup */
+.detail-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);backdrop-filter:blur(5px);display:none;align-items:center;justify-content:center;padding:18px;z-index:100}.detail-overlay.show{display:flex}.detail-modal{width:min(430px,100%);background:#fff;border:1px solid #e8e8e8;border-radius:18px;padding:20px;box-shadow:0 18px 60px rgba(0,0,0,.25);animation:modalIn .2s ease-out}.detail-modal h3{margin:0 0 8px;font-size:19px}.detail-modal .detail-sub{font-size:13px;color:#777;line-height:1.55;margin:0 0 14px}.detail-modal .detail-logo{width:68px;height:68px;border-radius:16px;object-fit:cover;background:#f1f1f1;display:block;margin-bottom:12px}.detail-actions{display:flex;gap:9px}.detail-actions button,.detail-actions a{flex:1;border:1px solid #ddd;border-radius:10px;padding:10px;text-align:center;text-decoration:none;background:#fff;color:#222;font-size:13px;font-weight:700;cursor:pointer}.detail-actions .primary{background:#111;color:#fff;border-color:#111;box-shadow:0 0 14px rgba(0,0,0,.18)}.prompt-card{cursor:pointer}.app-card{cursor:pointer}@keyframes modalIn{from{opacity:0;transform:translateY(10px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+
+/* MINHAJ app popup — compact auto-size, all existing features preserved */
+.detail-overlay{position:fixed;inset:0;background:rgba(15,23,42,.58);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);display:none;align-items:center;justify-content:center;padding:12px;z-index:1000}
+.detail-overlay.show{display:flex}
+.poloja-detail{position:relative;width:min(400px,calc(100vw - 28px));height:auto;max-height:calc(100vh - 24px);overflow:auto;text-align:left;padding:15px 14px 13px;border:1px solid #e2e8f0;border-radius:18px;background:#f8fafc;box-shadow:0 20px 55px rgba(0,0,0,.28);animation:polojaModalIn .22s cubic-bezier(.2,.8,.2,1)}
+.poloja-x{position:absolute;right:9px;top:8px;width:32px;height:32px;border:1px solid #e2e8f0;border-radius:50%;background:#eef2f7;color:#172033;font-size:21px;font-weight:700;line-height:28px;cursor:pointer;z-index:3}
+.poloja-x:active{transform:scale(.9);background:#e2e8f0}
+.poloja-head{display:flex;align-items:center;gap:11px;padding:3px 40px 10px 2px}
+.poloja-logo{width:62px!important;height:62px!important;flex:0 0 62px;border-radius:13px!important;object-fit:cover!important;margin:0!important;background:#fff;box-shadow:0 4px 12px rgba(15,23,42,.10)}
+.poloja-title-wrap{min-width:0}
+.poloja-detail h3{font-size:20px;line-height:1.12;margin:0 0 4px;font-weight:800;color:#172033;letter-spacing:-.02em}
+.poloja-sub{font-size:12px;color:#64748b;margin-bottom:6px}
+.poloja-badge{display:inline-flex;align-items:center;gap:4px;padding:4px 8px;border-radius:999px;background:#dff8ed;color:#10a77d;font-size:10px;font-weight:800}
+.poloja-stats{display:grid;grid-template-columns:1fr;margin:0 0 10px;border:1px solid #dbe4ef;border-radius:12px;overflow:hidden;background:#fff}
+.poloja-stats div{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:7px 11px;border-bottom:1px solid #dbe4ef;min-height:35px}
+.poloja-stats div:last-child{border-bottom:0}
+.poloja-stats span{font-size:12px;color:#64748b}
+.poloja-stats b{font-size:12px;color:#172033;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right}
+.poloja-quick-stats{margin:5px 0 10px;text-align:center;font-size:12px;font-weight:600;color:#777;letter-spacing:.1px}
+.poloja-description{border:1px solid #c9f1e4;border-radius:12px;padding:10px 11px;text-align:left;font-size:12px;line-height:1.5;color:#64748b;margin-bottom:10px;background:#effcf8}
+.poloja-description:before{content:'▣  Description & Information';display:block;color:#10a77d;font-size:14px;font-weight:800;margin-bottom:4px}
+.poloja-play{display:flex;align-items:center;gap:10px;border:1px solid #dbe4ef;border-radius:12px;padding:9px 11px;margin-bottom:10px;text-decoration:none;background:#fff;color:#172554;transition:transform .15s ease,box-shadow .18s ease}
+.poloja-play:active{transform:scale(.985)}
+.poloja-play-icon{font-size:25px;line-height:1;color:#172033}
+.poloja-play small{display:block;color:#64748b;font-size:10px;margin-bottom:1px}
+.poloja-play strong{display:block;font-size:15px;line-height:1.15;color:#172554}
+.poloja-play-arrow{margin-left:auto;font-size:22px;color:#64748b}
+.poloja-actions{display:grid;grid-template-columns:1fr;gap:7px}
+.poloja-actions button,.poloja-actions a{min-height:42px;border:0!important;border-radius:21px!important;padding:8px 12px!important;text-align:center;text-decoration:none;font-size:13px!important;font-weight:800!important;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.poloja-actions .primary{background:#12b886!important;color:#fff!important;box-shadow:0 6px 14px rgba(18,184,134,.18)!important}
+.poloja-telegram{display:flex!important;align-items:center!important;justify-content:center!important;gap:8px!important;background:#3f83ee!important;color:#fff!important;box-shadow:0 6px 14px rgba(63,131,238,.16)!important}
+@keyframes polojaModalIn{from{opacity:0;transform:translateY(8px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+@media(max-width:520px){.detail-overlay{padding:8px}.poloja-detail{width:min(380px,calc(100vw - 20px));max-height:calc(100vh - 16px);padding:13px 10px 11px;border-radius:17px}.poloja-head{gap:10px;padding:3px 38px 9px 2px}.poloja-logo{width:58px!important;height:58px!important;flex-basis:58px;border-radius:12px!important}.poloja-detail h3{font-size:19px}.poloja-sub{font-size:11px}.poloja-badge{font-size:10px;padding:4px 7px}.poloja-stats{border-radius:11px;margin-bottom:9px}.poloja-stats div{padding:6px 10px;min-height:33px}.poloja-stats span,.poloja-stats b{font-size:11.5px}.poloja-description{font-size:11.5px;padding:9px 10px;margin-bottom:9px;border-radius:11px}.poloja-description:before{font-size:13px}.poloja-play{padding:8px 10px;margin-bottom:9px;border-radius:11px}.poloja-play-icon{font-size:23px}.poloja-play strong{font-size:14px}.poloja-actions{gap:7px}.poloja-actions button,.poloja-actions a{min-height:40px;font-size:12.5px!important;border-radius:20px!important}.poloja-x{width:31px;height:31px;right:7px;top:6px;font-size:21px;line-height:27px}}
+
+/* Announcement ticker — continuous scrolling */
+.notice{position:relative;overflow:hidden;text-overflow:clip!important;white-space:nowrap!important;}
+.notice-track{display:inline-block!important;width:max-content!important;min-width:max-content!important;padding-left:100%!important;animation:minhajAnnouncement 12s linear infinite!important;will-change:transform;}
+@keyframes minhajAnnouncement{from{transform:translateX(0)}to{transform:translateX(-100%)}}
+
+.poloja-play-icon,.download-icon{display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;}
+.poloja-play-icon svg,.download-icon svg{display:block;}
+
+/* Footer info popup fix */
+.info-overlay{position:fixed;inset:0;display:none;align-items:center;justify-content:center;padding:16px;background:rgba(0,0,0,.45);backdrop-filter:blur(5px);z-index:9999;}
+.info-overlay.show{display:flex;}
+.info-modal{position:relative;width:min(420px,calc(100vw - 28px));max-height:80vh;overflow:auto;background:#fff;border-radius:16px;padding:22px 18px 18px;box-shadow:0 18px 60px rgba(0,0,0,.25);animation:infoModalIn .18s ease-out;}
+.info-modal h3{margin:0 34px 12px 0;font-size:19px;color:#151515;}
+.info-modal p{margin:8px 0;font-size:13px;line-height:1.65;color:#555;}
+.info-modal a{color:#1677ff;text-decoration:none;font-weight:600;}
+.info-close{position:absolute;top:8px;right:9px;width:30px;height:30px;border:0;border-radius:50%;background:#f1f1f1;color:#444;font-size:20px;line-height:30px;text-align:center;cursor:pointer;padding:0;}
+@keyframes infoModalIn{from{opacity:0;transform:translateY(8px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+
+/* MINHAJ custom rating star logo */
+.minhaj-star-logo{width:15px;height:15px;display:inline-block;vertical-align:-2px;flex:0 0 auto;}
+.minhaj-rating{display:inline-flex;align-items:center;gap:5px;}
+
+/* Game photos */
+.game-card .game-icon{width:48px;height:48px;min-width:48px;border-radius:10px;overflow:hidden;background:#f3f3f3;display:flex;align-items:center;justify-content:center;}
+.game-card .game-icon img{width:100%;height:100%;display:block;object-fit:cover;border-radius:inherit;}
+
+.search-no-results[hidden]{display:none!important}
+  .search-no-results{margin:18px auto 24px;width:min(92%,620px);text-align:center;padding:13px 16px;border:1px solid #e5e7eb;border-radius:12px;background:#f8fafc;color:#334155;font-size:14px;font-weight:700;line-height:1.5}
+.search-no-results span{font-size:12px;font-weight:500;color:#64748b}
+body.dark-mode .search-no-results{background:#172033;border-color:#334155;color:#f8fafc}
+body.dark-mode .search-no-results span{color:#cbd5e1}
+</style>
+
+<style id="minhaj-yellow-star-final">
+.minhaj-rating{display:inline-flex!important;align-items:center!important;gap:4px!important;}
+.minhaj-rating .minhaj-star-logo{width:14px!important;height:14px!important;display:inline-block!important;flex:0 0 14px!important;vertical-align:middle!important;filter:drop-shadow(0 1px 2px rgba(255,193,7,.35));}
+#appModalRating.minhaj-rating .minhaj-star-logo,#appModalQuickStats.minhaj-rating .minhaj-star-logo{width:15px!important;height:15px!important;flex-basis:15px!important;}
+</style>
+
+<style id="minhaj-nav-logo-icons">
+.nav-logo-icon{
+  width:17px!important;
+  height:17px!important;
+  display:inline-block!important;
+  flex:0 0 17px!important;
+  vertical-align:middle!important;
+  color:currentColor!important;
+}
+nav a .nav-logo-icon,
+.bottom-nav a .nav-logo-icon,
+.mobile-nav a .nav-logo-icon,
+.drawer a .nav-logo-icon{
+  margin-right:5px!important;
+}
+nav a, .bottom-nav a, .mobile-nav a, .drawer a{
+  align-items:center!important;
+}
+</style>
+
+
+<style id="minhaj-nav-button-fix">
+nav a, .bottom-nav a, .mobile-nav a, .drawer a{
+  text-decoration:none!important;
+  cursor:pointer!important;
+  user-select:none!important;
+  -webkit-tap-highlight-color:transparent!important;
+}
+.nav-logo-icon{
+  pointer-events:none!important;
+}
+</style>
+
+
+<style id="minhaj-section-visibility-fix">
+/* Each navigation button shows ONLY its own section. Home keeps the full homepage. */
+main.container.only-apps > *{display:none !important;}
+main.container.only-apps > #apps{display:block !important;}
+main.container.only-presets > *{display:none !important;}
+main.container.only-presets > #presets{display:block !important;}
+main.container.only-prompts > *{display:none !important;}
+main.container.only-prompts > #prompts{display:block !important;}
+main.container.only-home > *{display:block;}
+main.container.only-home .section-search-wrap{display:none !important;}
+
+/* : show every homepage collection together. */
+main.container.view-all-mode > *{display:block !important;}
+main.container.view-all-mode #promptRow{
+  display:grid !important;
+  grid-template-columns:repeat(6,minmax(0,1fr)) !important;
+  max-height:none !important;
+  overflow:visible !important;
+}
+@media(max-width:800px){
+  main.container.view-all-mode #promptRow{
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    gap:9px !important;
+  }
+}
+</style>
+
+
+<style id="minhaj-custom-nav-logos">
+.nav-logo-icon{width:18px!important;height:18px!important;display:inline-block!important;flex:0 0 18px!important;color:currentColor!important;vertical-align:middle!important;pointer-events:none!important;}
+.topbar nav a,.drawer-links a,.bottom-nav a{display:inline-flex!important;align-items:center!important;gap:6px!important;}
+.bottom-nav .nav-logo-icon{width:17px!important;height:17px!important;flex-basis:17px!important;}
+.nav-logo-icon path,.nav-logo-icon rect,.nav-logo-icon circle{vector-effect:non-scaling-stroke;}
+</style>
+
+<style id="minhaj-nav-vertical-and-prompt-size">
+/* Navigation: logo on top, text underneath */
+.topbar nav a, .drawer-links a, .bottom-nav a{
+  flex-direction:column!important;
+  justify-content:center!important;
+  align-items:center!important;
+  gap:4px!important;
+  text-align:center!important;
+}
+.topbar nav a .nav-logo-icon, .drawer-links a .nav-logo-icon, .bottom-nav a .nav-logo-icon{
+  width:19px!important;height:19px!important;
+  flex:0 0 19px!important;
+  margin:0!important;
+}
+.bottom-nav a .nav-logo-icon{width:20px!important;height:20px!important;flex-basis:20px!important;}
+.drawer-links a{flex-direction:row!important;justify-content:flex-start!important;text-align:left!important;}
+.drawer-links a .nav-logo-icon{margin:0!important;}
+
+/* AI Prompt section: same card/grid feel as Apps */
+main.container.only-prompts #promptRow{
+  display:grid!important;
+  grid-template-columns:repeat(4,minmax(0,1fr))!important;
+  gap:12px!important;
+  max-height:none!important;
+  overflow:visible!important;
+}
+main.container.only-prompts .prompt-card{
+  min-width:0!important;
+  min-height:150px!important;
+  height:100%!important;
+  display:flex!important;
+  flex-direction:column!important;
+}
+main.container.only-prompts .prompt-icon{
+  height:auto!important;
+  aspect-ratio:1/1!important;
+  flex:0 0 auto!important;
+  width:100%!important;
+}
+main.container.only-prompts .prompt-card b{margin-top:0!important;}
+main.container.only-prompts .prompt-card .muted{min-height:18px;}
+main.container.only-prompts .prompt-card button{margin-top:auto!important;}
+
+@media(max-width:800px){
+  main.container.only-prompts #promptRow{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:9px!important;
+  }
+  main.container.only-prompts .prompt-card{
+    min-height:150px!important;
+    padding:9px!important;
+  }
+  main.container.only-prompts .prompt-icon{
+    height:auto!important;
+    aspect-ratio:1/1!important;
+    flex-basis:auto!important;
+    width:100%!important;
+  }
+}
+</style>
+
+<style id="minhaj-search-logo-fix">.search-wrap .search-logo{width:20px!important;height:20px!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;color:#777!important;flex:0 0 20px!important;font-size:0!important}.search-wrap .search-logo svg{width:19px!important;height:19px!important;display:block!important}</style>
+<style id="minhaj-search-logo-inline-final">
+/* Search: logo and text/input stay on the SAME LINE */
+.search-wrap{display:flex!important;flex-direction:row!important;align-items:center!important;gap:8px!important;}
+.search-wrap .search-logo{display:inline-flex!important;flex-direction:row!important;align-items:center!important;justify-content:center!important;position:static!important;vertical-align:middle!important;flex:0 0 20px!important;width:20px!important;height:20px!important;margin:0!important;}
+.search-wrap .search-logo svg{display:block!important;width:19px!important;height:19px!important;}
+.search-wrap input{flex:1 1 auto!important;}
+</style>
+<style id="minhaj-four-nav-logo-top-final">
+/* Four main navigation buttons: logo ABOVE, text BELOW */
+.topbar nav > a[href="#home"],
+.topbar nav > a[href="#apps"],
+.topbar nav > a[href="#presets"],
+.topbar nav > a[href="#prompts"],
+.bottom-nav > a[href="#home"],
+.bottom-nav > a[href="#apps"],
+.bottom-nav > a[href="#presets"],
+.bottom-nav > a[href="#prompts"]{
+  display:inline-flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:3px!important;
+  text-align:center!important;
+  line-height:1.15!important;
+}
+.topbar nav > a[href="#home"] .nav-logo-icon,
+.topbar nav > a[href="#apps"] .nav-logo-icon,
+.topbar nav > a[href="#presets"] .nav-logo-icon,
+.topbar nav > a[href="#prompts"] .nav-logo-icon,
+.bottom-nav > a[href="#home"] .nav-logo-icon,
+.bottom-nav > a[href="#apps"] .nav-logo-icon,
+.bottom-nav > a[href="#presets"] .nav-logo-icon,
+.bottom-nav > a[href="#prompts"] .nav-logo-icon{
+  display:block!important;
+  margin:0!important;
+  width:20px!important;
+  height:20px!important;
+  flex:0 0 20px!important;
+}
+.topbar nav > a[href="#home"] span,
+.topbar nav > a[href="#apps"] span,
+.topbar nav > a[href="#presets"] span,
+.topbar nav > a[href="#prompts"] span,
+.bottom-nav > a[href="#home"] span,
+.bottom-nav > a[href="#apps"] span,
+.bottom-nav > a[href="#presets"] span,
+.bottom-nav > a[href="#prompts"] span{
+  display:block!important;
+  margin:0!important;
+  font-size:11px!important;
+}
+</style>
+
+<style id="minhaj-prompt-square-final">
+.prompt-icon{height:auto!important;aspect-ratio:1/1!important;flex:0 0 auto!important;width:100%!important;}
+.prompt-icon img{width:100%!important;height:100%!important;aspect-ratio:1/1!important;object-fit:cover!important;}
+@media(max-width:800px){.prompt-icon{height:auto!important;aspect-ratio:1/1!important;flex-basis:auto!important;width:100%!important;}}
+</style>
+
+<style id="minhaj-ai-prompt-popup-square-final">
+/* AI Prompt popup image — always 1:1 square */
+.prompt-modal-image{
+  width:100%!important;
+  height:auto!important;
+  aspect-ratio:1/1!important;
+  max-height:none!important;
+  object-fit:cover!important;
+  display:none;
+}
+</style>
+
+
+<style id="official-inline-final">
+.poloja-quick-stats{display:flex;align-items:center;justify-content:center;gap:5px;flex-wrap:wrap;}
+.poloja-official-inline{position:relative;display:inline-flex!important;align-items:center;justify-content:center;color:#075c3f;font-weight:850;white-space:nowrap;margin:0 0 0 3px;font-size:10px;line-height:1;padding:5px 10px;border-radius:7px;background:#d9f7e8;border:1px solid #8fd7b2;box-shadow:none;text-shadow:none;filter:none;width:max-content;overflow:hidden;}
+</style>
+
+<style id="minhaj-telegram-drawer-logo">
+.drawer-icon.telegram-drawer-logo{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+}
+.drawer-icon.telegram-drawer-logo svg{
+  display:block;
+  width:20px;
+  height:20px;
+}
+</style>
+
+<style id="minhaj-menu-buttons-smaller">
+/* Menu drawer buttons — slightly smaller */
+.drawer-links{gap:7px!important;padding:14px 0!important;}
+.drawer-links a{padding:10px 11px!important;border-radius:11px!important;font-size:13px!important;gap:10px!important;}
+.drawer-icon{width:27px!important;height:27px!important;border-radius:8px!important;}
+</style>
+
+<style id="minhaj-menu-compact-final">
+.side-drawer{padding:14px 12px 18px!important;}
+.drawer-head{padding:2px 3px 12px!important;}
+.drawer-brand{font-size:17px!important;}
+.drawer-close{width:36px!important;height:36px!important;font-size:20px!important;border-radius:9px!important;}
+.drawer-links{gap:5px!important;padding:10px 0!important;}
+.drawer-links a{padding:8px 10px!important;border-radius:10px!important;font-size:12.5px!important;gap:9px!important;}
+.drawer-icon{width:25px!important;height:25px!important;border-radius:7px!important;}
+.drawer-section-title{font-size:11px!important;margin:7px 3px 2px!important;}
+.drawer-note{padding:10px!important;border-radius:11px!important;font-size:10.5px!important;}
+</style>
+
+<style id="minhaj-image-download-protection">
+/* Image protection: discourage casual saving/dragging of site images */
+img, picture, svg {
+  -webkit-user-drag: none !important;
+  user-drag: none !important;
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  user-select: none !important;
+}
+</style>
+<script id="minhaj-image-download-protection-js">
+(function(){
+  function isImageTarget(el){
+    return !!(el && (el.closest('img, picture, svg') || el.tagName === 'IMG' || el.tagName === 'PICTURE' || el.tagName === 'SVG'));
+  }
+  document.addEventListener('contextmenu', function(e){
+    if(isImageTarget(e.target)) e.preventDefault();
+  }, true);
+  document.addEventListener('dragstart', function(e){
+    if(isImageTarget(e.target)) e.preventDefault();
+  }, true);
+  document.addEventListener('selectstart', function(e){
+    if(isImageTarget(e.target)) e.preventDefault();
+  }, true);
+  document.addEventListener('copy', function(e){
+    if(isImageTarget(document.activeElement) || isImageTarget(e.target)) e.preventDefault();
+  }, true);
+  document.addEventListener('keydown', function(e){
+    var k=(e.key||'').toLowerCase();
+    if((e.ctrlKey||e.metaKey) && (k==='s' || k==='u')) e.preventDefault();
+    if(e.ctrlKey && e.shiftKey && ['i','j','c'].includes(k)) e.preventDefault();
+  }, true);
+})();
+</script>
+
+
+<style id="minhaj-announcement-logo-fix">
+.detail-actions .primary{border:0;cursor:pointer;font:inherit}
+.detail-actions .primary:disabled{opacity:.55;cursor:not-allowed}
+@media(max-width:520px){.notice{min-height:49px!important;padding:6px 9px 6px 7px!important;border-radius:14px!important;gap:8px!important}.notice-logo{width:38px!important;height:38px!important;flex-basis:38px!important}.notice-track{font-size:12px!important}}
+</style>
+
+
+<style id="minhaj-final-cleanup">
+.notice{position:relative!important;display:block!important;overflow:hidden!important;text-overflow:clip!important;white-space:nowrap!important;min-height:0!important;padding:12px 14px!important;margin-bottom:28px!important;border-radius:11px!important;}
+.notice-track{display:inline-block!important;width:max-content!important;min-width:max-content!important;padding-left:100%!important;font-weight:800!important;text-shadow:none!important;animation:minhajAnnouncement 12s linear infinite!important;will-change:transform!important;}
+@keyframes minhajAnnouncement{from{transform:translateX(0)}to{transform:translateX(-100%)}}
+.download{display:block!important;width:100%!important;box-sizing:border-box!important;text-align:center!important;margin-top:12px!important;position:relative!important;}
+
+/* Game card/download: use the exact same structure and button sizing as App cards */
+.game-card.app-card{display:flex;flex-direction:column;height:100%;box-sizing:border-box;min-width:0;}
+.game-card.app-card .app-top{flex:0 0 auto;}
+.game-card.app-card .game-download{width:100%;box-sizing:border-box;margin-top:auto;padding:8px;text-align:center;}
+.game-card.app-card .game-download:hover{box-shadow:0 0 0 1px #ddd,0 0 18px rgba(0,0,0,.1);border-color:#aaa;}
+@media(max-width:800px){.game-card.app-card .game-download{margin-top:auto;}}
+</style>
+
+<style id="minhaj-social-media-menu">
+.drawer-section-title{font-size:12px;font-weight:800;color:#8a8a8a;text-transform:none;padding:5px 11px 1px;margin-top:1px;letter-spacing:.2px;}
+</style>
+
+
+<style>
+.section-title-with-icon{display:flex;align-items:center;gap:8px;}
+.ai-title-icon{display:inline-flex;align-items:center;justify-content:center}
+.section-title-icon{width:24px;height:24px;display:inline-flex;align-items:center;justify-content:center;flex:0 0 24px;border-radius:7px;}
+.section-title-icon svg{display:block;width:20px;height:20px;}
+.trending-title-icon{color:#ff6b00;background:rgba(255,107,0,.10);}
+.latest-title-icon{color:#00a6a6;background:rgba(0,166,166,.10);}
+.game-title-icon{color:#7b42d8;background:rgba(123,66,216,.10);}
+.ai-title-icon{color:#9b5cff;background:linear-gradient(135deg,rgba(155,92,255,.16),rgba(255,78,176,.14));border-radius:7px;}
+</style>
+
+<style id="minhaj-section-search-bars">
+.section-search-wrap{height:44px;border:1px solid #ddd;border-radius:10px;display:flex;align-items:center;padding:0 13px;gap:8px;margin:4px 0 16px;background:#fff;}
+.section-search-logo{width:20px;height:20px;display:inline-flex;align-items:center;justify-content:center;color:#777;flex:0 0 20px;}
+.section-search-logo svg{width:19px;height:19px;display:block;}
+.section-search{flex:1 1 auto;width:100%;border:0;outline:0;font-size:14px;background:transparent;color:#222;}
+.section-search::placeholder{color:#999;}
+.section-search-wrap:focus-within{border-color:#bbb;box-shadow:0 0 0 3px rgba(0,0,0,.04);}
+@media(max-width:520px){.section-search-wrap{height:42px;margin:2px 0 13px;padding:0 11px;}.section-search{font-size:13px;}}
+</style>
+
+<style id="minhaj-modern-full-look">
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+:root{
+  --mh-bg:#f6f8fc;
+  --mh-card:#ffffff;
+  --mh-text:#1d2939;
+  --mh-muted:#667085;
+  --mh-border:#e5eaf2;
+  --mh-green:#12b886;
+  --mh-purple:#7656f5;
+  --mh-blue:#2f80ed;
+  --mh-shadow:0 10px 30px rgba(31,41,55,.07);
+}
+
+html{scroll-padding-top:82px}
+body{
+  background:var(--mh-bg)!important;
+  color:var(--mh-text)!important;
+  font-family:"Poppins","Noto Sans Bengali",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;
+  letter-spacing:-.01em;
+}
+
+.topbar{
+  height:76px!important;
+  padding:0 max(18px,calc((100vw - 1180px)/2))!important;
+  gap:22px!important;
+  background:rgba(255,255,255,.92)!important;
+  border-bottom:1px solid rgba(226,232,240,.9)!important;
+  box-shadow:0 4px 18px rgba(15,23,42,.04)!important;
+  backdrop-filter:blur(18px)!important;
+  -webkit-backdrop-filter:blur(18px)!important;
+}
+.brand{font-size:23px!important;font-weight:800!important;color:#172033!important;gap:10px!important}
+.brand-logo{width:42px!important;height:42px!important;box-shadow:0 5px 16px rgba(18,184,134,.18)!important}
+.topbar nav{gap:5px!important}
+.topbar nav a{
+  min-height:42px!important;padding:9px 13px!important;border-radius:14px!important;
+  color:#667085!important;font-weight:600!important;transition:.2s ease!important;
+}
+.topbar nav a:hover{background:#f1f5f9!important;color:#1d2939!important}
+.topbar nav a.active{background:#e9fbf5!important;color:#0d9f73!important}
+
+.container{
+  width:min(1180px,calc(100% - 28px))!important;
+  max-width:1180px!important;
+  margin:0 auto!important;
+  padding:26px 0 120px!important;
+}
+
+.search-wrap{
+  height:60px!important;
+  border:1px solid #e1e7ef!important;
+  border-radius:30px!important;
+  padding:0 20px!important;
+  gap:10px!important;
+  background:#fff!important;
+  box-shadow:0 8px 28px rgba(31,41,55,.06)!important;
+  transition:.2s ease!important;
+}
+.search-wrap:focus-within{border-color:#b9c8dc!important;box-shadow:0 10px 32px rgba(31,41,55,.09),0 0 0 4px rgba(47,128,237,.06)!important}
+.search-wrap input{font-family:inherit!important;font-size:16px!important;font-weight:500!important;color:#344054!important}
+.search-wrap input::placeholder{color:#98a2b3!important}
+
+.notice{
+  min-height:72px!important;
+  margin:22px 0 28px!important;
+  border:0!important;
+  border-radius:36px!important;
+  background:linear-gradient(110deg,#6356e8 0%,#8a52f4 55%,#a94cf0 100%)!important;
+  box-shadow:0 14px 32px rgba(118,86,245,.24)!important;
+  color:#fff!important;
+  display:flex!important;align-items:center!important;
+  padding:0 26px!important;
+  overflow:hidden!important;
+}
+.notice-track{font-weight:600!important;font-size:15px!important;white-space:nowrap}
+
+section{margin-top:30px!important}
+.section-head{margin:0 0 14px!important;display:flex!important;align-items:center!important;justify-content:space-between!important}
+.section-title-with-icon{
+  display:flex!important;align-items:center!important;gap:10px!important;
+  margin:0!important;color:#596b88!important;font-size:26px!important;line-height:1.2!important;font-weight:800!important;
+}
+.section-title-with-icon small{font-size:.78em!important;font-weight:700!important;color:#697b98!important}
+.section-title-icon{
+  width:32px!important;height:32px!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;
+  border-radius:10px!important;background:#eef5ff!important;flex:0 0 32px!important;
+}
+.section-title-icon svg{width:21px!important;height:21px!important}
+.trending-title-icon{background:#e9faf5!important;color:#12ad82!important}
+.latest-title-icon{background:#edf3ff!important;color:#4f73b5!important}
+.game-title-icon{background:#f0edff!important;color:#7656f5!important}
+.ai-title-icon{background:linear-gradient(135deg,#f1e9ff,#ffeaf6)!important;color:#8752ef!important}
+
+.section-search-wrap{
+  height:50px!important;border:1px solid #e2e8f0!important;border-radius:25px!important;
+  background:#fff!important;box-shadow:0 5px 18px rgba(31,41,55,.045)!important;margin:0 0 16px!important;padding:0 17px!important;
+}
+.section-search{font-family:inherit!important;font-size:14px!important}
+
+.app-grid{gap:18px!important}
+.app-card,.game-card,.trend-card,.prompt-card{
+  border:1px solid var(--mh-border)!important;
+  background:#fff!important;
+  box-shadow:var(--mh-shadow)!important;
+  border-radius:22px!important;
+  overflow:hidden!important;
+  transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease!important;
+}
+.app-card:hover,.game-card:hover,.trend-card:hover,.prompt-card:hover{
+  transform:translateY(-3px)!important;
+  box-shadow:0 16px 34px rgba(31,41,55,.10)!important;
+  border-color:#d8e0ea!important;
+}
+.app-card{padding:12px!important}
+.app-card img,.trend-card img,.prompt-card img{border-radius:17px!important}
+.app-card .download,.game-download,.trend-download,.prompt-card button{
+  border-radius:13px!important;font-family:inherit!important;font-weight:700!important;
+}
+
+.prompt-row,.trending-grid{gap:18px!important}
+.prompt-row{padding-bottom:7px!important}
+.prompt-card{border-radius:18px!important}
+.prompt-card .prompt-image{border-radius:17px 17px 0 0!important}
+
+.bottom-nav{
+  width:min(680px,calc(100% - 24px))!important;
+  left:50%!important;right:auto!important;transform:translateX(-50%)!important;
+  bottom:12px!important;
+  border:1px solid #e2e8f0!important;
+  background:rgba(255,255,255,.94)!important;
+  border-radius:30px!important;
+  box-shadow:0 16px 40px rgba(15,23,42,.14)!important;
+  padding:8px!important;
+  backdrop-filter:blur(18px)!important;
+  -webkit-backdrop-filter:blur(18px)!important;
+}
+.bottom-nav a{border-radius:23px!important;min-height:64px!important;font-weight:600!important;color:#61718b!important}
+.bottom-nav a.active{background:#12b886!important;color:#fff!important;box-shadow:0 9px 22px rgba(18,184,134,.25)!important}
+.bottom-nav a .nav-logo-icon{width:24px!important;height:24px!important}
+
+footer{background:#fff!important;border-top:1px solid #e7ebf1!important}
+
+@media(max-width:760px){
+  .topbar{height:70px!important;padding:0 14px!important;gap:10px!important}
+  .brand{font-size:20px!important}
+  .brand-logo{width:38px!important;height:38px!important}
+  .topbar nav{display:none!important}
+  .container{width:calc(100% - 20px)!important;padding:18px 0 112px!important}
+  .search-wrap{height:58px!important}
+  .notice{min-height:68px!important;margin:18px 0 26px!important;padding:0 20px!important}
+  .notice-track{font-size:14px!important}
+  .section-title-with-icon{font-size:23px!important}
+  .section-title-icon{width:31px!important;height:31px!important;flex-basis:31px!important}
+  .app-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:14px!important}
+  .bottom-nav{width:calc(100% - 20px)!important;bottom:8px!important}
+  .bottom-nav a{min-height:60px!important;font-size:12px!important}
+}
+@media(max-width:430px){
+  .container{width:calc(100% - 18px)!important}
+  .brand{font-size:18px!important}
+  .brand-logo{width:36px!important;height:36px!important}
+  .section-title-with-icon{font-size:21px!important;gap:8px!important}
+  .section-title-icon{width:29px!important;height:29px!important;flex-basis:29px!important}
+  .section-search-wrap{height:46px!important}
+  .app-grid{gap:12px!important}
+}
+</style>
+
+
+<style id="minhaj-soft-compact-controls">
+/* Softer, more compact mobile controls */
+.notice{
+  min-height:56px!important;
+  margin:16px 0 22px!important;
+  border-radius:28px!important;
+  background:linear-gradient(110deg,#6d5ce7 0%,#8459e9 52%,#9659e6 100%)!important;
+  box-shadow:0 9px 22px rgba(118,86,245,.16)!important;
+  padding:0 18px!important;
+}
+.notice-track{font-size:13px!important;font-weight:600!important;}
+.search-wrap{
+  height:52px!important;
+  border-radius:26px!important;
+  padding:0 16px!important;
+  box-shadow:0 5px 18px rgba(31,41,55,.045)!important;
+}
+.search-wrap input{font-size:15px!important;}
+.bottom-nav{
+  width:min(610px,calc(100% - 28px))!important;
+  bottom:9px!important;
+  border-radius:25px!important;
+  padding:6px!important;
+  box-shadow:0 10px 28px rgba(15,23,42,.11)!important;
+}
+.bottom-nav a{
+  min-height:52px!important;
+  border-radius:19px!important;
+  font-size:11.5px!important;
+  gap:3px!important;
+}
+.bottom-nav a .nav-logo-icon{width:21px!important;height:21px!important;}
+.bottom-nav a.active{box-shadow:0 6px 16px rgba(18,184,134,.18)!important;}
+@media(max-width:760px){
+  .search-wrap{height:52px!important;}
+  .notice{min-height:54px!important;margin:16px 0 22px!important;padding:0 16px!important;}
+  .notice-track{font-size:12.5px!important;}
+  .bottom-nav{width:calc(100% - 28px)!important;bottom:7px!important;padding:5px!important;}
+  .bottom-nav a{min-height:52px!important;font-size:11px!important;border-radius:18px!important;}
+  .bottom-nav a .nav-logo-icon{width:20px!important;height:20px!important;}
+}
+@media(max-width:430px){
+  .search-wrap{height:50px!important;border-radius:25px!important;}
+  .notice{min-height:52px!important;border-radius:26px!important;}
+  .bottom-nav{width:calc(100% - 24px)!important;}
+  .bottom-nav a{min-height:50px!important;font-size:10.5px!important;}
+}
+</style>
+
+<style id="minhaj-trending-card-size-final">
+/* Only Trending Apps uses the compact card style from the reference screenshot. */
+.trending-grid{
+  display:grid!important;
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:12px!important;
+}
+.trending-grid .trend-card{
+  min-width:0!important;
+  min-height:285px!important;
+  height:285px!important;
+  padding:12px!important;
+  border-radius:18px!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:stretch!important;
+  justify-content:flex-start!important;
+  gap:10px!important;
+  box-sizing:border-box!important;
+  overflow:hidden!important;
+}
+.trending-grid .trend-card .logo{
+  width:100%!important;
+  height:155px!important;
+  min-width:0!important;
+  flex:0 0 155px!important;
+  border-radius:15px!important;
+  object-fit:cover!important;
+  align-self:stretch!important;
+}
+.trending-grid .trend-card .logo img{
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+  border-radius:15px!important;
+  display:block!important;
+}
+.trending-grid .trend-card .trend-info{width:100%!important;min-width:0!important}
+.trending-grid .trend-card .trend-info b{
+  font-size:15px!important;
+  line-height:1.25!important;
+  white-space:nowrap!important;
+  overflow:hidden!important;
+  text-overflow:ellipsis!important;
+}
+.trending-grid .trend-card .muted{margin-top:5px!important;font-size:12px!important}
+.trending-grid .trend-card .trend-download{
+  width:100%!important;
+  margin-top:auto!important;
+  padding:8px 10px!important;
+  border-radius:10px!important;
+  box-sizing:border-box!important;
+}
+@media(max-width:800px){
+  .trending-grid{
+    display:flex!important;
+    gap:12px!important;
+    overflow-x:auto!important;
+    overflow-y:hidden!important;
+    padding:2px 2px 9px!important;
+    scroll-snap-type:x proximity!important;
+    scrollbar-width:none!important;
+  }
+  .trending-grid::-webkit-scrollbar{display:none!important}
+  .trending-grid .trend-card{
+    flex:0 0 205px!important;
+    width:205px!important;
+    min-width:205px!important;
+    max-width:205px!important;
+    height:285px!important;
+    min-height:285px!important;
+    scroll-snap-align:start!important;
+  }
+  .trending-grid .trend-card .logo{height:150px!important;flex-basis:150px!important}
+}
+@media(max-width:390px){
+  .trending-grid .trend-card{
+    flex-basis:190px!important;
+    width:190px!important;
+    min-width:190px!important;
+    max-width:190px!important;
+  }
+}
+</style>
+
+<style id="minhaj-trending-same-app-size-final">
+/* Trending Apps cards use the same compact sizing as the Apps cards. */
+.trending-grid{
+  display:grid!important;
+  grid-template-columns:repeat(4,minmax(0,1fr))!important;
+  gap:18px!important;
+  overflow:visible!important;
+  padding:0!important;
+}
+.trending-grid .trend-card{
+  width:auto!important;
+  min-width:0!important;
+  max-width:none!important;
+  min-height:0!important;
+  height:100%!important;
+  padding:12px!important;
+  border-radius:22px!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:stretch!important;
+  gap:10px!important;
+  box-sizing:border-box!important;
+}
+.trending-grid .trend-card .logo{
+  width:58px!important;
+  height:58px!important;
+  min-width:58px!important;
+  flex:0 0 58px!important;
+  border-radius:12px!important;
+  object-fit:cover!important;
+  align-self:flex-start!important;
+}
+.trending-grid .trend-card .logo img{
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+  border-radius:12px!important;
+  display:block!important;
+}
+.trending-grid .trend-card .trend-info{width:100%!important;min-width:0!important}
+.trending-grid .trend-card .trend-info b{
+  font-size:14px!important;line-height:1.25!important;
+  white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important;
+}
+.trending-grid .trend-card .muted{font-size:12px!important;margin-top:4px!important}
+.trending-grid .trend-card .trend-download{
+  width:100%!important;margin-top:auto!important;padding:8px!important;
+  border-radius:13px!important;box-sizing:border-box!important;
+}
+@media(max-width:800px){
+  .trending-grid{
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:12px!important;
+    overflow:visible!important;
+    padding:0!important;
+  }
+  .trending-grid .trend-card{
+    width:auto!important;min-width:0!important;max-width:none!important;
+    height:100%!important;min-height:0!important;padding:9px!important;
+    border-radius:18px!important;
+  }
+  .trending-grid .trend-card .logo{
+    width:48px!important;height:48px!important;min-width:48px!important;flex-basis:48px!important;
+  }
+}
+@media(max-width:390px){
+  .trending-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:9px!important}
+}
+</style>
+
+<style id="minhaj-trending-exact-app-size-override">
+/* Trending Apps: exact same compact card sizing as Apps. */
+.trending-grid{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:12px!important;overflow:visible!important;padding:0!important;align-items:stretch!important}
+.trending-grid .trend-card{border:1px solid #e8e8e8!important;border-radius:11px!important;padding:12px!important;background:#fff!important;min-width:0!important;width:auto!important;max-width:none!important;height:100%!important;min-height:0!important;box-shadow:0 3px 15px rgba(0,0,0,.055),0 1px 3px rgba(0,0,0,.04)!important;display:flex!important;flex-direction:column!important;box-sizing:border-box!important;gap:0!important}
+.trending-grid .trend-card .logo{width:58px!important;height:58px!important;min-width:58px!important;flex:0 0 58px!important;border-radius:12px!important;object-fit:cover!important;align-self:flex-start!important}
+.trending-grid .trend-card .logo img{width:100%!important;height:100%!important;object-fit:cover!important;border-radius:12px!important;display:block!important}
+.trending-grid .trend-card .trend-info{width:100%!important;min-width:0!important;margin-top:10px!important}
+.trending-grid .trend-card .trend-info b{font-size:14px!important;line-height:1.25!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important}
+.trending-grid .trend-card .muted{font-size:12px!important;margin-top:4px!important}
+.trending-grid .trend-card .trend-download{width:100%!important;box-sizing:border-box!important;margin-top:auto!important;padding:8px!important;border-radius:13px!important}
+@media(max-width:800px){.trending-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px!important}.trending-grid .trend-card{padding:9px!important;border-radius:11px!important}.trending-grid .trend-card .logo{width:48px!important;height:48px!important;min-width:48px!important;flex-basis:48px!important}}
+@media(max-width:390px){.trending-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:9px!important}}
+</style>
+
+<style id="minhaj-trending-final-three-horizontal">
+/* Trending Apps: 3 compact cards in one row, logo above app name. */
+.trending-grid{
+  display:grid!important;
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:12px!important;
+  overflow:visible!important;
+  padding:0!important;
+}
+.trending-grid .trend-card{
+  min-width:0!important;
+  width:auto!important;
+  height:auto!important;
+  min-height:0!important;
+  padding:10px!important;
+  border-radius:11px!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:stretch!important;
+  gap:0!important;
+}
+.trending-grid .trend-card .logo{
+  width:100%!important;
+  height:auto!important;
+  aspect-ratio:1/1!important;
+  min-width:0!important;
+  flex:0 0 auto!important;
+  align-self:stretch!important;
+  border-radius:10px!important;
+  object-fit:cover!important;
+}
+.trending-grid .trend-card .logo img{
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+  border-radius:10px!important;
+  display:block!important;
+}
+.trending-grid .trend-card .trend-info{
+  width:100%!important;
+  min-width:0!important;
+  margin-top:8px!important;
+}
+.trending-grid .trend-card .trend-info b{
+  font-size:12px!important;
+  line-height:1.25!important;
+  text-align:center!important;
+  white-space:nowrap!important;
+  overflow:hidden!important;
+  text-overflow:ellipsis!important;
+}
+.trending-grid .trend-card .muted{
+  justify-content:center!important;
+  font-size:10px!important;
+  margin-top:3px!important;
+  white-space:nowrap!important;
+  overflow:hidden!important;
+}
+.trending-grid .trend-card .trend-download{
+  width:100%!important;
+  margin-top:8px!important;
+  padding:6px 8px!important;
+  border-radius:8px!important;
+  font-size:10px!important;
+}
+@media(max-width:800px){
+  .trending-grid{
+    grid-template-columns:repeat(3,minmax(0,1fr))!important;
+    gap:8px!important;
+  }
+  .trending-grid .trend-card{padding:8px!important;border-radius:10px!important}
+  .trending-grid .trend-card .trend-info{margin-top:6px!important}
+  .trending-grid .trend-card .trend-info b{font-size:11px!important}
+  .trending-grid .trend-card .muted{font-size:9px!important}
+  .trending-grid .trend-card .trend-download{padding:6px 5px!important;font-size:9px!important}
+}
+</style>
+<style id="minhaj-search-cleanup">
+/* Search mode: show only the section that contains the matching result. */
+/* Search mode hides unrelated content, but keeps the section that owns the active search input mounted. */
+main.container.search-mode > #prompts,
+main.container.search-mode > #trending,
+main.container.search-mode > #apps,
+main.container.search-mode > #presets{display:none!important;}
+main.container.search-mode.search-show-prompts > #prompts,
+main.container.search-mode.search-show-apps > #apps,
+main.container.search-mode.search-show-games > #presets{display:block!important;}
+main.container.search-mode.search-source-prompts > #prompts,
+main.container.search-mode.search-source-apps > #apps,
+main.container.search-mode.search-source-games > #presets{display:block!important;}
+/* Section search boxes stay visible while typing. */
+main.container.search-mode .section-search-wrap{display:flex!important;visibility:visible!important;opacity:1!important;}
+/* When a search started in one section finds another category, keep ONLY that
+   section's search field visible; never show a misleading (0) heading or cards. */
+main.container.search-mode.search-source-apps.search-show-games > #apps .section-head .section-title-with-icon,
+main.container.search-mode.search-source-apps.search-show-prompts > #apps .section-head .section-title-with-icon,
+main.container.search-mode.search-source-games.search-show-apps > #presets .section-head .section-title-with-icon,
+main.container.search-mode.search-source-games.search-show-prompts > #presets .section-head .section-title-with-icon,
+main.container.search-mode.search-source-prompts.search-show-apps > #prompts .section-head .section-title-with-icon,
+main.container.search-mode.search-source-prompts.search-show-games > #prompts .section-head .section-title-with-icon{display:none!important;}
+main.container.search-mode.search-source-apps.search-show-games > #apps .section-head,
+main.container.search-mode.search-source-apps.search-show-prompts > #apps .section-head,
+main.container.search-mode.search-source-games.search-show-apps > #presets .section-head,
+main.container.search-mode.search-source-games.search-show-prompts > #presets .section-head,
+main.container.search-mode.search-source-prompts.search-show-apps > #prompts .section-head,
+main.container.search-mode.search-source-prompts.search-show-games > #prompts .section-head{display:flex!important;}
+main.container.search-mode .section-head{display:flex;}
+.section-title-with-icon{display:flex;align-items:center;gap:7px;}
+.section-title-icon{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;flex:0 0 22px;}
+.section-title-icon svg{display:block!important;width:20px!important;height:20px!important;}
+</style>
+
+<style id="minhaj-announcement-logo-final">
+.notice{display:flex!important;align-items:center!important;gap:9px!important;padding:7px 12px 7px 9px!important;min-height:50px!important;}
+.notice-logo{flex:0 0 44px!important;width:44px!important;height:44px!important;border-radius:50%!important;display:flex!important;align-items:center!important;justify-content:center!important;background:rgba(255,255,255,.22)!important;color:#fff!important;box-shadow:0 4px 12px rgba(78,58,180,.18)!important;z-index:2!important;}
+.notice-logo svg{width:24px!important;height:24px!important;display:block!important;}
+.notice-track{flex:1 1 auto!important;min-width:0!important;display:block!important;overflow:hidden!important;padding-left:0!important;white-space:nowrap!important;font-weight:700!important;}
+@media(max-width:520px){.notice{min-height:48px!important;padding:6px 9px 6px 7px!important;gap:8px!important}.notice-logo{width:38px!important;height:38px!important;flex-basis:38px!important}.notice-track{font-size:12px!important;}}
+</style>
+
+<style id="minhaj-announcement-logo-position-fix">
+.notice{display:grid!important;grid-template-columns:44px minmax(0,1fr)!important;align-items:center!important;column-gap:9px!important;overflow:hidden!important;}
+.notice-logo{grid-column:1!important;grid-row:1!important;margin:0!important;align-self:center!important;justify-self:center!important;position:relative!important;z-index:3!important;}
+.notice-track{grid-column:2!important;grid-row:1!important;min-width:0!important;width:100%!important;height:100%!important;display:flex!important;align-items:center!important;overflow:hidden!important;white-space:nowrap!important;margin:0!important;padding:0!important;}
+@media(max-width:520px){.notice{grid-template-columns:38px minmax(0,1fr)!important;column-gap:8px!important;}.notice-track{font-size:12px!important;}}
+</style>
+
+<style id="announcement-logo-final-hard-fix">
+/* Keep announcement icon and scrolling text in separate fixed areas. */
+.notice{
+  position:relative!important;
+  display:block!important;
+  box-sizing:border-box!important;
+  overflow:hidden!important;
+  white-space:nowrap!important;
+  min-height:50px!important;
+  padding:0 12px 0 62px!important;
+}
+.notice-logo{
+  position:absolute!important;
+  left:9px!important;
+  top:50%!important;
+  transform:translateY(-50%)!important;
+  width:44px!important;
+  height:44px!important;
+  margin:0!important;
+  padding:0!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  flex:none!important;
+  z-index:5!important;
+}
+.notice-logo svg{
+  width:24px!important;
+  height:24px!important;
+  display:block!important;
+  flex:none!important;
+}
+.notice-track{
+  display:block!important;
+  position:relative!important;
+  width:max-content!important;
+  max-width:none!important;
+  height:50px!important;
+  line-height:50px!important;
+  margin:0!important;
+  padding:0!important;
+  white-space:nowrap!important;
+  overflow:visible!important;
+  animation:minhajAnnouncement 12s linear infinite!important;
+}
+@media(max-width:520px){
+  .notice{min-height:48px!important;padding:0 9px 0 54px!important;}
+  .notice-logo{left:7px!important;width:38px!important;height:38px!important;}
+  .notice-logo svg{width:21px!important;height:21px!important;}
+  .notice-track{height:48px!important;line-height:48px!important;font-size:12px!important;}
+}
+</style>
+<style id="announcement-logo-clean-final">
+/* Final announcement layout: icon stays left, ticker text stays to its right. */
+.notice{position:relative!important;display:block!important;overflow:hidden!important;box-sizing:border-box!important;white-space:nowrap!important;padding:0 12px 0 62px!important;min-height:50px!important;}
+.notice-logo{position:absolute!important;left:9px!important;top:50%!important;transform:translateY(-50%)!important;width:44px!important;height:44px!important;margin:0!important;padding:0!important;display:flex!important;align-items:center!important;justify-content:center!important;z-index:10!important;}
+.notice-logo svg{display:block!important;width:24px!important;height:24px!important;max-width:none!important;max-height:none!important;}
+.notice-track{display:block!important;position:relative!important;margin:0!important;padding:0!important;width:max-content!important;height:50px!important;line-height:50px!important;min-width:0!important;white-space:nowrap!important;overflow:visible!important;}
+@media(max-width:520px){.notice{min-height:48px!important;padding:0 9px 0 54px!important}.notice-logo{left:7px!important;width:38px!important;height:38px!important}.notice-logo svg{width:21px!important;height:21px!important}.notice-track{height:48px!important;line-height:48px!important;font-size:12px!important}}
+</style>
+
+<style id="poloja-style-announcement-animation">
+/* Announcement logo animation inspired by the reference site's compact animated notice treatment. */
+.notice-logo{
+  overflow:visible!important;
+  border-radius:50%!important;
+  background:rgba(255,255,255,.18)!important;
+  box-shadow:0 0 0 0 rgba(255,255,255,.42)!important;
+  animation:noticeLogoPulse 2.1s ease-out infinite!important;
+}
+.notice-logo::before,
+.notice-logo::after{
+  content:""!important;
+  position:absolute!important;
+  inset:0!important;
+  border-radius:50%!important;
+  border:1px solid rgba(255,255,255,.42)!important;
+  pointer-events:none!important;
+}
+.notice-logo::before{animation:noticeLogoRing 2.1s ease-out infinite!important;}
+.notice-logo::after{animation:noticeLogoRing 2.1s ease-out .7s infinite!important;}
+.notice-logo svg{
+  position:relative!important;
+  z-index:2!important;
+  transform-origin:50% 55%!important;
+  animation:noticeMegaphone 1.8s ease-in-out infinite!important;
+}
+@keyframes noticeLogoPulse{
+  0%,100%{transform:translateY(-50%) scale(1);box-shadow:0 0 0 0 rgba(255,255,255,.40)}
+  50%{transform:translateY(-50%) scale(1.055);box-shadow:0 0 0 7px rgba(255,255,255,.06)}
+}
+@keyframes noticeLogoRing{
+  0%{transform:scale(.82);opacity:.65}
+  70%{transform:scale(1.55);opacity:0}
+  100%{transform:scale(1.55);opacity:0}
+}
+@keyframes noticeMegaphone{
+  0%,100%{transform:rotate(0deg) scale(1)}
+  10%{transform:rotate(-7deg) scale(1.03)}
+  20%{transform:rotate(7deg) scale(1.03)}
+  30%{transform:rotate(-5deg) scale(1.02)}
+  40%{transform:rotate(4deg) scale(1.01)}
+  55%,100%{transform:rotate(0deg) scale(1)}
+}
+@media(prefers-reduced-motion:reduce){
+  .notice-logo,.notice-logo::before,.notice-logo::after,.notice-logo svg{animation:none!important}
+}
+</style>
+
+
+<style id="announcement-layout-final-fix">
+/* Final: announcement logo and ticker are always side-by-side. */
+.notice{
+  position:relative!important;
+  display:flex!important;
+  align-items:center!important;
+  flex-direction:row!important;
+  flex-wrap:nowrap!important;
+  overflow:hidden!important;
+  box-sizing:border-box!important;
+  white-space:nowrap!important;
+  min-height:50px!important;
+  height:50px!important;
+  padding:0 12px 0 9px!important;
+  gap:8px!important;
+}
+.notice-logo{
+  position:relative!important;
+  left:auto!important;
+  top:auto!important;
+  transform:none!important;
+  flex:0 0 44px!important;
+  width:44px!important;
+  height:44px!important;
+  min-width:44px!important;
+  min-height:44px!important;
+  margin:0!important;
+  padding:0!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  z-index:10!important;
+  border-radius:50%!important;
+  box-sizing:border-box!important;
+}
+.notice-logo svg{
+  display:block!important;
+  width:24px!important;
+  height:24px!important;
+  flex:0 0 24px!important;
+}
+.notice-track{
+  display:block!important;
+  flex:0 0 auto!important;
+  width:max-content!important;
+  min-width:max-content!important;
+  height:50px!important;
+  line-height:50px!important;
+  margin:0!important;
+  padding-left:0!important;
+  white-space:nowrap!important;
+  overflow:visible!important;
+  animation:minhajAnnouncementSide 12s linear infinite!important;
+  will-change:transform!important;
+}
+@keyframes minhajAnnouncementSide{
+  from{transform:translateX(100vw)}
+  to{transform:translateX(-100%)}
+}
+@keyframes noticeLogoPulseSide{
+  0%,100%{transform:scale(1);box-shadow:0 0 0 0 rgba(255,255,255,.40)}
+  50%{transform:scale(1.055);box-shadow:0 0 0 7px rgba(255,255,255,.06)}
+}
+.notice-logo{animation:noticeLogoPulseSide 2.1s ease-out infinite!important}
+@media(max-width:520px){
+  .notice{min-height:48px!important;height:48px!important;padding:0 9px 0 7px!important;gap:7px!important}
+  .notice-logo{flex-basis:38px!important;width:38px!important;height:38px!important;min-width:38px!important;min-height:38px!important}
+  .notice-logo svg{width:21px!important;height:21px!important;flex-basis:21px!important}
+  .notice-track{height:48px!important;line-height:48px!important;font-size:12px!important}
+}
+@media(prefers-reduced-motion:reduce){
+  .notice-logo,.notice-logo::before,.notice-logo::after,.notice-logo svg,.notice-track{animation:none!important}
+}
+</style>
+
+
+<style id="announcement-moving-final">
+/* Final announcement ticker: always moves horizontally; logo remains fixed on the left. */
+.notice{position:relative!important;display:block!important;overflow:hidden!important;white-space:nowrap!important;box-sizing:border-box!important;padding-left:62px!important;}
+.notice-logo{position:absolute!important;left:9px!important;top:50%!important;transform:translateY(-50%)!important;z-index:20!important;}
+.notice-track{display:block!important;position:relative!important;width:max-content!important;min-width:max-content!important;max-width:none!important;height:50px!important;line-height:50px!important;margin:0!important;padding:0!important;white-space:nowrap!important;overflow:visible!important;animation:announcementScrollFinal 14s linear infinite!important;will-change:transform!important;}
+@keyframes announcementScrollFinal{0%{transform:translateX(100vw)}100%{transform:translateX(-100%)}}
+@media(max-width:520px){.notice{padding-left:54px!important}.notice-track{height:48px!important;line-height:48px!important;font-size:12px!important;animation-duration:12s!important}}
+</style>
+
+<style id="announcement-logo-solid-overlay-final">
+/* Announcement logo stays clearly visible above the moving ticker text. */
+.notice{position:relative!important;overflow:hidden!important;isolation:isolate!important;}
+.notice-logo{position:absolute!important;left:8px!important;top:50%!important;transform:translateY(-50%)!important;width:44px!important;height:44px!important;margin:0!important;padding:0!important;display:flex!important;align-items:center!important;justify-content:center!important;border-radius:50%!important;background:linear-gradient(145deg,#bca7ff,#8f72e8)!important;border:2px solid rgba(255,255,255,.42)!important;box-shadow:0 4px 14px rgba(70,45,150,.30),0 0 0 6px rgba(255,255,255,.10)!important;z-index:30!important;overflow:hidden!important;}
+.notice-logo::before{content:""!important;position:absolute!important;inset:0!important;border-radius:50%!important;background:rgba(255,255,255,.10)!important;z-index:-1!important;}
+.notice-logo svg{position:relative!important;z-index:2!important;display:block!important;width:24px!important;height:24px!important;color:#fff!important;fill:currentColor!important;filter:drop-shadow(0 1px 2px rgba(0,0,0,.18))!important;}
+.notice-track{position:relative!important;z-index:1!important;display:block!important;width:max-content!important;white-space:nowrap!important;padding-left:0!important;}
+@media(max-width:520px){
+.notice{padding-left:46px!important;}
+.notice-logo{left:6px!important;width:38px!important;height:38px!important;}
+.notice-logo svg{width:21px!important;height:21px!important;}
+}
+</style>
+
+<style id="announcement-logo-mask-final">
+/* Solid mask behind the logo: the ticker can pass behind it, but the logo area stays fully covered by the announcement background. */
+.notice{position:relative!important;overflow:hidden!important;}
+.notice::after{
+  content:""!important;
+  position:absolute!important;
+  left:0!important;
+  top:0!important;
+  bottom:0!important;
+  width:78px!important;
+  background:inherit!important;
+  background-color:#8f72e8!important;
+  border-radius:inherit!important;
+  z-index:25!important;
+  pointer-events:none!important;
+}
+.notice-logo{z-index:40!important;}
+.notice-track{z-index:1!important;}
+@media(max-width:520px){
+  .notice::after{width:64px!important;}
+}
+</style>
+
+<style id="prompt-copy-logo-fix">
+#promptCopy{display:flex!important;align-items:center!important;justify-content:center!important;gap:7px!important;}
+#promptCopy svg{display:block!important;flex:0 0 auto!important;}
+</style>
+
+<style id="announcement-compact-final-fix">
+/* Compact announcement: same gradient, less empty height, logo stays visible. */
+.notice{
+  min-height:52px!important;
+  height:52px!important;
+  margin:16px 0 22px!important;
+  padding:0 12px 0 8px!important;
+  border-radius:26px!important;
+  display:block!important;
+  position:relative!important;
+  overflow:hidden!important;
+}
+.notice-logo{
+  position:absolute!important;
+  left:8px!important;
+  top:50%!important;
+  transform:translateY(-50%)!important;
+  width:42px!important;
+  height:42px!important;
+  z-index:40!important;
+}
+.notice-track{
+  display:block!important;
+  height:52px!important;
+  line-height:52px!important;
+  margin:0!important;
+  padding:0!important;
+  padding-left:0!important;
+  white-space:nowrap!important;
+  width:max-content!important;
+  min-width:max-content!important;
+  animation:announcementScrollFinal 14s linear infinite!important;
+  will-change:transform!important;
+}
+@media(max-width:760px){
+  .notice{
+    min-height:48px!important;
+    height:48px!important;
+    margin:14px 0 20px!important;
+    padding:0 9px 0 6px!important;
+    border-radius:24px!important;
+  }
+  .notice-logo{
+    left:6px!important;
+    width:38px!important;
+    height:38px!important;
+  }
+  .notice-track{
+    height:48px!important;
+    line-height:48px!important;
+    font-size:13px!important;
+  }
+}
+</style>
+
+
+<style id="compact-rating-download-text-final">
+.minhaj-rating{font-size:11px!important;line-height:1.2!important;gap:4px!important;}
+.minhaj-rating svg{width:12px!important;height:12px!important;}
+@media(max-width:760px){.minhaj-rating{font-size:10px!important;gap:3px!important}.minhaj-rating svg{width:11px!important;height:11px!important}}
+</style>
+
+<style id="minhaj-search-final-fix">
+/* FINAL SEARCH FIX: section search bars never disappear while typing */
+main.container.search-mode .section-search-wrap{
+  display:flex!important;
+  visibility:visible!important;
+  opacity:1!important;
+}
+main.container.search-mode.search-show-apps #apps .section-search-wrap,
+main.container.search-mode.search-show-games #presets .section-search-wrap,
+main.container.search-mode.search-show-prompts #prompts .section-search-wrap{
+  display:flex!important;
+}
+</style>
+<style id="minhaj-section-search-always-visible-final">
+/* FINAL FIX: Apps/Game/AI Prompt section search boxes never disappear while typing. */
+main.container .section-search-wrap{
+  display:flex!important;
+  visibility:visible!important;
+  opacity:1!important;
+}
+main.container.search-mode .section-search-wrap{
+  display:flex!important;
+  visibility:visible!important;
+  opacity:1!important;
+}
+</style>
+<style id="minhaj-section-search-keyboard-final">
+/* FINAL: section search inputs stay mounted and visible while typing. */
+main.container .section-search-wrap{visibility:visible!important;opacity:1!important;}
+main.container .section-search-wrap:focus-within{visibility:visible!important;opacity:1!important;}
+</style>
+<style id="minhaj-cross-category-search-heading-final">
+/* Cross-category search: keep the active search field, hide the source category heading/count. */
+main.container.search-mode.search-source-apps.search-show-games > #apps .section-head .section-title-with-icon,
+main.container.search-mode.search-source-apps.search-show-prompts > #apps .section-head .section-title-with-icon,
+main.container.search-mode.search-source-games.search-show-apps > #presets .section-head .section-title-with-icon,
+main.container.search-mode.search-source-games.search-show-prompts > #presets .section-head .section-title-with-icon,
+main.container.search-mode.search-source-prompts.search-show-apps > #prompts .section-head .section-title-with-icon,
+main.container.search-mode.search-source-prompts.search-show-games > #prompts .section-head .section-title-with-icon{display:none!important;}
+</style>
+
+<style id="minhaj-cross-category-searchbar-final">
+/* FINAL: when a section search finds another category, show only the original search box. */
+main.container.search-mode.search-source-apps.search-show-games > #presets .section-search-wrap,
+main.container.search-mode.search-source-apps.search-show-prompts > #prompts .section-search-wrap,
+main.container.search-mode.search-source-games.search-show-apps > #apps .section-search-wrap,
+main.container.search-mode.search-source-games.search-show-prompts > #prompts .section-search-wrap,
+main.container.search-mode.search-source-prompts.search-show-apps > #apps .section-search-wrap,
+main.container.search-mode.search-source-prompts.search-show-games > #presets .section-search-wrap{
+  display:none!important;
+}
+/* Keep the search box where the user started typing. */
+main.container.search-mode.search-source-apps > #apps .section-search-wrap,
+main.container.search-mode.search-source-games > #presets .section-search-wrap,
+main.container.search-mode.search-source-prompts > #prompts .section-search-wrap{
+  display:flex!important;
+  visibility:visible!important;
+  opacity:1!important;
+}
+</style>
+
+<style id="minhaj-searchbar-top-final">
+/* FINAL: The active section search bar always stays at the top of search results. */
+#activeSectionSearchHost{display:none;width:100%;margin:0 0 14px;}
+#activeSectionSearchHost .section-search-wrap{display:flex!important;visibility:visible!important;opacity:1!important;margin:0 0 14px!important;}
+main.container.search-mode .section-search-wrap{display:none!important;visibility:hidden!important;opacity:0!important;}
+main.container.search-mode #activeSectionSearchHost{display:block!important;}
+main.container.search-mode #activeSectionSearchHost .section-search-wrap{display:flex!important;visibility:visible!important;opacity:1!important;}
+#activeSectionSearchHost .section-search{display:block!important;}
+</style>
+<style id="minhaj-remove-section-search-final">
+/* Apps / Game / AI Prompt section search controls removed. */
+.section-search-wrap,.section-search{display:none !important;}
+</style>
+
+
+<style id="minhaj-top-quick-actions-final">
+/* Compact top controls: Theme → Telegram → Menu */
+.top-actions{
+  margin-left:auto!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:flex-end!important;
+  gap:6px!important;
+  flex:0 0 auto!important;
+}
+.top-action{
+  width:40px!important;
+  height:40px!important;
+  min-width:40px!important;
+  padding:0!important;
+  margin:0!important;
+  border:1px solid #e2e8f0!important;
+  border-radius:12px!important;
+  background:#fff!important;
+  color:#475467!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  text-decoration:none!important;
+  cursor:pointer!important;
+  box-shadow:0 3px 10px rgba(15,23,42,.055)!important;
+  transition:transform .16s ease,background .2s ease,color .2s ease,box-shadow .2s ease,border-color .2s ease!important;
+  -webkit-tap-highlight-color:transparent!important;
+}
+.top-action:hover{
+  background:#f8fafc!important;
+  border-color:#d5dde8!important;
+  color:#172033!important;
+  box-shadow:0 7px 18px rgba(15,23,42,.09)!important;
+}
+.top-action:active{transform:scale(.93)!important;}
+.top-action svg{width:19px!important;height:19px!important;display:block!important;}
+.theme-toggle .sun-icon{display:none!important;}
+body.dark-mode .theme-toggle .moon-icon{display:none!important;}
+body.dark-mode .theme-toggle .sun-icon{display:block!important;}
+.telegram-top{color:#2f80ed!important;}
+.telegram-top:hover{color:#1677df!important;background:#eef6ff!important;border-color:#cfe3ff!important;}
+.menu.top-action{display:none!important;font-size:0!important;position:relative!important;overflow:hidden!important;}
+.menu.top-action svg{width:20px!important;height:20px!important;}
+.menu.top-action.is-open{background:#111!important;color:#fff!important;border-color:#111!important;}
+@media(max-width:760px){
+  .topbar{
+    height:64px!important;
+    padding:0 12px!important;
+    gap:8px!important;
+  }
+  .topbar .brand{min-width:0!important;}
+  .topbar .brand-logo{width:36px!important;height:36px!important;}
+  .topbar .brand{font-size:18px!important;gap:8px!important;}
+  .topbar nav{display:none!important;}
+  .top-actions{gap:5px!important;}
+  .top-action{width:38px!important;height:38px!important;min-width:38px!important;border-radius:11px!important;}
+  .top-action svg{width:18px!important;height:18px!important;}
+  .menu.top-action{display:inline-flex!important;}
+}
+@media(max-width:380px){
+  .topbar{padding:0 9px!important;}
+  .topbar .brand{font-size:16px!important;}
+  .topbar .brand-logo{width:33px!important;height:33px!important;}
+  .top-actions{gap:4px!important;}
+  .top-action{width:36px!important;height:36px!important;min-width:36px!important;border-radius:10px!important;}
+}
+
+/* Dark mode */
+body.dark-mode{
+  --mh-bg:#0f172a!important;
+  --mh-card:#111827!important;
+  --mh-text:#e5e7eb!important;
+  --mh-muted:#94a3b8!important;
+  --mh-border:#263244!important;
+  background:#0f172a!important;
+  color:#e5e7eb!important;
+}
+body.dark-mode .topbar{
+  background:rgba(15,23,42,.92)!important;
+  border-bottom-color:#263244!important;
+  box-shadow:0 4px 18px rgba(0,0,0,.22)!important;
+}
+body.dark-mode .brand{color:#f8fafc!important;}
+body.dark-mode .topbar nav a{color:#94a3b8!important;}
+body.dark-mode .topbar nav a:hover{background:#172033!important;color:#fff!important;}
+body.dark-mode .topbar nav a.active{background:#123a32!important;color:#54d6ae!important;}
+body.dark-mode .top-action{background:#111827!important;color:#cbd5e1!important;border-color:#263244!important;box-shadow:0 4px 12px rgba(0,0,0,.18)!important;}
+body.dark-mode .top-action:hover{background:#172033!important;color:#fff!important;border-color:#334155!important;}
+body.dark-mode .telegram-top{color:#60a5fa!important;}
+body.dark-mode .telegram-top:hover{background:#10243d!important;border-color:#244a76!important;}
+body.dark-mode .search-wrap,
+body.dark-mode .section-search-wrap,
+body.dark-mode .app-card,
+body.dark-mode .game-card,
+body.dark-mode .trend-card,
+body.dark-mode .prompt-card,
+body.dark-mode .info-card,
+body.dark-mode footer{
+  background:#111827!important;
+  border-color:#263244!important;
+  color:#e5e7eb!important;
+}
+body.dark-mode .search-wrap input,
+body.dark-mode .section-search{color:#e5e7eb!important;}
+body.dark-mode .search-wrap input::placeholder,
+body.dark-mode .section-search::placeholder{color:#64748b!important;}
+body.dark-mode .section-title-with-icon{color:#cbd5e1!important;}
+body.dark-mode .section-title-with-icon small{color:#94a3b8!important;}
+body.dark-mode .muted,
+body.dark-mode .rating{color:#94a3b8!important;}
+body.dark-mode .download,
+body.dark-mode .game-download,
+body.dark-mode .trend-download,
+body.dark-mode .prompt-card button{
+  background:#172033!important;
+  border-color:#334155!important;
+  color:#e5e7eb!important;
+}
+body.dark-mode .bottom-nav{
+  background:rgba(17,24,39,.94)!important;
+  border-color:#263244!important;
+}
+body.dark-mode .bottom-nav a{color:#94a3b8!important;}
+body.dark-mode .side-drawer{background:#111827!important;color:#e5e7eb!important;}
+body.dark-mode .drawer-head{border-bottom-color:#263244!important;}
+body.dark-mode .drawer-brand{color:#f8fafc!important;}
+body.dark-mode .drawer-close{background:#172033!important;color:#e5e7eb!important;}
+body.dark-mode .drawer-links a{color:#e5e7eb!important;}
+body.dark-mode .drawer-links a:hover{background:#172033!important;}
+body.dark-mode .drawer-links a.active{background:#fff!important;color:#111827!important;}
+body.dark-mode .drawer-icon{background:#263244!important;color:#e5e7eb!important;}
+body.dark-mode .drawer-note{background:#0f172a!important;border-color:#263244!important;color:#94a3b8!important;}
+</style>
+
+
+<style id="minhaj-theme-contrast-final">
+/* Final theme contrast fixes */
+/* Light mode: dark, readable bottom navigation + search field */
+body:not(.dark-mode) .bottom-nav{
+  background:rgba(255,255,255,.97)!important;
+  border-color:#dbe3ec!important;
+}
+body:not(.dark-mode) .bottom-nav a{
+  color:#475569!important;
+}
+body:not(.dark-mode) .bottom-nav a .nav-logo-icon{
+  color:#475569!important;
+  stroke:currentColor!important;
+}
+body:not(.dark-mode) .bottom-nav a.active{
+  background:#12b886!important;
+  color:#fff!important;
+}
+body:not(.dark-mode) .bottom-nav a.active .nav-logo-icon{
+  color:#fff!important;
+}
+body:not(.dark-mode) .search-wrap{
+  background:#fff!important;
+  border-color:#cfd8e3!important;
+}
+body:not(.dark-mode) .search-wrap input{
+  background:transparent!important;
+  color:#172033!important;
+}
+body:not(.dark-mode) .search-wrap input::placeholder{
+  color:#64748b!important;
+  opacity:1!important;
+}
+/* Dark mode: never leave the search area white, and keep bottom nav readable */
+body.dark-mode .bottom-nav{
+  background:rgba(17,24,39,.97)!important;
+  border-color:#334155!important;
+}
+body.dark-mode .bottom-nav a{
+  color:#cbd5e1!important;
+}
+body.dark-mode .bottom-nav a .nav-logo-icon{
+  color:#cbd5e1!important;
+  stroke:currentColor!important;
+}
+body.dark-mode .bottom-nav a.active{
+  background:#12b886!important;
+  color:#fff!important;
+}
+body.dark-mode .bottom-nav a.active .nav-logo-icon{
+  color:#fff!important;
+}
+body.dark-mode .search-wrap{
+  background:#111827!important;
+  border-color:#334155!important;
+  box-shadow:0 8px 24px rgba(0,0,0,.22)!important;
+}
+body.dark-mode .search-wrap input{
+  background:transparent!important;
+  color:#f8fafc!important;
+}
+body.dark-mode .search-wrap input::placeholder{
+  color:#94a3b8!important;
+  opacity:1!important;
+}
+body.dark-mode .search-wrap .search-logo{
+  color:#cbd5e1!important;
+}
+</style>
+
+
+<style id="minhaj-theme-contrast-v2">
+/* FINAL: Light/Sun mode contrast */
+html body:not(.dark-mode) .bottom-nav{
+  background:#f1f5f9 !important;
+  border-top:1px solid #cbd5e1 !important;
+  box-shadow:0 -4px 16px rgba(15,23,42,.08) !important;
+}
+html body:not(.dark-mode) .bottom-nav > a{
+  color:#1e293b !important;
+  -webkit-text-fill-color:#1e293b !important;
+  opacity:1 !important;
+  font-weight:700 !important;
+}
+html body:not(.dark-mode) .bottom-nav > a .nav-logo-icon,
+html body:not(.dark-mode) .bottom-nav > a svg{
+  color:#1e293b !important;
+  stroke:currentColor !important;
+  opacity:1 !important;
+}
+html body:not(.dark-mode) .bottom-nav > a.active{
+  background:#16a37a !important;
+  color:#ffffff !important;
+  -webkit-text-fill-color:#ffffff !important;
+  border-radius:12px !important;
+  margin:5px 4px !important;
+  padding-top:5px !important;
+  font-weight:800 !important;
+}
+html body:not(.dark-mode) .bottom-nav > a.active .nav-logo-icon,
+html body:not(.dark-mode) .bottom-nav > a.active svg{
+  color:#ffffff !important;
+  stroke:#ffffff !important;
+}
+
+/* Search field: no forced pure-white fill in light mode */
+html body:not(.dark-mode) .search-wrap{
+  background:#f1f5f9 !important;
+  border:1px solid #cbd5e1 !important;
+  box-shadow:0 3px 12px rgba(15,23,42,.07) !important;
+}
+html body:not(.dark-mode) .search-wrap input,
+html body:not(.dark-mode) .search-wrap input[type="search"]{
+  background:#f1f5f9 !important;
+  color:#0f172a !important;
+  -webkit-text-fill-color:#0f172a !important;
+  opacity:1 !important;
+}
+html body:not(.dark-mode) .search-wrap input::placeholder{
+  color:#475569 !important;
+  -webkit-text-fill-color:#475569 !important;
+  opacity:1 !important;
+}
+html body:not(.dark-mode) .search-wrap .search-logo{
+  color:#334155 !important;
+  opacity:1 !important;
+}
+
+/* Dark mode: keep the same elements readable */
+html body.dark-mode .bottom-nav{
+  background:#111827 !important;
+  border-top:1px solid #334155 !important;
+}
+html body.dark-mode .bottom-nav > a{
+  color:#e2e8f0 !important;
+  -webkit-text-fill-color:#e2e8f0 !important;
+  opacity:1 !important;
+  font-weight:700 !important;
+}
+html body.dark-mode .bottom-nav > a .nav-logo-icon,
+html body.dark-mode .bottom-nav > a svg{
+  color:#e2e8f0 !important;
+  stroke:currentColor !important;
+  opacity:1 !important;
+}
+html body.dark-mode .bottom-nav > a.active{
+  background:#16a37a !important;
+  color:#ffffff !important;
+  -webkit-text-fill-color:#ffffff !important;
+}
+html body.dark-mode .bottom-nav > a.active .nav-logo-icon,
+html body.dark-mode .bottom-nav > a.active svg{
+  color:#ffffff !important;
+  stroke:#ffffff !important;
+}
+html body.dark-mode .search-wrap{
+  background:#111827 !important;
+  border:1px solid #334155 !important;
+}
+html body.dark-mode .search-wrap input,
+html body.dark-mode .search-wrap input[type="search"]{
+  background:#111827 !important;
+  color:#f8fafc !important;
+  -webkit-text-fill-color:#f8fafc !important;
+}
+html body.dark-mode .search-wrap input::placeholder{
+  color:#94a3b8 !important;
+  -webkit-text-fill-color:#94a3b8 !important;
+  opacity:1 !important;
+}
+html body.dark-mode .search-wrap .search-logo{
+  color:#cbd5e1 !important;
+}
+</style>
+
+<style id="minhaj-no-results-message">
+.search-no-results{margin:18px auto 24px;width:min(92%,620px);text-align:center;padding:13px 16px;border:1px solid #e5e7eb;border-radius:12px;background:#f8fafc;color:#334155;font-size:14px;font-weight:700;line-height:1.5}
+.search-no-results span{font-size:12px;font-weight:500;color:#64748b}
+body.dark-mode .search-no-results{background:#172033;border-color:#334155;color:#f8fafc}
+body.dark-mode .search-no-results span{color:#cbd5e1}
+</style>
+
+<style id="download-buttons-safe-fix">
+/* Download buttons — visual-only fix; does not change card/grid sizing */
+.download,
+.trend-download,
+#appModalDownload{
+  box-sizing:border-box;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+  min-height:38px;
+  height:38px;
+  padding:0 14px !important;
+  margin-top:12px;
+  border:1px solid #d9dee7 !important;
+  border-radius:10px !important;
+  background:#ffffff !important;
+  color:#1f2937 !important;
+  font-size:13px !important;
+  font-weight:700 !important;
+  line-height:1 !important;
+  text-decoration:none !important;
+  cursor:pointer;
+  box-shadow:0 2px 7px rgba(15,23,42,.07) !important;
+  transition:transform .16s ease,box-shadow .18s ease,background .18s ease,border-color .18s ease !important;
+}
+
+.download::before,
+.trend-download::before{
+  content:"";
+  width:15px;
+  height:15px;
+  flex:0 0 15px;
+  display:inline-block;
+  background:currentColor;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 3v11m0 0 5-5m-5 5-5-5M5 20h14' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 3v11m0 0 5-5m-5 5-5-5M5 20h14' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;
+}
+
+#appModalDownload{
+  min-height:44px;
+  height:44px;
+  border:0 !important;
+  border-radius:11px !important;
+  background:#111827 !important;
+  color:#fff !important;
+  box-shadow:0 5px 14px rgba(15,23,42,.16) !important;
+}
+
+#appModalDownload .download-icon{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:18px;
+  height:18px;
+}
+#appModalDownload .download-icon svg{
+  width:18px !important;
+  height:18px !important;
+}
+
+.download:hover,
+.trend-download:hover{
+  background:#f8fafc !important;
+  border-color:#bfc7d4 !important;
+  box-shadow:0 5px 14px rgba(15,23,42,.11) !important;
+  transform:translateY(-1px);
+}
+#appModalDownload:hover{
+  background:#1f2937 !important;
+  box-shadow:0 7px 17px rgba(15,23,42,.22) !important;
+  transform:translateY(-1px);
+}
+
+.download:active,
+.trend-download:active,
+#appModalDownload:active{
+  transform:scale(.97) !important;
+  box-shadow:0 2px 7px rgba(15,23,42,.12) !important;
+}
+
+body.dark-mode .download,
+body.dark-mode .trend-download{
+  background:#172033 !important;
+  border-color:#334155 !important;
+  color:#f8fafc !important;
+  box-shadow:0 2px 8px rgba(0,0,0,.20) !important;
+}
+body.dark-mode .download:hover,
+body.dark-mode .trend-download:hover{
+  background:#202c43 !important;
+  border-color:#475569 !important;
+}
+body.dark-mode #appModalDownload{
+  background:#f8fafc !important;
+  color:#111827 !important;
+  box-shadow:0 5px 15px rgba(0,0,0,.28) !important;
+}
+body.dark-mode #appModalDownload:hover{
+  background:#ffffff !important;
+}
+@media(max-width:480px){
+  .download,
+  .trend-download{
+    min-height:36px;
+    height:36px;
+    padding:0 11px !important;
+    border-radius:9px !important;
+    font-size:12px !important;
+  }
+  #appModalDownload{
+    min-height:42px;
+    height:42px;
+    font-size:13px !important;
+  }
+}
+</style>
+
+<style id="minhaj-universal-download-buttons">
+/* ===== MINHAJ APPS — Compact, clean & identical download buttons ===== */
+.app-card .download,
+.game-card .game-download,
+.trend-card .trend-download{
+  position:relative!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:6px!important;
+  box-sizing:border-box!important;
+  height:34px!important;
+  min-height:34px!important;
+  padding:0 12px!important;
+  margin-top:10px!important;
+  border:1px solid #e2e5e8!important;
+  border-radius:9px!important;
+  background:#fff!important;
+  color:#202428!important;
+  font-family:inherit!important;
+  font-size:11.5px!important;
+  font-weight:700!important;
+  line-height:1!important;
+  letter-spacing:0!important;
+  text-decoration:none!important;
+  cursor:pointer!important;
+  overflow:hidden!important;
+  box-shadow:0 2px 7px rgba(0,0,0,.06)!important;
+  transition:transform .15s ease,background .15s ease,border-color .15s ease,box-shadow .15s ease!important;
+}
+
+/* Small, clean download icon */
+.app-card .download::before,
+.game-card .game-download::before,
+.trend-card .trend-download::before{
+  content:"";
+  width:13px;
+  height:13px;
+  flex:0 0 13px;
+  display:block;
+  background:currentColor;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M11 3h2v10.17l3.59-3.58L18 11l-6 6-6-6 1.41-1.41L11 13.17V3zM5 19h14v2H5z'/%3E%3C/svg%3E") center/contain no-repeat;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M11 3h2v10.17l3.59-3.58L18 11l-6 6-6-6 1.41-1.41L11 13.17V3zM5 19h14v2H5z'/%3E%3C/svg%3E") center/contain no-repeat;
+}
+
+.app-card .download:hover,
+.game-card .game-download:hover,
+.trend-card .trend-download:hover{
+  background:#f5f7f8!important;
+  border-color:#cfd4d8!important;
+  box-shadow:0 4px 11px rgba(0,0,0,.08)!important;
+  transform:translateY(-1px)!important;
+}
+
+.app-card .download:active,
+.game-card .game-download:active,
+.trend-card .trend-download:active,
+.app-card .download.press,
+.game-card .game-download.press,
+.trend-card .trend-download.press{
+  transform:scale(.97)!important;
+  box-shadow:0 2px 6px rgba(0,0,0,.06)!important;
+}
+
+/* Apps + Games: same compact full-width button */
+.app-card .download,
+.game-card .game-download{
+  width:100%!important;
+  margin-top:auto!important;
+}
+
+/* Trending: same design, smaller natural width */
+.trend-card .trend-download{
+  flex:0 0 auto!important;
+  width:auto!important;
+  min-width:84px!important;
+  margin-top:0!important;
+  white-space:nowrap!important;
+}
+
+/* Dark mode */
+body.dark-mode .app-card .download,
+body.dark-mode .game-card .game-download,
+body.dark-mode .trend-card .trend-download{
+  background:#18202a!important;
+  border-color:#303b48!important;
+  color:#f1f5f9!important;
+  box-shadow:0 2px 7px rgba(0,0,0,.16)!important;
+}
+body.dark-mode .app-card .download:hover,
+body.dark-mode .game-card .game-download:hover,
+body.dark-mode .trend-card .trend-download:hover{
+  background:#202a36!important;
+  border-color:#42505f!important;
+}
+
+@media(max-width:520px){
+  .app-card .download,
+  .game-card .game-download{
+    height:33px!important;
+    min-height:33px!important;
+    font-size:11px!important;
+    padding:0 10px!important;
+    border-radius:8px!important;
+  }
+  .trend-card .trend-download{
+    height:32px!important;
+    min-height:32px!important;
+    min-width:80px!important;
+    font-size:10.5px!important;
+    padding:0 9px!important;
+    border-radius:8px!important;
+  }
+  .app-card .download::before,
+  .game-card .game-download::before,
+  .trend-card .trend-download::before{
+    width:12px;
+    height:12px;
+    flex-basis:12px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  .app-card .download,
+  .game-card .game-download,
+  .trend-card .trend-download{transition:none!important;}
+}
+</style>
+
+</head>
+<body>
+<div class="prompt-modal-backdrop" id="promptModal" aria-hidden="true">
+  <div class="prompt-modal" role="dialog" aria-modal="true">
+    <h3 id="promptModalTitle">AI Prompt</h3>
+    <img id="promptModalImage" class="prompt-modal-image" alt="Prompt image">
+    <div class="prompt-text" id="promptModalText"></div>
+    <div class="prompt-actions">
+      <button type="button" id="promptClose">Close</button>
+      <button type="button" class="copy-main" id="promptCopy" aria-label="Copy"><svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><rect x="9" y="9" width="11" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M6 15H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Copy</span></button>
+    </div>
+  </div>
+</div>
+
+  
+<div class="detail-overlay" id="appModal" aria-hidden="true">
+  <div class="detail-modal poloja-detail" role="dialog" aria-modal="true">
+    <button class="poloja-x" type="button" id="appModalX" aria-label="Close">×</button>
+    <div class="poloja-head">
+      <img id="appModalLogo" class="detail-logo poloja-logo" alt="App logo">
+      <div class="poloja-title-wrap">
+        <h3 id="appModalTitle">App</h3>
+        <div class="poloja-sub" id="appModalSub">Official App</div>
+      <div id="appModalQuickStats" class="poloja-quick-stats minhaj-rating"><svg class="minhaj-star-logo" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.86 5.79 6.39.93-4.63 4.52 1.09 6.38L12 17.2l-5.71 3.02 1.09-6.38 6.39-.93L12 2.6z" fill="currentColor"/></svg><span>4.8</span><span>·</span><span>6.0K</span></div>
+      </div>
+    </div>
+    <div class="poloja-stats">
+      <div><span>Updated</span><b id="appModalUpdated">Recently</b></div>
+      <div><span>Developer</span><b id="appModalDeveloper">Official Developer</b></div>
+      <div><span>Version</span><b id="appModalVersion">Latest</b></div>
+      <div><span>Size</span><b id="appModalSize">—</b></div>
+      <div><span>Downloads</span><b id="appModalDownloads">—</b></div>
+      <div><span>Rating</span><b id="appModalRating" class="minhaj-rating"><svg class="minhaj-star-logo" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.86 5.79 6.39.93-4.63 4.52 1.09 6.38L12 17.2l-5.71 3.02 1.09-6.38 6.39-.93L12 2.6z" fill="currentColor"/></svg><span>—</span></b></div>
+    </div>
+    <div class="poloja-description" id="appModalDescription">Official app information.</div>
+    <a id="appModalPlay" class="poloja-play" href="#" target="_blank" rel="noopener noreferrer">
+      <span class="poloja-play-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path fill="#00d639" d="M3 3.6v16.8c0 .6.7 1 1.2.7l10.2-8.4L4.2 3c-.5-.4-1.2 0-1.2.6Z"/><path fill="#00a4ef" d="m14.4 12.7 3.2-2.6 3.1 1.7c.7.4.7 1.4 0 1.8l-3.1 1.7-3.2-2.6Z"/><path fill="#ffcf00" d="m4.2 3 13.4 7.5-3.2 2.6L4.2 3Z"/><path fill="#f44336" d="m4.2 21 13.4-7.5-3.2-2.6L4.2 21Z"/></svg></span>
+      <span><small>Download Official App 🚨</small><strong>Play Store</strong></span>
+      <span class="poloja-play-arrow">›</span>
+    </a>
+    <div class="detail-actions poloja-actions">
+      <button type="button" id="appModalDownload" class="primary"><span class="download-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 3v11" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="m7.5 10.5 4.5 4.5 4.5-4.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 20h16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span> DOWNLOAD (<span id="appModalDownloadSize">—</span>)</button>
+      <a id="appModalTelegram" class="poloja-telegram" href="https://t.me/minhajafrad" target="_blank" rel="noopener noreferrer"><span class="poloja-telegram-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M21.7 3.4 18.6 20c-.2 1.2-.9 1.5-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.2-8.3c.4-.4-.1-.6-.6-.2L6.1 13.7l-5-1.6c-1.1-.3-1.1-1.1.2-1.6L20.7 3c.9-.3 1.7.2 1 0.4Z"/></svg></span><span>Join Telegram</span></a>
+      <button type="button" id="appModalClose" style="display:none">Close</button>
+    </div>
+  </div>
+</div>
+
+  <header class="topbar">
+    <div class="brand"><img class="brand-logo" src="https://i.postimg.cc/k5qxxjHd/Tik-Tok-Logo-9D2F901.png" alt="MINHAJ Logo">MINHAJ APPS</div>
+    <nav>
+       <a class="active" href="#home"><svg class="nav-logo-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.7 12 3l9 7.7v8.2a2 2 0 0 1-2 2h-4.7v-6.2H9.7v6.2H5a2 2 0 0 1-2-2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9.7 20.9h4.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Home</span></a>
+       <a href="#apps"><svg class="nav-logo-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.2" y="3.2" width="7.1" height="7.1" rx="1.4" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="13.7" y="3.2" width="7.1" height="7.1" rx="1.4" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="3.2" y="13.7" width="7.1" height="7.1" rx="1.4" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="13.7" y="13.7" width="7.1" height="7.1" rx="1.4" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><span>Apps</span></a>
+       <a href="#presets"><svg class="nav-logo-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.2 8.2h7.6c2.1 0 3.7 1.4 4.1 3.4l.9 4.1c.4 1.8-1 3.4-2.8 3.4-1 0-1.9-.5-2.4-1.3l-1.1-1.6h-5l-1.1 1.6c-.5.8-1.4 1.3-2.4 1.3-1.8 0-3.2-1.6-2.8-3.4l.9-4.1c.4-2 2-3.4 4.1-3.4Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8 12v4M6 14h4M16.5 13.2h.01M18 15h.01" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Game</span></a>
+       <a href="#prompts"><svg class="nav-logo-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.8 1.8 5.5 5.4 1.9-5.4 1.8-1.8 5.6-1.8-5.6-5.4-1.8 5.4-1.9z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="m19 15.2.8 2.3 2.2.8-2.2.8-.8 2.3-.8-2.3-2.2-.8 2.2-.8z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg><span>AI Prompt</span></a>
+       <a href="https://t.me/minhajafrad" target="_blank" rel="noopener noreferrer">Join Telegram</a>
+     </nav>
+    <div class="top-actions" aria-label="Quick actions">
+      <button type="button" class="top-action theme-toggle" id="themeToggle" aria-label="Switch to dark mode" title="Dark mode">
+        <svg class="theme-icon moon-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.3 15.7A8.5 8.5 0 0 1 8.3 3.7 8.5 8.5 0 1 0 20.3 15.7Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg class="theme-icon sun-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+      <a class="top-action telegram-top" href="https://t.me/minhajafrad" target="_blank" rel="noopener noreferrer" aria-label="Join Telegram" title="Telegram">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21.7 3.4 18.6 20c-.2 1.2-.9 1.5-1.8.9l-5-3.7-2.4 2.3-2.4.5.4-5.1 9.2-8.3c.4-.4-.1-.6-.6-.2L6.1 13.7l-5-1.6c-1.1-.3-1.1-1.1.2-1.6L20.7 3c.9-.3 1.7.2 1 0.4Z"/></svg>
+      </a>
+      <button type="button" class="top-action menu" id="menuBtn" aria-label="Open menu" title="Menu">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </header>
+  <div class="side-overlay" id="sideOverlay"></div>
+  <aside class="side-drawer" id="sideDrawer" aria-hidden="true">
+    <div class="drawer-head"><div class="drawer-brand">MINHAJ APPS</div><button type="button" class="drawer-close" id="drawerClose" aria-label="Close menu">×</button></div>
+    <nav class="drawer-links">
+       <a class="active" href="#home"><svg class="nav-logo-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.7 12 3l9 7.7v8.2a2 2 0 0 1-2 2h-4.7v-6.2H9.7v6.2H5a2 2 0 0 1-2-2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9.7 20.9h4.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Home</span></a>
+       <a href="#apps"><svg class="nav-logo-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.2" y="3.2" width="7.1" height="7.1" rx="1.4" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="13.7" y="3.2" width="7.1" height="7.1" rx="1.4" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="3.2" y="13.7" width="7.1" height="7.1" rx="1.4" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="13.7" y="13.7" width="7.1" height="7.1" rx="1.4" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><span>Apps</span></a>
+       <a href="#presets"><svg class="nav-logo-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.2 8.2h7.6c2.1 0 3.7 1.4 4.1 3.4l.9 4.1c.4 1.8-1 3.4-2.8 3.4-1 0-1.9-.5-2.4-1.3l-1.1-1.6h-5l-1.1 1.6c-.5.8-1.4 1.3-2.4 1.3-1.8 0-3.2-1.6-2.8-3.4l.9-4.1c.4-2 2-3.4 4.1-3.4Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8 12v4M6 14h4M16.5 13.2h.01M18 15h.01" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Game</span></a>
+       <a href="#prompts"><svg class="nav-logo-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.8 1.8 5.5 5.4 1.9-5.4 1.8-1.8 5.6-1.8-5.6-5.4-1.8 5.4-1.9z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="m19 15.2.8 2.3 2.2.8-2.2.8-.8 2.3-.8-2.3-2.2-.8 2.2-.8z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg><span>AI Prompt</span></a>
+       <div class="drawer-section-title">Social Media 👇</div>
+       <a href="https://www.facebook.com/share/1d285KGT2A/" target="_blank" rel="noopener noreferrer"><span class="drawer-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M13.7 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.1H7.5V13h2.8v8h3.4Z"/></svg></span>Facebook</a>
+       <a href="https://youtube.com/@gaming_minhaj_ff?si=AdqJoJDEScsGJC1-" target="_blank" rel="noopener noreferrer"><span class="drawer-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4L15.8 12l-6.2 3.6Z"/></svg></span>YouTube</a>
+        <a href="https://www.tiktok.com/@minhaj_afrad?_r=1&_t=ZS-99pMC8Fk3Mr" target="_blank" rel="noopener noreferrer"><span class="drawer-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M15.5 3c.3 2.1 1.5 3.7 3.5 4.3v3.1c-1.4-.1-2.6-.5-3.6-1.2v6.2c0 4-2.7 6.6-6.3 6.6-3.4 0-5.9-2.4-5.9-5.7 0-3.5 2.8-6 6.4-6 .3 0 .7 0 1 .1v3.2c-.3-.1-.6-.2-1-.2-1.6 0-2.9 1.1-2.9 2.8 0 1.5 1.1 2.7 2.6 2.7 1.7 0 2.9-1.1 2.9-3.3V3h3.3Z"/></svg></span>TikTok</a>
+       <a href="https://t.me/minhajafrad" target="_blank" rel="noopener noreferrer"><span class="drawer-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M21.7 3.4 18.6 20c-.2 1.2-.9 1.5-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.2-8.3c.4-.4-.1-.6-.6-.2L6.1 13.7l-5-1.6c-1.1-.3-1.1-1.1.2-1.6L20.7 3c.9-.3 1.7.2 1 0.4Z"/></svg></span>Telegram</a>
+     </nav>
+    <div class="drawer-note">✨ MINHAJ APPS এ ওয়েবসাইটে সকল প্রিমিয়াম App পাবেন 💎</div>
+  </aside>
+
+
+  <main id="home" class="container">
+    <div class="search-wrap">
+      <span class="search-logo" aria-hidden="true"><svg viewBox="0 0 24 24" role="img"><circle cx="10.8" cy="10.8" r="6.8" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M16 16l5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+      <input id="search" type="search" placeholder="Search Apps & AI Prompts...." autocomplete="off">
+    </div>
+
+    <div class="notice" id="telegram" aria-label="Announcement">
+      <span class="notice-logo" aria-hidden="true"><svg viewBox="0 0 24 24" role="img"><path d="M4 10.1h4.2L17.5 5v14L8.2 13.9H4a1 1 0 0 1-1-1v-1.8a1 1 0 0 1 1-1Z" fill="currentColor"/><path d="M8 14.1 9.7 20h2.4l-1.8-6.1H8Z" fill="currentColor"/><path d="M20 8.1c1.1 1 1.7 2.4 1.7 3.9S21.1 14.9 20 15.9" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span>
+      <span class="notice-track">ঘোষণা — MINHAJ APPS-এ আপনার প্রয়োজনীয় Apps, Game, এবং AI Prompt একসাথে পাবেন 🚨</span>
+    </div>
+
+    <div id="activeSectionSearchHost" aria-live="polite"></div>
+    <div id="searchNoResults" class="search-no-results" hidden aria-live="polite">No Results Found<br><span>আপনার সার্চ অনুযায়ী কোনো কিছু পাওয়া যায়নি।</span></div>
+<section id="prompts">
+<div class="section-head">
+        <h2 class="section-title-with-icon"><span class="section-title-icon ai-title-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none"><path d="m12 2.8 1.8 5.5 5.4 1.9-5.4 1.8-1.8 5.6-1.8-5.6-5.4-1.8 5.4-1.9z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="m19 15.2.8 2.3 2.2.8-.8.3-1.4.5-.8 2.3-.8-2.3-2.2-.8 2.2-.8.8-2.3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></span>AI Prompt <small id="promptCount">(0)</small></h2>
+      </div>
+      <div class="prompt-row" id="promptRow"></div>
+    </section>
+
+    <section id="trending">
+      <div class="section-head">
+        <h2 class="section-title-with-icon"><span class="section-title-icon trending-title-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none"><path d="M12 21c4.1 0 7-2.7 7-6.6 0-3.1-1.8-5.4-4.4-7.7.1 2.1-.7 3.6-2 4.6.1-3.3-1.7-6.1-4.8-8.3.2 3.5-2.8 5.6-2.8 9.7C5 17.9 7.9 21 12 21Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9.2 17.2c.4 1.2 1.4 1.9 2.8 1.9 1.7 0 2.8-1.1 2.8-2.6 0-1.1-.5-1.9-1.4-2.8-.1 1-.5 1.7-1.1 2.1-.2-1.3-.9-2.3-1.9-3-.1 1.5-1.2 2.2-1.2 3.5 0 .3 0 .6.1.9Z" fill="currentColor"/></svg></span>Trending Apps <small id="trendingCount">(0)</small></h2>
+      </div>
+      <div class="trending-grid" id="trendingGrid"></div>
+    </section>
+
+    <section id="apps">
+<div class="section-head">
+        <h2 class="section-title-with-icon"><span class="section-title-icon latest-title-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none"><circle cx="12" cy="12" r="8.2" stroke="currentColor" stroke-width="1.8"/><path d="M12 7.5v5l3.2 1.9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Latest Updates <small id="countLabel">(0)</small></h2>
+      </div>
+      <div class="app-grid" id="appGrid"></div>
+      <div class="empty" id="empty" hidden>কোনো App পাওয়া যায়নি।</div>
+    </section>
+
+    <section id="presets">
+<div class="section-head">
+        <h2 class="section-title-with-icon"><span class="section-title-icon game-title-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none"><path d="M7.5 8h9a4 4 0 0 1 3.8 2.8l1.2 4.1a2.7 2.7 0 0 1-5 2.1l-1.2-1.7H8.7l-1.2 1.7a2.7 2.7 0 0 1-5-2.1l1.2-4.1A4 4 0 0 1 7.5 8Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M8 11v4M6 13h4M16 12.5h.01M18 14.5h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>Game Updates <small id="gameCount">(0)</small></h2>
+      </div>
+      <div class="app-grid game-grid" id="gameGrid"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 MINHAJ APPS</p>
+    <div class="footer-links">
+      <a href="#about" data-info="about" role="button">About</a>
+      <a href="#privacy" data-info="privacy" role="button">Privacy Policy</a>
+      <a href="#contact" data-info="contact" role="button">Contact</a>
+      <a href="#disclaimer" data-info="disclaimer" role="button">Disclaimer</a>
+      <a href="#developer" data-info="developer" role="button">Developer</a>
+    </div>
+  </footer>
+
+  <div class="info-overlay" id="infoModal" aria-hidden="true">
+  <div class="info-modal" role="dialog" aria-modal="true" aria-labelledby="infoTitle">
+    <button class="info-close" id="infoClose" type="button" aria-label="Close">×</button>
+    <h3 id="infoTitle">MINHAJ APPS</h3>
+    <div id="infoContent"></div>
+  </div>
+</div>
+
+<div class="bottom-nav">
+     <a class="active" href="#home"><svg class="nav-logo-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.7 12 3l9 7.7v8.2a2 2 0 0 1-2 2h-4.7v-6.2H9.7v6.2H5a2 2 0 0 1-2-2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9.7 20.9h4.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Home</span></a>
+     <a href="#apps"><svg class="nav-logo-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.2" y="3.2" width="7.1" height="7.1" rx="1.4" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="13.7" y="3.2" width="7.1" height="7.1" rx="1.4" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="3.2" y="13.7" width="7.1" height="7.1" rx="1.4" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="13.7" y="13.7" width="7.1" height="7.1" rx="1.4" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><span>Apps</span></a>
+     <a href="#presets"><svg class="nav-logo-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.2 8.2h7.6c2.1 0 3.7 1.4 4.1 3.4l.9 4.1c.4 1.8-1 3.4-2.8 3.4-1 0-1.9-.5-2.4-1.3l-1.1-1.6h-5l-1.1 1.6c-.5.8-1.4 1.3-2.4 1.3-1.8 0-3.2-1.6-2.8-3.4l.9-4.1c.4-2 2-3.4 4.1-3.4Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8 12v4M6 14h4M16.5 13.2h.01M18 15h.01" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Game</span></a>
+     <a href="#prompts"><svg class="nav-logo-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.8 1.8 5.5 5.4 1.9-5.4 1.8-1.8 5.6-1.8-5.6-5.4-1.8 5.4-1.9z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="m19 15.2.8 2.3 2.2.8-2.2.8-.8 2.3-.8-2.3-2.2-.8 2.2-.8z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg><span>AI Prompt</span></a>
+   </div>
+
+  
+<script>
+/* ================= DOWNLOAD LINKS — EDIT ONLY THESE =================
+   Change the URL inside quotes to change an app's Download button.
+   Google Play links are kept separately below.
+==================================================================== */
+const downloadLinks = {
+  "Magic Eraser": "https://download1507.mediafire.com/dhq6me55sfkggkISYgHOAX4kdvV4MgPIAvFN9viJWdOPOkUSmRB7jZCi5zT-qbV2v4KYFw6DnZIuV6hNmwArZZM0-W_a93P_Iri9eLUFOsP3F-gyBrgCOeVrHXcAw76DA8KuI1xPFGsVi03ludgpbD8JsXvulX5TZBP31ndylFKjfmM/cvci4vn97vtrd6w/Magic+Eraser+Pro.apk",
+  "Sketchbook": "https://download1588.mediafire.com/oydxqvr1mzzgdUYT77-VOlwOan6W-ee0kCUnKb_cSDyY0NHjqCWQxK3K8Rdpk-uAH2vTgklZgKIMN19NMsKnd6r4R3RpeWdKCk2NTsp47uFlVtY8dnC-il2vMXJoLhTadCLqZH8vWRpA7sAtmRMbs3DmfzsLk05jmr9Ryi9wyMMme0Y/eo421khhbhawack/Sketchbook+Pro.apk",
+  "Pixellab": "https://download1581.mediafire.com/gra9dj450adgHGliT4qNfbRJ1awVrjxaRHHwszRnyVbggokCiop4i1uGRvuDzEl_Z6rsGh3t5qAKcAuS2YuivKNL8zXdQC5m0qqduzNVjdR7Cb2Yfzz29jv6VuPxDAu3wTX_Re3Qv_FFLV9QpWhEvw07x218EMt_lNSWp2fQgHx7zFOAAg/qtyv71sj6duwrp5/PixelLab+Pro.apk",
+  "Node": "https://download1523.mediafire.com/kmtp82u6imdgAVQfgA1DkMgsL-gmJVX6UJ6-SeVP-8EKlh6SI6nsH5MYatqAX2_B77Vze0SC1f52Hw2cUDHJWCet11G3yVef15J_aISoTlaMxBULI8e6ZU1xWeFicxtOLmPETd4OPGCCIwpm5xCG-lnpNX5Ijuy8VudYYdkPBaSAsr8/jq9ibftln4xl7lc/Node+Video+Editor.apk",
+  "Toji Motion": "https://download946.mediafire.com/mjwdplsosgcgae7FsRJSk8TtMUACs2caqdwe6u6zQaD6v4zEf_qeqIvYJBrHT3m4S1-ZB_kxRpJoY-C6gXqSirq7botiLmeHAdl1sG_TxTkWhwq-GFwlhySgRXB3jHhxb9a82I_qtc99L8IR-cvNW9IJjqnQkQxMoKlaCxn3sg4C0AQ/qcnqoz8vpiw4xqn/Toji+Motion+Premium+Unlocked.apk",
+  "ZArchiver": "https://download1335.mediafire.com/mqd3lue5d2lgzz2zq81TqQnbZKWz1DvyM2IInlK6sBpeizNzMGSvs4ptYJkK0Y_F4vSGyfH5QU0miJW4uCG7Frx9CKvFKzpz5y16GDfjt9e-eT_gxXkYNcNEO-0vOHV4PtEoHLc161DR7zwnVKK5IbXNZl_8XyMiypkduCOsspTxsJs/5d9cp958vqoll6k/ZArchiver+Pro.apk",
+  "CapCut": "https://download850.mediafire.com/bg2srbhyb9ggF5xysozuFFMvkvUV-WVuIhCQukGvd_LEcRcHoowiEsu9KoBlWU5cntMIFsgLCB9ZKSkzvJUaL1saBlM32r6kYhAT4aUEUP5kVl8tVftlXyYnKnghiFEAFwoPoIDc-Um1rzq2mxfoLPRXJckEJvCkCVwY8ezsH4UpBMU/bo4spe2vq6x1wi2/CapCut+Pro.apk",
+  "Efiko": "https://download1980.mediafire.com/nl188p144usg5QB_RbEryHJbxH92rOODC1vbQDcL7qIabdmZPg_qF5S8QEc_x-jRgOTBS2mmrOmLWrmfBhlcl1jrXnmkkVKfa60F-Cyv8nBTJ5WR1u8jMslEz4t5CGR9qn1P7dYSg7eDqA_mzkB2c1Zstxlm8LI5TAx-i1lyWv9XZOo/219nd5vblq7mllr/Efiko+Pro+%28No+Watermark%29.apk",
+  "YouTube": "https://download1585.mediafire.com/k0eqp7j9ai8gPxMcI53KcZbVAtiIAQWrJB4MVh06odZaLp0RKxD-v9bGxqhceBKl9vTn3YbNJqjnFHxNB5Y3uHFyp9Kfmx_zQsv8C0Lqg6DFkpSJN7tihSmW-vAX9EGpqV0rd8R2LGPjo42t_fSkZJicFSoswNqW-0ARx3hEJvJ_D7s/gtc0fem6585yhgb/YouTube+Pro.apk",
+  "Snapseed": "https://download1583.mediafire.com/6z58lbc8o35gQby0NBPC_EtO31AsVq9x1tLGqA62wtyKUfz6rGF7BB97vLOvw56u07kqKmYxoFjxs7d5xpX7H3egzzpjooJ96kFa7YAHmILsWgAu96yYHf385bHf8aORCaygSEXvPjWrvBOdxSzssxrLI134W_48M9VuQbnxZfT_Ko3veA/kuy9ujuriizqjaa/Snapseed+Pro.apk",
+  "Picsart": "https://download1322.mediafire.com/jzxu5gxv0b6gr-a0gkoU7wnZCd6d5V2DKRahLY2jwGY0nEbyOa2DgIIZq8gIJrpXIA41aa1B66CWcEKGejo5A4kLiCvtrN6xMC3FCiCs7bMGrSD15RXqxqgHhvFrMuvBXoeLR6dMijrIQzv7FCgdvzVjMGPgF48uVNmIS9reGJg2gHA/vpdsgdnw4h8a96e/Picsart+Pro.apk",
+  "Lightroom": "https://download848.mediafire.com/1zn4y06j8beg5Dx8ENVsst1I1XuMTTY1Zm32XJTKhGiTyry6aYp2nL3LpcmG3KVsaz8G1AjM9OYQySGCqEtdAkN4FmvgoN6ybAZthvaKaRmi9Gdst8I9RZP3dp4ykO6XMV0gtVRA2C65uAsiYqqsr157wc_nTM1rqhmtJl-7JLHLrj8/8420rm138uc8j8h/Lightroom+Pro.apk",
+  "InShot": "https://download1336.mediafire.com/7553qktz6cpgE91f0imMRkf_Ok_v8njwsxKX8IVA6O75ZuJc3NJb7rLOfbem1tVgHytNUkKHjpZjWfj9vstXYupYEx2CbuODVM8IgYlofgJ1cVdBxb1DRuUcWaLwlqA1mdF9D80iNhnB4ia6nZ0K-f-Rhnk0B_tzGz31eNG9ltBoKMw/s6z8rmlvfw8957h/InShot+Pro.apk",
+  "Remini": "https://download1530.mediafire.com/3u8xm2rlwx3gZe-lhSJTpCE3pHAHnC4k051_NO18qdWfWC92huixFhywDx7ERvFHay0UNOCUwlI4gKzvhQzF6apPs73AuZi9eI6TlNMPnNROPCP0fOveGnsJua79ag7S1N7MJEJlqmU58VmcqbRzC70w-7jdZ5TABtgdTSbXZjgWjdI/hgzm34mww1bqngw/Remini+Pro.apk",
+  "VN Video Editor": "https://download1073.mediafire.com/kau75sxifodgtrCNp0JpPRjjQN9K22RBGoTM20TES39s7qG_XIuSHbm6HYwuSFmojaD2labi40RKz4fcbRM7bOoWgG-6h-P3sePqzVDXMOOTxMUF4jy4ialQgYKLS6Stl3C9fpibFGFX6nmvuaBLZc2gvjsJfrg86T_0bRPoZCr59v0/1qtj6jj6xu51fu4/VN+-+Video+Editor+Pro.apk",
+  "Alight Motion": "https://download1531.mediafire.com/ack7llyg84sgw4_UE2bKR4hfKmezTYL9rOv7qckmDv8yS-HZcHqozMaKnhTWpgFLB6ZMfWC2AypLkJKbzN2fjB3DNuU2uU5F4sB6b5VNRBLP36USoWFIXfsGT6KuqK3dIguYbL8FUOQN-2qZHwUrDi3thMOKpaBGaUXcB81qo5mBQ-U/oj5z8xv4snqnheo/Alight+Motion+Pro.apk",
+  "Telegram": "https://download1590.mediafire.com/8xk2sosi78dgVFwhZmhgGRKJA5t-LApAM8AWfQHQU4Zjr_3BeYLNfjsW2witjCNdmVXUIMF3ohl-F8gHDCtzu73dQOjyL-wpNNLC8l5IsxlzqWCxr2tAHCO3AQHoByv8WXDRD3t5TMc_j3zaYuYx0e4tUaFjBaNWhXbv1staja65m8E/7seetxx3gbwp15r/Telegram+Pro.apk",
+  "ChatGPT": "https://en.softonic.com/download/chatgpt/android/post-download?dt=internalDownload",
+  "Gold Motion": "https://download2449.mediafire.com/qd0mp3ccknkggNuq1x66jjIbksC7ZsX0IB8bw9yPaNozPhfs8Hx1n5_nmUPnYxklb0CUkyMDbASE1oEFWxZVq01-deOXN7ufw6Hxwb1My5Ds-l0emjiC9mPZaj-Exvl5FLEcsUgjYF775QjdF15EUXI_CnurQ1CP_UE6TY-uvedWZ90/utfbdxnwj9r3ax3/Gold+Motion+V6.0.apk",
+  "Canva": "https://cdn800.onehost.io/2023/Canva_2.267.0_1786699528_latestmodapks.com.apk",
+};
+
+const apps = [
+  {name:"YouTube",size:"27 MB",image:"https://i.postimg.cc/c4GLgS5L/Picsart-26-09-13-09-45-56-620.jpg",version:"1.4.0",rating:"4.7",icon:"",downloads:"9.8K",playLink:"https://play.google.com/store/apps/details?id=com.google.android.youtube",url:downloadLinks["YouTube"]},
+  {name:"Node Video Editor",size:"151 MB",image:"https://i.postimg.cc/m2ZRDrH3/Picsart-26-09-20-16-24-16-906.jpg",version:"8.2.1",rating:"5.1",icon:"",downloads:"9.7K",playLink:"https://play.google.com/store/apps/details?id=com.shallwaystudio.nodevideo",url:downloadLinks["Node"]},
+  {name:"Lightroom",size:"165 MB",image:"https://i.postimg.cc/fLXhD3sB/Picsart-26-09-13-09-51-51-442.jpg",version:"4.9.2",rating:"4.7",icon:"",downloads:"9.2K",playLink:"https://play.google.com/store/apps/details?id=com.adobe.lrmobile",url:downloadLinks["Lightroom"]},
+  {name:"InShot",size:"93 MB",image:"https://i.postimg.cc/Sx55RyDt/Picsart-26-09-13-09-53-28-619.jpg",version:"2.1.9",rating:"4.5",icon:"",downloads:"8.5K",playLink:"https://play.google.com/store/apps/details?id=com.camerasideas.instashot",url:downloadLinks["InShot"]},
+  {name:"Picsart",size:"84 MB",image:"https://i.postimg.cc/vmJpqQng/Picsart-26-09-13-09-52-54-930.jpg",version:"2.4.9",rating:"4.9",icon:"",downloads:"7.1K",playLink:"https://play.google.com/store/apps/details?id=com.picsart.studio",url:downloadLinks["Picsart"]},
+  {name:"Pixellab",size:"38 MB",image:"https://i.postimg.cc/FKdBDbmQ/Picsart-26-09-23-11-02-01-725.jpg",version:"2.1.9",rating:"6.2",icon:"",downloads:"9.7K",playLink:"https://play.google.com/store/apps/details?id=com.imaginstudio.imagetools.pixellab",url:downloadLinks["Pixellab"]},
+  {name:"Toji Motion",size:"269 MB",image:"https://i.postimg.cc/wTXWqWzc/Picsart-26-09-15-19-32-57-450.jpg",version:"4.1.3",rating:"2.9",icon:"",downloads:"3.7K",playLink:"https://t.me/minhajafrad",url:downloadLinks["Toji Motion"]},
+  {name:"Efiko",size:"31 MB",image:"https://i.postimg.cc/yNPy7Vd4/Picsart-26-09-15-14-29-23-751.jpg",version:"1.4.2",rating:"2.8",icon:"",downloads:"4.7K",playLink:"https://t.me/minhajafrad",url:downloadLinks["Efiko"]},
+  {name:"CapCut",size:"351 MB",image:"https://i.postimg.cc/zBw6xPz4/1709651369581.png",version:"4.1.6",rating:"7.8",icon:"",downloads:"10.4K",playLink:"https://play.google.com/store/apps/details?id=com.lemon.lvoverseas",url:downloadLinks["CapCut"]},
+  { name: "Magic Eraser", size: "34 MB", image: "https://i.postimg.cc/9QCbnrwy/Picsart-26-09-22-15-26-53-030.jpg", version: "2.5.1", rating: "3.4", icon: "", downloads: "5.8K", playLink: "https://play.google.com/store/apps/details?id=com.duygiangdg.magiceraser", url: downloadLinks["Magic Eraser"] }, { name: "SketchBook", size: "55 MB", image: "https://i.postimg.cc/L6BBL2Q1/Picsart-26-09-22-15-26-29-756.jpg", version: "6.2.9", rating: "4.8", icon: "", downloads: "8.2K", playLink: "https://play.google.com/store/apps/details?id=com.adsk.sketchbook", url: downloadLinks["Sketchbook"] },
+  {name:"Alight Motion",size:"101 MB",image:"https://i.postimg.cc/Y26wPmbh/Picsart-26-09-13-09-52-28-817.jpg",version:"3.6.1",rating:"4.5",icon:"",downloads:"7.9K",playLink:"https://play.google.com/store/apps/details?id=com.alightcreative.motion",url:downloadLinks["Alight Motion"]},
+  {name:"Remini",size:"191 MB",image:"https://i.postimg.cc/6pjK0Jz2/Picsart-26-09-13-09-50-57-380.jpg",version:"3.7.1",rating:"4.5",icon:"",downloads:"8.3K",playLink:"https://play.google.com/store/apps/details?id=com.bigwinepot.nwdn.international",url:downloadLinks["Remini"]},
+  {name:"VN Video Editor",size:"273 MB",image:"https://i.postimg.cc/4xJ4P1gq/Picsart-26-09-13-09-48-33-008.jpg",version:"6.1.2",rating:"4.7",icon:"",downloads:"6.1K",playLink:"https://play.google.com/store/apps/details?id=com.frontrow.vlog",url:downloadLinks["VN Video Editor"]},
+  {name:"Snapseed",size:"143 MB",image:"https://i.postimg.cc/7P0xyRPj/Picsart-26-09-13-09-50-21-357.jpg",version:"5.9.2",rating:"2.6",icon:"",downloads:"5.6K",playLink:"https://play.google.com/store/apps/details?id=com.niksoftware.snapseed",url:downloadLinks["Snapseed"]},
+  {name:"Telegram",size:"73 MB",image:"https://i.postimg.cc/7hFDSgNR/Picsart-26-09-13-09-44-36-352.jpg",version:"4.2.7",rating:"4.7",icon:"",downloads:"8.4K",playLink:"https://play.google.com/store/apps/details?id=org.telegram.messenger",url:downloadLinks["Telegram"]},
+  {name:"ZArchiver",size:"14 MB",image:"https://i.postimg.cc/BZDpphXy/Picsart-26-09-15-19-32-30-365.jpg",version:"2.3.7",rating:"1.1",icon:"",downloads:"1.9K",playLink:"https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver",url:downloadLinks["ZArchiver"]},
+  {name:"ChatGPT",size:"75 MB",image:"https://i.postimg.cc/Jh0rV4GW/Picsart-26-09-13-09-49-47-514.jpg",version:"3.2.4",rating:"4.7",icon:"",downloads:"5.9K",playLink:"https://play.google.com/store/apps/details?id=com.openai.chatgpt",url:downloadLinks["ChatGPT"]},
+  {name:"Canva",size:"90 MB",image:"https://i.postimg.cc/VkRvPVgF/Picsart-26-09-13-09-45-19-745.jpg",version:"6.2.1",rating:"1.8",icon:"",downloads:"4.2K",playLink:"https://play.google.com/store/apps/details?id=com.canva.editor",url:downloadLinks["Canva"]},
+  {name:"Gold Motion",size:"173 MB",image:"https://i.postimg.cc/T24qZJKL/Picsart-26-09-20-09-30-54-939.png",version:"3.8.1",rating:"2.0",icon:"",downloads:"2.5K",playLink:"https://t.me/minhajafrad",url:downloadLinks["Gold Motion"]},
+];
+
+function updateSectionCounts(){
+  try{
+    var promptEl=document.getElementById("promptCount");
+    var appEl=document.getElementById("countLabel");
+    var trendingEl=document.getElementById("trendingCount");
+    if(promptEl && Array.isArray(prompts)) promptEl.textContent="("+prompts.length+")";
+    if(appEl && Array.isArray(apps)) appEl.textContent="("+apps.length+")";
+    if(trendingEl && Array.isArray(trendingAppNames)) trendingEl.textContent="("+trendingAppNames.filter(function(name){ return apps.some(function(a){ return a.name===name; }); }).length+")";
+  }catch(e){}
+}
+
+const prompts = [
+  {name:"৮০ দর্শকের Prompt 🛒",icon:"👤",image:"https://i.postimg.cc/fycH8HgJ/Picsart-26-09-14-18-29-26-598.jpg",prompt:"Create Your 80s Look:Transform the person in the uploaded photo into an authentic 1980s look. Keep their face natural and recognizable. Add era-appropriate hairstyle, outfit, vintage setting, warm cinematic lighting, faded colors and realistic film grain. Photorealistic, 9:16."},
+  {name:"গালফ্রেন্ড Prompt 🛒",icon:"🎬",image:"https://i.postimg.cc/Y0KnfcRY/Picsart-26-09-14-18-28-54-509.jpg",prompt:"Create a cinematic, soft monochrome portrait based on the reference image.Keep the main male subject in the foreground, positioned very close to the camera on the left side of the frame, with only part of his face visible.He is wearing a loose white shirt with the collar slightly open.Behind his shoulder, place a young woman partially hidden, gently peeking from behind him, with only her face and eyes clearly visible.Use a soft natural window light coming from the right side, creating a bright, dreamy and slightly faded atmosphere.Keep the background minimal with a softly blurred curtain / window.Use a subtle black - and - white / desaturated teal monochrome color grade, soft film texture, realistic skin texture, shallow depth of field, gentle highlights and cinematic contrast.IMPORTANT: Preserve the male subject 's original face, facial features, hairstyle, expression, skin texture, and identity exactly as provided in the input photo. Do not change his face or body shape. Match the reference composition and camera angle as closely as possible. Photorealistic, cinematic photography, natural lighting, high detail, vertical portrait, 4:5 aspect ratio."},
+  {name:"Wether Prompt 🛒",icon:"🌌",image:"https://i.postimg.cc/qMbkwjfq/Picsart-26-09-14-18-52-21-801.jpg",prompt:"Same face outfit Same ultrawide Upper-angle low-angle shot of a young man Seat this bov in a stvlish pose on the topmost stone visible in the background; the pose needs to look realistic.And add some more clouds according to the color of the sky! Increases quality.Instagrammable 4:5 ratio."},
+  
+];
+
+const appGrid=document.getElementById("appGrid");
+const trendGrid=document.getElementById("trendingGrid");
+const promptRow=document.getElementById("promptRow");
+const search=document.getElementById("search");
+const empty=document.getElementById("empty");
+const countLabel=document.getElementById("countLabel");
+
+function logoHTML(app){
+  if(app.image){
+    return `<img class="logo" src="${app.image}" alt="${app.name} logo" loading="lazy"
+      onerror="this.outerHTML='<div class=&quot;logo&quot;>${app.icon}</div>'">`;
+  }
+  return `<div class="logo">${app.icon}</div>`;
+}
+
+function renderApps(list){
+  countLabel.textContent=`(${list.length})`;
+  appGrid.innerHTML=list.map(a=>`
+    <article class="app-card">
+      <div class="app-top">
+        ${logoHTML(a)}
+        <div class="meta">
+          <b>${a.name}</b>
+          <div class="muted">v${a.version}</div>
+          <div class="rating minhaj-rating">${minhajStarLogo()}<span>${a.rating}</span><span>·</span><span>${a.downloads}</span></div>
+        </div>
+      </div>
+      <button type="button" class="download" data-app-name="${a.name}" onclick="openAppByName(this.dataset.appName)">Download</button>
+    </article>`).join("");
+  empty.hidden=list.length!==0;
+}
+
+const trendingAppNames=["CapCut","YouTube","ChatGPT"];
+
+function renderTrending(){
+  const trendingList=trendingAppNames.map(name=>apps.find(a=>a.name===name)).filter(Boolean);
+  const trendingCount=document.getElementById("trendingCount");
+  if(trendingCount) trendingCount.textContent=`(${trendingList.length})`;
+  trendGrid.innerHTML=trendingList.map(a=>`
+    <article class="trend-card" data-app-name="${a.name}">
+      ${logoHTML(a)}
+      <div class="trend-info"><b>${a.name}</b><div class="muted minhaj-rating">${minhajStarLogo()}<span>${a.rating}</span><span>·</span><span>${a.downloads}</span></div></div>
+      <button type="button" class="trend-download" data-app-name="${a.name}" onclick="openAppByName(this.dataset.appName)">Download</button>
+    </article>`).join("");
+}
+
+function makePrompt(name){
+  const item=prompts.find(p=>p.name===name);
+  return item ? item.prompt : `Create a high-quality ${name} with realistic details, clean composition and professional lighting.`;
+}
+
+const appModal=document.getElementById("appModal");
+const appModalLogo=document.getElementById("appModalLogo");
+const appModalTitle=document.getElementById("appModalTitle");
+const appModalSub=document.getElementById("appModalSub");
+const appModalDownload=document.getElementById("appModalDownload");
+const appModalPlay=document.getElementById("appModalPlay");
+const appModalClose=document.getElementById("appModalClose");
+
+function minhajStarLogo(){
+  return '<svg class="minhaj-star-logo" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.86 5.79 6.39.93-4.63 4.52 1.09 6.38L12 17.2l-5.71 3.02 1.09-6.38-4.63-4.52 6.39-.93L12 2.6z" fill="currentColor"/></svg>';
+}
+
+document.addEventListener("click",function(e){
+  const btn=e.target.closest("button.download,button.trend-download");
+  if(!btn) return;
+  e.preventDefault();
+  e.stopPropagation();
+  openAppByName(btn.dataset.appName);
+});
+
+function openAppByName(name){
+  const app=apps.find(a=>a.name===name);
+  if(app) openApp(app);
+}
+
+/* =========================================================
+   GAME PHOTOS — EASY EDIT
+   শুধু নিচের 12টি URL বদলালেই Game-এর ছবি পরিবর্তন হবে।
+   ========================================================= */
+const gamePhotos = Object.create(null);
+
+/* =========================================================
+   GAME PHOTOS — SAFE EASY EDIT
+   প্রতিটি ছবি আলাদা লাইনে দিন।
+   এখানে URL বদলাতে COMMA (,) লাগবে না — তাই ভুলে JavaScript
+   ভেঙে যাওয়ার ঝুঁকি কম।
+   ========================================================= */
+gamePhotos["Free Fire"] = "https://i.postimg.cc/YCj3dZfV/Picsart-26-09-16-15-44-45-583.png";
+gamePhotos["Free Fire Max"] = "https://i.postimg.cc/Y2gT3GqH/Picsart-26-09-16-15-45-21-478.png";
+gamePhotos["PUBG MOBILE"] = "https://i.postimg.cc/RZdP7B19/Picsart-26-09-14-15-31-50-439.jpg";
+gamePhotos["Hill Climb Racing"] = "https://i.postimg.cc/sDGwPM9X/Picsart-26-09-14-08-49-35-260.jpg";
+gamePhotos["Subway Surfers"] = "https://i.postimg.cc/pLNksPqc/Picsart-26-09-14-08-50-08-846.jpg";
+gamePhotos["Candy Crush Saga"] = "https://i.postimg.cc/HxsY35hr/Picsart-26-09-14-16-39-42-844.jpg";
+gamePhotos["8 Ball Pool"] = "https://i.postimg.cc/ZKkRz9BK/Picsart-26-09-14-16-39-16-800.jpg";
+gamePhotos["eFootball"] = "https://i.postimg.cc/1z4PqPng/Picsart-26-09-14-16-38-50-362.jpg";
+gamePhotos["D L S"] = "https://i.postimg.cc/Hkk1qH2Y/Picsart-26-09-14-16-37-55-831.jpg";
+
+const games = [
+  {name:"Free Fire",developer:"Garena International I",rating:"5.4",downloads:"9.7K",updated:"Sep 10, 2026",version:"5.5.7",size:"1.0 GB",image: safeGamePhoto("Free Fire"),description:"Free Fire is a fast-paced battle royale game from Garena.",url:"https://play.google.com/store/apps/details?id=com.dts.freefireth",playLink:"https://play.google.com/store/apps/details?id=com.dts.freefireth"},
+  {name:"Free Fire Max",developer:"Garena International I",rating:"4.5",downloads:"8.3K",updated:"Sep 10, 2026",version:"5.5.7",size:"1.0 GB",image: safeGamePhoto("Free Fire Max"),description:"Free Fire Max is a fast-paced battle royale game from Garena.",url:"https://play.google.com/store/apps/details?id=com.dts.freefiremax",playLink:"https://play.google.com/store/apps/details?id=com.dts.freefiremax"},
+  {name:"PUBG MOBILE",developer:"Level Infinite",rating:"4.1",downloads:"6.2K",updated:"Recently",version:"3.1.9",size:"1.2 GB",image: safeGamePhoto("PUBG MOBILE"),description:"PUBG MOBILE is a competitive battle royale game with large-scale multiplayer matches.",url:"https://play.google.com/store/apps/details?id=com.tencent.ig",playLink:"https://play.google.com/store/apps/details?id=com.tencent.ig"},
+  {name:"Dream League Soccer 2026 | DLS",developer:"First Touch Games Ltd.",rating:"4.9",downloads:"8.6K",updated:"Recently",version:"2.1.3",size:"185.6 MB",image: safeGamePhoto("D L S"),description:"Dream League Soccer 2026 is a football game from First Touch Games.",url:"https://res.ldrescdn.com/apk/com.firsttouchgames.dls7-ld-13.420.xapk",playLink:"https://play.google.com/store/apps/details?id=com.firsttouchgames.dls7"},
+  {name:"eFootball",developer:"KONAMI",rating:"3.6",downloads:"6.1K",updated:"Recently",version:"3.9.1",size:"830 MB",image: safeGamePhoto("eFootball"),description:"eFootball is KONAMI's mobile football game with online competitive matches.",url:"https://res.ldrescdn.com/apk/jp.konami.pesam-ld-11.0.1.xapk",playLink:"https://play.google.com/store/apps/details?id=jp.konami.pesam"},
+  {name:"Subway Surfers",developer:"SYBO Games",rating:"4.6",downloads:"8.0K",updated:"Sep 7, 2026",version:"5.7.1",size:"221.8 MB",image: safeGamePhoto("Subway Surfers"),description:"Subway Surfers is an action runner game from SYBO Games. Dash, dodge trains and collect rewards.",url:"https://subway-surfers.en.uptodown.com/android/download/1215160022-x",playLink:"https://play.google.com/store/apps/details?id=com.kiloo.subwaysurf"},
+  {name:"Hill Climb Racing",developer:"Fingersoft",rating:"4.2",downloads:"7.2K",updated:"Aug 6, 2026",version:"6.1.4",size:"151 MB",image: safeGamePhoto("Hill Climb Racing"),description:"Hill Climb Racing is a physics-based driving game from Fingersoft. Race uphill, perform stunts and upgrade your vehicles.",url:"https://en.softonic.com/download/hill-climb-racing/android/post-download?dt=internalDownload",playLink:"https://play.google.com/store/apps/details?id=com.fingersoft.hillclimb"},
+  {name:"Candy Crush Saga",developer:"King",rating:"3.7",downloads:"6.8K",updated:"Recently",version:"3.1.5",size:"156.5 MB",image: safeGamePhoto("Candy Crush Saga"),description:"Candy Crush Saga is a classic match-three puzzle game from King.",url:"https://d.apkpure.com/b/XAPK/com.king.candycrushsaga?version=latest",playLink:"https://play.google.com/store/apps/details?id=com.king.candycrushsaga"},
+  {name:"8 Ball Pool",developer:"Miniclip.com",rating:"3.7",downloads:"6.1K",updated:"Recently",version:"2.6.8",size:"242.5 MB",image: safeGamePhoto("8 Ball Pool"),description:"8 Ball Pool is an online billiards game from Miniclip.",url:"https://en.softonic.com/download/8-ball-pool/android/post-download?dt=internalDownload",playLink:"https://play.google.com/store/apps/details?id=com.miniclip.eightballpool"},
+];
+
+function safeGamePhoto(name){
+  const url = String(gamePhotos[name] || "").trim();
+  if(!url) return "";
+  try{
+    const parsed = new URL(url, window.location.href);
+    if(!/^https?:$/i.test(parsed.protocol)) return "";
+    return parsed.href;
+  }catch(e){
+    return "";
+  }
+}
+
+function renderGames(list=games){
+  const grid=document.getElementById("gameGrid");
+  if(!grid) return;
+  const items=Array.isArray(list) ? list : games;
+  const gameCount=document.getElementById("gameCount");
+  if(gameCount) gameCount.textContent=`(${items.length})`;
+  grid.innerHTML=items.map(g=>`
+    <div class="game-card app-card" data-game-name="${g.name}">
+      <div class="app-top">
+        <div class="game-icon logo">${g.image ? `<img src="${g.image}" alt="${g.name}" loading="lazy" decoding="async" onerror="this.onerror=null;this.style.display='none';">` : ""}</div>
+        <div class="meta">
+          <b>${g.name}</b>
+          <div class="muted">v${g.version || "Latest"}</div>
+          <div class="rating minhaj-rating">${minhajStarLogo()}<span>${g.rating}</span><span>·</span><span>${g.downloads}</span></div>
+        </div>
+      </div>
+      <button type="button" class="download game-download" data-game-name="${g.name}">Download</button>
+    </div>`).join("");
+}
+
+function updateGameCount(list=games){
+  const gameCount=document.getElementById("gameCount");
+  const items=Array.isArray(list) ? list : games;
+  if(gameCount) gameCount.textContent=`(${items.length})`;
+}
+
+renderGames();
+updateGameCount();
+
+// Game card/button click: bind directly so the shared document handlers cannot block it.
+function bindGameClicks(){
+  document.querySelectorAll("#gameGrid .game-download").forEach(function(button){
+    button.onclick=function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      openGameByName(this.getAttribute("data-game-name") || "");
+    };
+  });
+  document.querySelectorAll("#gameGrid .game-card").forEach(function(card){
+    card.onclick=function(e){
+      if(e.target.closest("button")) return;
+      openGameByName(this.getAttribute("data-game-name") || "");
+    };
+  });
+}
+bindGameClicks();
+
+function openGameByName(name){
+  const game=games.find(g=>g.name===name);
+  if(game) openGame(game);
+}
+
+function openGame(game){
+  if(!appModal.classList.contains("show")){ history.pushState({minhajModal:"game"},"",location.href.split("#")[0]+"#game"); }
+  appModalLogo.src=game.image || "";
+  appModalLogo.onerror=()=>{appModalLogo.style.visibility="hidden";};
+  appModalLogo.onload=()=>{appModalLogo.style.visibility="visible";};
+  appModalLogo.style.visibility=game.image ? "visible" : "hidden";
+  appModalLogo.alt=game.name+" logo";
+  appModalTitle.textContent=game.name;
+  appModalSub.textContent="Official Game";
+  document.getElementById("appModalUpdated").textContent="Updated " + (game.updated || "Recently");
+  document.getElementById("appModalDeveloper").textContent=game.developer || "Official Developer";
+  document.getElementById("appModalVersion").textContent=game.version || "Latest";
+  document.getElementById("appModalSize").textContent=game.size || "—";
+  document.getElementById("appModalDownloads").textContent=game.downloads || "—";
+  document.getElementById("appModalRating").innerHTML=minhajStarLogo()+"<span>"+(game.rating || "—")+"</span>";
+  document.getElementById("appModalQuickStats").innerHTML=minhajStarLogo()+"<span>"+(game.rating || "—")+"</span><span>·</span><span>"+(game.downloads || "—")+"</span><span class='poloja-official-inline'>Official</span>";
+  document.getElementById("appModalDescription").textContent=game.description || "Official game information.";
+  document.getElementById("appModalDownloadSize").textContent=game.size || "—";
+  appModalDownload.dataset.downloadUrl=game.url || "";
+  appModalDownload.disabled=!game.url;
+  appModalPlay.href=game.playLink || game.url || "#";
+  appModal.classList.add("show");
+  appModal.setAttribute("aria-hidden","false");
+}
+
+function openApp(app){
+  if(!appModal.classList.contains("show")){ history.pushState({minhajModal:"app"},"",location.href.split("#")[0]+"#app"); }
+  appModalLogo.src=app.image || ""; appModalLogo.onerror=()=>{appModalLogo.style.visibility="hidden";}; appModalLogo.onload=()=>{appModalLogo.style.visibility="visible";}; appModalLogo.style.visibility=app.image ? "visible" : "hidden";
+  appModalLogo.alt=app.name+" logo";
+  appModalTitle.textContent=app.name;
+  appModalSub.textContent= app.name + " Pro App";
+  document.getElementById("appModalUpdated").textContent="Updated " + (app.updated || "Recently");
+  document.getElementById("appModalDeveloper").textContent=app.developer || "Official Developer";
+  document.getElementById("appModalVersion").textContent=app.version || "Latest";
+  document.getElementById("appModalSize").textContent=app.size || "—";
+  document.getElementById("appModalDownloads").textContent=app.downloads || "—";
+  document.getElementById("appModalRating").innerHTML=minhajStarLogo()+"<span>"+(app.rating || "—")+"</span>";
+  document.getElementById("appModalQuickStats").innerHTML=minhajStarLogo()+"<span>"+(app.rating || "—")+"</span><span>·</span><span>"+(app.downloads || "—")+"</span><span class='poloja-official-inline'>Official</span>";
+  if(!document.getElementById("appModalOfficialBadge")){ /* badge is static below stats */ }
+  document.getElementById("appModalDescription").textContent=app.description || ("Official " + app.name + " app. Version " + (app.version || "latest") + ".");
+  document.getElementById("appModalDownloadSize").textContent=app.size || "—";
+  appModalDownload.dataset.downloadUrl=app.url || "";
+  appModalDownload.disabled=!app.url;
+  appModalPlay.href=app.playLink || app.url || "#";
+  appModal.classList.add("show");
+  appModal.setAttribute("aria-hidden","false");
+}
+function closeApp(fromPopState=false){appModal.classList.remove("show");appModal.setAttribute("aria-hidden","true");if(!fromPopState && (location.hash==="#app" || location.hash==="#game")){history.back();}}
+window.addEventListener("popstate",()=>{if(appModal.classList.contains("show"))closeApp(true);});
+appModalClose.addEventListener("click",closeApp);
+document.getElementById("appModalX").addEventListener("click",closeApp);
+appModalDownload.addEventListener("click",function(e){
+  e.preventDefault();
+  e.stopPropagation();
+  const url=this.dataset.downloadUrl || "";
+  if(!url) return;
+  window.location.href=url;
+});
+appModal.addEventListener("click",e=>{if(e.target===appModal)closeApp()});
+
+function renderPrompts(){
+  const subtitles=[];
+  const promptCount=document.getElementById("promptCount");
+  if(promptCount) promptCount.textContent=`(${prompts.length})`;
+  promptRow.innerHTML=prompts.map((p,i)=>`
+    <article class="prompt-card" data-prompt="${p.name.replace(/"/g,'&quot;')}">
+      <div class="prompt-icon">${p.image ? `<img class="prompt-image" src="${p.image}" alt="${p.name}" loading="lazy" onerror="this.style.display='none';this.parentElement.insertAdjacentText('beforeend',p.icon||'')">` : (p.icon||'')}</div>
+      <b>${p.name}</b>
+      <div class="muted">${subtitles[i]||''}</div>
+      <button type="button" onclick='copyPrompt(${JSON.stringify(p.name)})'>▼ Copy Prompt</button>
+    </article>`).join("");
+}
+
+document.addEventListener("click",e=>{
+  const trendCard=e.target.closest(".trend-card");
+  if(trendCard && !e.target.closest("a,button")){
+    const app=apps.find(x=>x.name===trendCard.dataset.appName);
+    if(app) openApp(app);
+    return;
+  }
+  const promptCard=e.target.closest(".prompt-card");
+  if(promptCard && !e.target.closest("button")){
+    const name=promptCard.dataset.prompt;
+    if(name) openPrompt(name);
+    return;
+  }
+  const gameButton=e.target.closest(".game-download");
+  if(gameButton){
+    e.preventDefault();
+    e.stopPropagation();
+    openGameByName(gameButton.dataset.gameName);
+    return;
+  }
+  const gameCard=e.target.closest(".game-card");
+  if(gameCard && !e.target.closest("button")){
+    openGameByName(gameCard.dataset.gameName);
+    return;
+  }
+  const appCard=e.target.closest(".app-card");
+  if(appCard && !e.target.closest("a,button")){
+    const name=appCard.querySelector(".meta b")?.textContent;
+    const app=apps.find(x=>x.name===name);
+    if(app) openApp(app);
+  }
+});
+
+const promptModal=document.getElementById("promptModal");
+const promptModalTitle=document.getElementById("promptModalTitle");
+const promptModalText=document.getElementById("promptModalText");
+const promptModalImage=document.getElementById("promptModalImage");
+const promptCopy=document.getElementById("promptCopy");
+const promptClose=document.getElementById("promptClose");
+let currentPromptText="";
+function openPrompt(name){
+  if(!promptModal.classList.contains("show")){
+    history.pushState({minhajModal:"prompt"},"",location.href.split("#")[0]+"#prompt");
+  }
+  currentPromptText=makePrompt(name);
+  promptModalTitle.textContent=name;
+  const promptData=prompts.find(p=>p.name===name);
+  if(promptData && promptData.image){
+    promptModalImage.src=promptData.image;
+    promptModalImage.style.display="block";
+    promptModalImage.onerror=()=>{promptModalImage.style.display="none";};
+  }else{
+    promptModalImage.removeAttribute("src");
+    promptModalImage.style.display="none";
+  }
+  promptModalText.textContent=currentPromptText;
+  promptModal.classList.add("show");
+  promptModal.setAttribute("aria-hidden","false");
+}
+function closePrompt(fromPopState=false){
+  promptModal.classList.remove("show");
+  promptModal.setAttribute("aria-hidden","true");
+  if(!fromPopState && location.hash==="#prompt"){ history.back(); }
+}
+function copyPrompt(name){
+  openPrompt(name);
+}
+promptCopy.addEventListener("click",async()=>{
+  try{
+    if(navigator.clipboard && window.isSecureContext){
+      await navigator.clipboard.writeText(currentPromptText);
+    }else{
+      const ta=document.createElement("textarea");
+      ta.value=currentPromptText; ta.style.position="fixed"; ta.style.opacity="0";
+      document.body.appendChild(ta); ta.focus(); ta.select(); document.execCommand("copy"); ta.remove();
+    }
+    promptCopy.querySelector("span").textContent="✓ Copied";
+    setTimeout(()=>promptCopy.querySelector("span").textContent="Copy",900);
+  }catch(e){
+    promptModalText.focus();
+    alert("Prompt কপি করা যায়নি। Prompt-এ চাপ দিয়ে Select/Copy করুন।");
+  }
+});
+promptClose.addEventListener("click",closePrompt);
+promptModal.addEventListener("click",e=>{if(e.target===promptModal)closePrompt()});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"){closePrompt();closeApp();}});
+
+function setNoResultsVisible(show){
+  const el=document.getElementById("searchNoResults");
+  if(el) el.hidden=!Boolean(show);
+}
+
+function runSearch(){
+  const q=search.value.trim().toLowerCase();
+  const searchNoResults=document.getElementById("searchNoResults");
+  setNoResultsVisible(false);
+  const main=document.querySelector("main.container");
+  const resultTitle=document.getElementById("searchResultsTitle");
+  const promptSection=document.getElementById("prompts");
+  const promptHead=promptSection ? promptSection.querySelector(".section-head") : null;
+  const appSection=document.getElementById("apps");
+  const appHead=appSection ? appSection.querySelector(".section-head") : null;
+  const gameSection=document.getElementById("presets");
+  const gameHead=gameSection ? gameSection.querySelector(".section-head") : null;
+  const emptyAppMessage=document.getElementById("empty");
+  const gameCountEl=document.getElementById("gameCount");
+  const setGameCount=function(n){
+    if(gameCountEl) gameCountEl.textContent="("+Math.max(0, Number(n)||0)+")";
+  };
+  const promptCountEl=document.getElementById("promptCount");
+  const setPromptCount=function(n){
+    if(promptCountEl) promptCountEl.textContent="("+Math.max(0, Number(n)||0)+")";
+  };
+  if(!q){
+    setNoResultsVisible(false);
+    main.classList.remove("search-mode","search-show-apps","search-show-games","search-show-prompts");
+    if(resultTitle) resultTitle.style.display="none";
+    if(promptHead) promptHead.style.display="flex";
+    if(appHead) appHead.style.display="flex";
+    if(gameHead) gameHead.style.display="flex";
+    renderApps(apps);
+    renderPrompts();
+    renderGames(games);
+    setGameCount(games.length);
+    setPromptCount(prompts.length);
+    bindGameClicks();
+    return;
+  }
+
+  main.classList.add("search-mode");
+  main.classList.remove("search-show-apps","search-show-games","search-show-prompts");
+  const appResults=apps.filter(a=>{
+    const text=[a.name,a.version,a.rating,a.downloads,a.description].filter(Boolean).join(" ").toLowerCase();
+    return text.includes(q);
+  });
+  const promptResults=prompts.filter(p=>{
+    const text=[p.name,p.prompt].filter(Boolean).join(" ").toLowerCase();
+    return text.includes(q);
+  });
+  const gameResults=games.filter(g=>{
+    const text=[g.name,g.developer,g.version,g.rating,g.downloads,g.description].filter(Boolean).join(" ").toLowerCase();
+    return text.includes(q);
+  });
+
+  // Exact name matches get priority so a search from any section returns the real category.
+  const exactApps=apps.filter(a=>a.name.toLowerCase()===q);
+  const exactGames=games.filter(g=>g.name.toLowerCase()===q);
+  const exactPrompts=prompts.filter(p=>p.name.toLowerCase()===q);
+  const prioritizedType = exactApps.length ? 'apps' : exactGames.length ? 'games' : exactPrompts.length ? 'prompts' : (appResults.length ? 'apps' : gameResults.length ? 'games' : promptResults.length ? 'prompts' : 'none');
+
+  // Search shows ONLY the matching category. It never shows all Apps + all Prompts together.
+  if(prioritizedType==='apps'){
+    main.classList.add("search-show-apps");
+    if(resultTitle){resultTitle.style.display="block";resultTitle.textContent=`Search Results for “${search.value.trim()}”`;}
+    if(appHead) appHead.style.display="flex";
+    if(promptHead) promptHead.style.display="none";
+    renderApps(appResults);
+    renderGames([]);
+    setGameCount(0);
+    setPromptCount(0);
+    bindGameClicks();
+    promptRow.innerHTML="";
+  }else if(prioritizedType==='games'){
+    main.classList.add("search-show-games");
+    if(resultTitle){resultTitle.style.display="block";resultTitle.textContent=`Search Results for “${search.value.trim()}”`;}
+    if(appHead) appHead.style.display="none";
+    if(promptHead) promptHead.style.display="none";
+    if(gameHead) gameHead.style.display="flex";
+    renderApps([]);
+    if(emptyAppMessage) emptyAppMessage.hidden=true;
+    promptRow.innerHTML="";
+    renderGames(gameResults);
+    setGameCount(gameResults.length);
+    setPromptCount(0);
+    bindGameClicks();
+  }else if(prioritizedType==='prompts'){
+    main.classList.add("search-show-prompts");
+    if(resultTitle){resultTitle.style.display="block";resultTitle.textContent=`Search Results for “${search.value.trim()}”`;}
+    if(appHead) appHead.style.display="none";
+    if(promptHead) promptHead.style.display="flex";
+    if(gameHead) gameHead.style.display="none";
+    renderApps([]);
+    if(emptyAppMessage) emptyAppMessage.hidden=true;
+    renderGames([]);
+    setGameCount(0);
+    setPromptCount(promptResults.length);
+    bindGameClicks();
+    promptRow.innerHTML=promptResults.map(p=>`<article class="prompt-card" data-prompt="${p.name.replace(/"/g,'&quot;')}"><div class="prompt-icon">${p.image ? `<img class="prompt-image" src="${p.image}" alt="${p.name}" loading="lazy" onerror="this.style.display='none';this.parentElement.insertAdjacentText('beforeend',p.icon||'')">` : (p.icon||'')}</div><b>${p.name}</b><div class="muted">AI creative prompt</div><button type="button" onclick='copyPrompt(${JSON.stringify(p.name)})'>▼ Copy Prompt</button></article>`).join("");
+  }else{
+    // Show No Results only for a real, non-empty search query.
+    setNoResultsVisible(Boolean(q));
+    if(resultTitle){resultTitle.style.display="block";resultTitle.textContent=`Search Results for “${search.value.trim()}”`;}
+    if(appHead) appHead.style.display="flex";
+    if(promptHead) promptHead.style.display="none";
+    if(gameHead) gameHead.style.display="none";
+    renderApps([]);
+    renderGames([]);
+    setGameCount(0);
+    setPromptCount(0);
+    bindGameClicks();
+    promptRow.innerHTML="";
+  }
+}
+
+const sectionSearchInputs=document.querySelectorAll('.section-search');
+setNoResultsVisible(false);
+
+/*
+   SECTION SEARCH — independent, cross-category, keyboard-safe.
+   Apps/Game/AI Prompt-এর যেকোনো search box থেকে App, Game বা AI Prompt খোঁজা যাবে।
+   Source section সবসময় visible থাকবে, তাই typing-এর সময় focus/keyboard হারাবে না।
+   অন্য search box-গুলোতে value copy করা হবে না।
+*/
+function sectionNameFromInput(input){
+  const section=input.closest('section');
+  if(!section) return 'apps';
+  if(section.id==='presets') return 'games';
+  if(section.id==='prompts') return 'prompts';
+  return 'apps';
+}
+
+function showSection(id,show){
+  const el=document.getElementById(id);
+  if(el) el.style.display=show ? '' : 'none';
+}
+
+function runSectionSearch(input){
+  const q=(input.value||'').trim().toLowerCase();
+  const main=document.querySelector('main.container');
+  const promptSection=document.getElementById('prompts');
+  const appSection=document.getElementById('apps');
+  const gameSection=document.getElementById('presets');
+  const promptHead=promptSection ? promptSection.querySelector('.section-head') : null;
+  const appHead=appSection ? appSection.querySelector('.section-head') : null;
+  const gameHead=gameSection ? gameSection.querySelector('.section-head') : null;
+  const appEmpty=document.getElementById('empty');
+  const promptRow=document.getElementById('promptRow');
+  const gameCount=document.getElementById('gameCount');
+  const promptCount=document.getElementById('promptCount');
+  const setCount=(el,n)=>{if(el) el.textContent='('+Math.max(0,Number(n)||0)+')';};
+
+  // Empty search: restore the normal page and keep the current input focused.
+  if(!q){
+    setNoResultsVisible(false);
+    main.classList.remove('search-mode','search-show-apps','search-show-games','search-show-prompts','search-source-apps','search-source-games','search-source-prompts');
+    if(promptHead) promptHead.style.display='flex';
+    if(appHead) appHead.style.display='flex';
+    if(gameHead) gameHead.style.display='flex';
+    renderApps(apps);
+    renderPrompts();
+    renderGames(games);
+    setCount(gameCount,games.length);
+    setCount(promptCount,prompts.length);
+    if(appEmpty) appEmpty.hidden=true;
+    bindGameClicks();
+    return;
+  }
+
+  const appResults=apps.filter(a=>{
+    const text=[a.name,a.version,a.rating,a.downloads,a.description,a.developer].filter(Boolean).join(' ').toLowerCase();
+    return text.includes(q);
+  });
+  const gameResults=games.filter(g=>{
+    const text=[g.name,g.version,g.rating,g.downloads,g.description,g.developer].filter(Boolean).join(' ').toLowerCase();
+    return text.includes(q);
+  });
+  const promptResults=prompts.filter(p=>{
+    const text=[p.name,p.prompt].filter(Boolean).join(' ').toLowerCase();
+    return text.includes(q);
+  });
+
+  // Exact name first; otherwise use the same category priority everywhere.
+  const exactApps=apps.filter(a=>a.name.toLowerCase()===q);
+  const exactGames=games.filter(g=>g.name.toLowerCase()===q);
+  const exactPrompts=prompts.filter(p=>p.name.toLowerCase()===q);
+  const type=exactApps.length?'apps':exactGames.length?'games':exactPrompts.length?'prompts':
+    (appResults.length?'apps':gameResults.length?'games':promptResults.length?'prompts':'none');
+  setNoResultsVisible(false);
+
+  main.classList.add('search-mode');
+  main.classList.remove('search-show-apps','search-show-games','search-show-prompts','search-source-apps','search-source-games','search-source-prompts');
+  const source=sectionNameFromInput(input);
+  main.classList.add('search-source-'+(source==='games'?'games':source==='prompts'?'prompts':'apps'));
+
+  if(type==='apps'){
+    main.classList.add('search-show-apps');
+    if(appHead) appHead.style.display='flex';
+    if(gameHead) gameHead.style.display='none';
+    if(promptHead) promptHead.style.display='none';
+    renderApps(appResults);
+    renderGames([]);
+    if(promptRow) promptRow.innerHTML='';
+    setCount(gameCount,0); setCount(promptCount,0);
+    if(appEmpty) appEmpty.hidden=appResults.length>0;
+  }else if(type==='games'){
+    // IMPORTANT: searching Free Fire from Apps OR AI Prompt must show the Game result.
+    main.classList.add('search-show-games');
+    if(appHead) appHead.style.display='none';
+    if(gameHead) gameHead.style.display='flex';
+    if(promptHead) promptHead.style.display='none';
+    renderApps([]);
+    if(promptRow) promptRow.innerHTML='';
+    renderGames(gameResults);
+    setCount(gameCount,gameResults.length); setCount(promptCount,0);
+    if(appEmpty) appEmpty.hidden=true;
+  }else if(type==='prompts'){
+    main.classList.add('search-show-prompts');
+    if(appHead) appHead.style.display='none';
+    if(gameHead) gameHead.style.display='none';
+    if(promptHead) promptHead.style.display='flex';
+    renderApps([]); renderGames([]);
+    setCount(gameCount,0); setCount(promptCount,promptResults.length);
+    if(promptRow) promptRow.innerHTML=promptResults.map(p=>`<article class="prompt-card" data-prompt="${p.name.replace(/"/g,'&quot;')}"><div class="prompt-icon">${p.image ? `<img class="prompt-image" src="${p.image}" alt="${p.name}" loading="lazy" onerror="this.style.display='none';this.parentElement.insertAdjacentText('beforeend',p.icon||'')">` : (p.icon||'')}</div><b>${p.name}</b><div class="muted">AI creative prompt</div><button type="button" onclick='copyPrompt(${JSON.stringify(p.name)})'>▼ Copy Prompt</button></article>`).join('');
+    if(appEmpty) appEmpty.hidden=true;
+  }else{
+    // Wrong non-empty query: show the no-results message. Empty search never shows it.
+    setNoResultsVisible(Boolean(q));
+    if(appHead) appHead.style.display='flex';
+    if(gameHead) gameHead.style.display='none';
+    if(promptHead) promptHead.style.display='none';
+    main.classList.add('search-show-apps');
+    renderApps([]); renderGames([]);
+    if(promptRow) promptRow.innerHTML='';
+    setCount(gameCount,0); setCount(promptCount,0);
+    if(appEmpty) appEmpty.hidden=true;
+  }
+  bindGameClicks();
+  // Rendering cards can replace DOM nodes; restore focus to the same search input.
+  if(document.activeElement!==input){ try{input.focus({preventScroll:true});}catch(_){input.focus();} }
+}
+
+sectionSearchInputs.forEach(input=>{
+  input.setAttribute('type','text');
+  input.removeAttribute('name');
+  input.setAttribute('enterkeyhint','search');
+  input.addEventListener('input',()=>{ if(window.minhajMoveActiveSearchTop) minhajMoveActiveSearchTop(input); runSectionSearch(input); });
+  // Do not blur, submit, navigate, or switch away from the source search box.
+  input.addEventListener('keydown',e=>{
+    if(e.key==='Enter'){
+      e.preventDefault();
+      if(window.minhajMoveActiveSearchTop) minhajMoveActiveSearchTop(input);
+      runSectionSearch(input);
+    }
+  });
+});
+search.addEventListener("input",()=>{ sectionSearchInputs.forEach(input=>input.value=search.value); runSearch(); });
+// Android keyboard "Go/Search" support: the search event is fired by type=search.
+search.addEventListener("search",()=>{
+  runSearch();
+});
+search.addEventListener("keydown",e=>{
+  if(e.key==="Enter" || e.keyCode===13){
+    e.preventDefault();
+    runSearch();
+    // Keep focus so Android keyboards do not close unexpectedly.
+    try{search.focus({preventScroll:true});}catch(_){search.focus();}
+  }
+});
+// Also handle IME action/submit on mobile keyboards.
+const searchWrap=document.querySelector(".search-wrap");
+if(searchWrap){
+  searchWrap.addEventListener("submit",e=>{e.preventDefault();runSearch();try{search.focus({preventScroll:true});}catch(_){search.focus();}});
+}
+
+
+// Reliable touch feedback: always removes pressed state on release/cancel.
+document.addEventListener("pointerdown",e=>{
+  const el=e.target.closest(".download,.menu,.prompt-card button,.topbar nav a,.bottom-nav a,.app-card,.trend-card");
+  if(!el) return;
+  el.classList.add("touching");
+  const r=document.createElement("span"); r.className="ripple";
+  const rect=el.getBoundingClientRect(); const size=Math.max(rect.width,rect.height)*1.7;
+  r.style.width=r.style.height=size+"px";
+  r.style.left=(e.clientX-rect.left-size/2)+"px"; r.style.top=(e.clientY-rect.top-size/2)+"px";
+  if(getComputedStyle(el).position==="static") el.style.position="relative";
+  el.style.overflow="hidden"; el.appendChild(r);
+  const clear=()=>{el.classList.remove("touching");setTimeout(()=>r.remove(),450);};
+  el.addEventListener("pointerup",clear,{once:true});
+  el.addEventListener("pointercancel",clear,{once:true});
+  el.addEventListener("pointerleave",clear,{once:true});
+});
+
+
+// Reliable section navigation for desktop nav, drawer nav and bottom nav
+function goToSection(hash){
+  const main=document.querySelector('main.container');
+  if(main){
+    main.classList.remove('section-apps','section-presets','section-prompts');
+    if(hash==='#apps') main.classList.add('section-apps');
+    else if(hash==='#presets') main.classList.add('section-presets');
+    else if(hash==='#prompts') main.classList.add('section-prompts');
+  }
+  const target=document.querySelector(hash);
+  if(!target) return;
+  const topbar=document.querySelector('.topbar');
+  const offset=(topbar?.offsetHeight||58)+12;
+  const y=target.getBoundingClientRect().top + window.scrollY - offset;
+  window.scrollTo({top:Math.max(0,y),behavior:'smooth'});
+}
+function setActiveNav(hash){
+  document.querySelectorAll('.topbar nav a, .drawer-links a, .bottom-nav a').forEach(a=>{
+    const active=a.getAttribute('href')===hash;
+    a.classList.toggle('active',active);
+  });
+}
+document.addEventListener('click',e=>{
+  const link=e.target.closest('.topbar nav a, .drawer-links a, .bottom-nav a');
+  if(!link) return;
+  const href=link.getAttribute('href')||'';
+  if(!href.startsWith('#')) return;
+  const target=document.querySelector(href);
+  if(!target) return;
+  e.preventDefault();
+  setActiveNav(href);
+  goToSection(href);
+  if(link.closest('.drawer-links')) closeMenu();
+  history.replaceState(null,'',href);
+});
+window.addEventListener('hashchange',()=>{
+  const hash=location.hash||'#home';
+  if(document.querySelector(hash)){ setActiveNav(hash); goToSection(hash); }
+});
+
+// Mobile side menu
+const menuBtn=document.getElementById("menuBtn");
+const sideDrawer=document.getElementById("sideDrawer");
+const sideOverlay=document.getElementById("sideOverlay");
+const drawerClose=document.getElementById("drawerClose");
+function openMenu(){sideDrawer.classList.add("show");sideOverlay.classList.add("show");menuBtn.classList.add("is-open");sideDrawer.setAttribute("aria-hidden","false");document.body.classList.add("menu-open");try{history.pushState({minhajMenuOpen:true,minhajSection:location.hash||"#home"},"",location.href);}catch(e){}}
+function closeMenu(){sideDrawer.classList.remove("show");sideOverlay.classList.remove("show");menuBtn.classList.remove("is-open");sideDrawer.setAttribute("aria-hidden","true");document.body.classList.remove("menu-open");}
+menuBtn.addEventListener("click",()=>sideDrawer.classList.contains("show")?closeMenu():openMenu());
+drawerClose.addEventListener("click",closeMenu); sideOverlay.addEventListener("click",closeMenu);
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeMenu()});
+sideDrawer.querySelectorAll("a").forEach(a=>a.addEventListener("click",closeMenu));
+// Poloja-style touch feedback: short press + ripple, always clears on release
+const pressSelector=".download,.trend-download,.menu,.drawer-close,.drawer-links a,.prompt-card button,.bottom-nav a,.section-head>a,.footer-links a,.app-card,.trend-card,.prompt-card";
+let activePress=null;
+let pressTimer=null;
+function clearPress(el){if(!el)return;el.classList.remove("press");if(activePress===el)activePress=null;}
+function startPress(e){
+  const el=e.target.closest(pressSelector); if(!el)return;
+  clearTimeout(pressTimer); clearPress(activePress); activePress=el; el.classList.add("press");
+  const old=el.querySelector(".ripple,.press-ripple"); if(old)old.remove();
+  const r=document.createElement("span"); r.className=(el.classList.contains("download")||el.classList.contains("trend-download"))?"ripple":"press-ripple";
+  const rect=el.getBoundingClientRect(), size=Math.max(rect.width,rect.height)*.95;
+  r.style.width=r.style.height=size+"px"; r.style.left=(e.clientX-rect.left-size/2)+"px"; r.style.top=(e.clientY-rect.top-size/2)+"px";
+  el.appendChild(r);
+  pressTimer=setTimeout(()=>{clearPress(el);if(r.isConnected)r.remove();},500);
+}
+document.addEventListener("pointerdown",startPress,{passive:true});
+["pointerup","pointercancel","pointerleave"].forEach(ev=>document.addEventListener(ev,()=>{clearTimeout(pressTimer);clearPress(activePress);},{passive:true}));
+document.addEventListener("click",e=>{const el=e.target.closest(pressSelector);if(el)setTimeout(()=>clearPress(el),35);});
+
+updateSectionCounts();
+renderPrompts();
+renderTrending();
+renderApps(apps);
+const initialHash=location.hash||'#home';
+setActiveNav(initialHash);
+if(['#home','#apps','#presets','#prompts'].includes(initialHash)) goToSection(initialHash);
+
+// Footer information links
+const infoData={
+  about:{title:"About MINHAJ APPS",html:"<p>MINHAJ APPS হলো একটি সহজ App ও AI Resource Directory। এখানে বৈধ Apps, Tools, Games এবং AI Resources সম্পর্কে তথ্য ও অফিসিয়াল/অনুমোদিত ডাউনলোড লিংক দেওয়া হয়।</p>"},
+  privacy:{title:"Privacy Policy",html:"<p>MINHAJ APPS নিজে থেকে আপনার ব্যক্তিগত তথ্য সংগ্রহ বা বিক্রি করার উদ্দেশ্যে তৈরি নয়। Search ও সাধারণ website ব্যবহারের তথ্য আপনার ডিভাইসের browser-এর মধ্যেই থাকতে পারে। কোনো third-party service ব্যবহার করলে তাদের নিজস্ব privacy policy প্রযোজ্য হবে।</p>"},
+  contact:{title:"Contact",html:`<p>Website সম্পর্কে কোনো সমস্যা, ভুল তথ্য বা পরামর্শ জানাতে যোগাযোগ করুন 👇</p><p><a href="https://t.me/minhajafrad/298" target="_blank" rel="noopener">Telegram — @minhajafrad1</a></p>`},
+  disclaimer:{title:"Disclaimer",html:"<p>MINHAJ APPS একটি information/directory website। কোনো App-এর মালিকানা বা copyright আমরা দাবি করি না। Download করার আগে App-এর developer ও official source যাচাই করুন। Third-party Apps বা services-এর নিজস্ব terms, privacy policy ও license প্রযোজ্য।</p>"},
+  developer:{title:"Developer",html:"<p><b>MINHAJ APPS</b></p><p>Designed and developed for a simple, mobile-friendly App & AI Resource directory.</p>"}
+};
+const infoModal=document.getElementById("infoModal"),infoTitle=document.getElementById("infoTitle"),infoContent=document.getElementById("infoContent"),infoClose=document.getElementById("infoClose");
+function closeInfo(fromPopState=false){
+  infoModal.classList.remove("show");
+  infoModal.setAttribute("aria-hidden","true");
+  if(!fromPopState && ["#about","#privacy","#contact","#disclaimer","#developer"].includes(location.hash)){ history.back(); }
+}
+function openInfo(key){
+  const d=infoData[key];
+  if(!d)return;
+  if(!infoModal.classList.contains("show")){ history.pushState({minhajModal:"info",info:key},"",location.href.split("#")[0]+"#"+key); }
+  infoTitle.textContent=d.title;
+  infoContent.innerHTML=d.html;
+  infoModal.classList.add("show");
+  infoModal.setAttribute("aria-hidden","false");
+}
+document.querySelectorAll('.footer-links a[data-info]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();openInfo(a.dataset.info);}));
+infoClose.addEventListener('click',closeInfo);
+infoModal.addEventListener('click',e=>{if(e.target===infoModal)closeInfo();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeInfo();});
+window.addEventListener('popstate',function(){if(infoModal.classList.contains('show'))closeInfo(true);if(promptModal.classList.contains('show'))closePrompt(true);});
+</script>
+
+
+<script id="minhaj-nav-definitive-fix">
+(function(){
+  function applySection(hash,fromPopState){
+    var main=document.querySelector('main.container');
+    if(!main) return;
+
+    // Leaving Search mode: restore the complete collections before showing
+    // Apps/Games/AI Prompt from the bottom navigation. Otherwise the previous
+    // search result would remain rendered (e.g. only Free Fire Max).
+    var searchInput=document.getElementById('search');
+    if(searchInput && searchInput.value.trim()){
+      searchInput.value='';
+      main.classList.remove('search-mode');
+      var resultTitle=document.getElementById('searchResultsTitle');
+      var emptyAppMessage=document.getElementById('empty');
+      var appHead=document.querySelector('#apps .section-head');
+      var gameHead=document.querySelector('#presets .section-head');
+      var promptSection=document.getElementById('prompts');
+      var promptHead=promptSection ? promptSection.querySelector('.section-head') : null;
+      if(resultTitle) resultTitle.style.display='none';
+      if(appHead) appHead.style.display='flex';
+      if(gameHead) gameHead.style.display='flex';
+      if(promptHead) promptHead.style.display='flex';
+      if(emptyAppMessage) emptyAppMessage.hidden=false;
+      if(typeof renderApps==='function' && typeof apps!=='undefined') renderApps(apps);
+      if(typeof renderGames==='function' && typeof games!=='undefined') renderGames(games);
+      if(typeof renderPrompts==='function') renderPrompts();
+      if(typeof updateGameCount==='function') updateGameCount();
+      if(typeof bindGameClicks==='function') bindGameClicks();
+    }
+
+    main.classList.remove('only-home','only-apps','only-presets','only-prompts','view-all-mode');
+    if(hash==='#apps') main.classList.add('only-apps');
+    else if(hash==='#presets') main.classList.add('only-presets');
+    else if(hash==='#prompts') main.classList.add('only-prompts');
+    else main.classList.add('only-home');
+
+    document.querySelectorAll('.topbar nav a, .drawer-links a, .bottom-nav a').forEach(function(a){
+      a.classList.toggle('active', (a.getAttribute('href')||'')===hash);
+    });
+
+    var target=document.querySelector(hash);
+    if(target){
+      setTimeout(function(){
+        var topbar=document.querySelector('.topbar');
+        var offset=(topbar?topbar.offsetHeight:58)+10;
+        var y=target.getBoundingClientRect().top+window.scrollY-offset;
+        window.scrollTo({top:Math.max(0,y),behavior:'smooth'});
+      },20);
+    } else {
+      window.scrollTo({top:0,behavior:'smooth'});
+    }
+    try{if(!fromPopState && (!history.state || !history.state.minhajSection || (location.hash||'#home')!==hash)){history.pushState({minhajSection:hash},'',hash);}}catch(e){}
+  }
+
+  window.goToSection=applySection;
+
+  document.addEventListener('click',function(e){
+    var link=e.target.closest('a[href="#home"],a[href="#apps"],a[href="#presets"],a[href="#prompts"]');
+    if(!link) return;
+    //  is a special homepage action: let its own handler show all collections.
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    applySection(link.getAttribute('href'));
+    // Close mobile drawer if present.
+    var drawer=document.querySelector('.drawer');
+    var overlay=document.querySelector('.drawer-overlay');
+    if(drawer) drawer.classList.remove('open','show','active');
+    if(overlay) overlay.classList.remove('show','open','active');
+  },true);
+
+  document.addEventListener('DOMContentLoaded',function(){
+    var hash=location.hash;
+    if(hash!=='#apps' && hash!=='#presets' && hash!=='#prompts') hash='#home';
+    try{history.replaceState({minhajSection:hash},'',hash);}catch(e){}
+    applySection(hash,true);
+  });
+})();
+</script>
+
+
+
+
+<script id="minhaj-mobile-back-fix">
+(function(){
+  window.addEventListener('popstate', function(event){
+    try{
+      if (typeof appModal !== 'undefined' && appModal && appModal.classList.contains('show')) {
+        closeApp(true);
+        return;
+      }
+    }catch(e){}
+
+    try{
+      if (sideDrawer && sideDrawer.classList.contains('show')) {
+        closeMenu();
+        return;
+      }
+    }catch(e){}
+
+    try{
+      var state=event && event.state;
+      var backHash=(state && state.minhajSection) || location.hash || '#home';
+      if(/^#(home|apps|presets|prompts)$/.test(backHash) && typeof window.goToSection==='function') window.goToSection(backHash,true);
+    }catch(e){}
+  });
+})();
+</script>
+
+
+<style id="official-visible-final">
+/* Official label — clearly visible background */
+.poloja-official-inline{
+  position:relative!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:5px!important;
+  min-height:24px!important;
+  padding:4px 10px!important;
+  margin-left:5px!important;
+  box-sizing:border-box!important;
+  border-radius:999px!important;
+  color:#075c43!important;
+  background:#d9ffed!important;
+  background-image:linear-gradient(135deg,#effff7 0%,#c8f9df 48%,#aaf0cd 100%)!important;
+  border:1px solid #55c993!important;
+  box-shadow:0 2px 7px rgba(14,150,94,.18), inset 0 1px 0 rgba(255,255,255,.95), inset 0 -1px 0 rgba(21,135,88,.10), 0 0 10px rgba(38,211,135,.16)!important;
+  text-shadow:none!important;
+  opacity:1!important;
+  overflow:visible!important;
+  z-index:2!important;
+}
+.poloja-official-inline::before{
+  content:""!important;
+  position:absolute!important;
+  inset:2px!important;
+  border-radius:inherit!important;
+  background:linear-gradient(180deg,rgba(255,255,255,.55),rgba(255,255,255,0) 55%)!important;
+  pointer-events:none!important;
+}
+.poloja-official-inline::after{
+  content:"✓"!important;
+  position:static!important;
+  width:13px!important;
+  height:13px!important;
+  display:grid!important;
+  place-items:center!important;
+  flex:0 0 13px!important;
+  border-radius:50%!important;
+  color:#fff!important;
+  background:#16a86b!important;
+  box-shadow:0 0 0 2px rgba(255,255,255,.75),0 0 7px rgba(22,168,107,.35)!important;
+  font-size:8px!important;
+  font-weight:900!important;
+  transform:none!important;
+  animation:none!important;
+}
+.poloja-quick-stats{overflow:visible!important;}
+</style>
+
+<script id="announcement-moving-runtime">
+(function(){
+  function startAnnouncementTicker(){
+    var notice=document.querySelector('.notice');
+    var track=notice && notice.querySelector('.notice-track');
+    if(!notice || !track) return;
+    track.style.animation='announcementScrollFinal 14s linear infinite';
+    track.style.webkitAnimation='announcementScrollFinal 14s linear infinite';
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',startAnnouncementTicker);
+  else startAnnouncementTicker();
+})();
+</script>
+
+<style id="announcement-logo-bg-color-final">
+/* Final requested look: remove the small logo background and match the mask to the announcement background. */
+.notice::after{
+  background:inherit!important;
+  background-color:transparent!important;
+  background-image:inherit!important;
+  z-index:25!important;
+}
+.notice-logo{
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+  z-index:40!important;
+}
+.notice-logo::before{
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+}
+.notice-logo::after{
+  background:transparent!important;
+}
+.notice-logo svg{
+  background:transparent!important;
+}
+</style>
+
+<script id="dynamic-section-counts-final">
+(function(){
+  function updateSectionCounts(){
+    try{
+      var appEl=document.getElementById("countLabel");
+      var gameEl=document.getElementById("gameCount");
+      var promptEl=document.getElementById("promptCount");
+      if(appEl && Array.isArray(window.apps)) appEl.textContent="("+window.apps.length+")";
+      if(gameEl && Array.isArray(window.games)) gameEl.textContent="("+window.games.length+")";
+      if(promptEl && Array.isArray(window.prompts)) promptEl.textContent="("+window.prompts.length+")";
+    }catch(e){}
+  }
+  if(document.readyState === "loading") document.addEventListener("DOMContentLoaded", updateSectionCounts);
+  else updateSectionCounts();
+})();
+</script>
+
+<script id="minhaj-searchbar-top-final-js">
+(function(){
+  const host=document.getElementById('activeSectionSearchHost');
+  const inputs=document.querySelectorAll('.section-search');
+  if(!host || !inputs.length) return;
+  inputs.forEach(function(input){
+    const wrap=input.closest('.section-search-wrap');
+    if(!wrap) return;
+    if(!wrap.dataset.originalParent){
+      wrap.dataset.originalParent=wrap.parentElement ? wrap.parentElement.id || '' : '';
+      wrap.dataset.originalNext=wrap.nextElementSibling ? (wrap.nextElementSibling.id || '') : '';
+    }
+    input.addEventListener('focus',function(){
+      if(!document.querySelector('main.container.search-mode')) return;
+      if(wrap.parentElement!==host) host.appendChild(wrap);
+    },true);
+  });
+  window.minhajMoveActiveSearchTop=function(input){
+    const wrap=input && input.closest('.section-search-wrap');
+    if(!wrap || !host) return;
+    if(wrap.parentElement!==host) host.appendChild(wrap);
+    host.style.display='block';
+  };
+})();
+</script>
+
+
+<script id="minhaj-theme-toggle-final">
+(function(){
+  /* System theme is the default.
+     - Phone/browser Dark = website Dark
+     - Phone/browser Light = website Light
+     - Theme button temporarily switches the current theme
+     - If the phone/browser theme changes later, the website follows it automatically
+  */
+  var btn=document.getElementById('themeToggle');
+  var media=window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+  var manualOverride=false;
+
+  function systemMode(){
+    return (media && media.matches) ? 'dark' : 'light';
+  }
+
+  function apply(mode){
+    var dark = mode === 'dark';
+    document.body.classList.toggle('dark-mode', dark);
+    document.documentElement.style.colorScheme = dark ? 'dark' : 'light';
+
+    if(btn){
+      btn.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+      btn.setAttribute('title', dark ? 'Light mode' : 'Dark mode');
+      btn.setAttribute('aria-pressed', dark ? 'true' : 'false');
+    }
+  }
+
+  /* Always start from the phone/browser theme. */
+  apply(systemMode());
+
+  /* Follow phone/browser theme changes automatically. */
+  function handleSystemChange(){
+    manualOverride=false;
+    apply(systemMode());
+  }
+
+  if(media){
+    if(media.addEventListener){
+      media.addEventListener('change', handleSystemChange);
+    }else if(media.addListener){
+      media.addListener(handleSystemChange);
+    }
+  }
+
+  /* Button can still switch Dark/Light manually. */
+  if(btn){
+    btn.addEventListener('click', function(){
+      manualOverride=true;
+      var next=document.body.classList.contains('dark-mode') ? 'light' : 'dark';
+      apply(next);
+    });
+  }
+})();
+</script>
+
+
+<style id="minhaj-all-popup-theme-final">
+/* ALL POPUPS — follow the same body theme as the main page */
+
+/* Light / Sun */
+html body:not(.dark-mode) .prompt-modal-backdrop,
+html body:not(.dark-mode) .detail-overlay,
+html body:not(.dark-mode) .info-overlay{background:rgba(15,23,42,.45)!important;}
+html body:not(.dark-mode) .prompt-modal,
+html body:not(.dark-mode) .detail-modal,
+html body:not(.dark-mode) .info-modal{
+  background:#ffffff!important;
+  color:#172033!important;
+  border-color:#dbe3ec!important;
+}
+html body:not(.dark-mode) .prompt-modal h3,
+html body:not(.dark-mode) .detail-modal h3,
+html body:not(.dark-mode) .info-modal h3{color:#172033!important;}
+html body:not(.dark-mode) .prompt-text{background:#f8fafc!important;color:#334155!important;border-color:#dbe3ec!important;}
+html body:not(.dark-mode) .prompt-actions button{background:#fff!important;color:#172033!important;border-color:#dbe3ec!important;}
+html body:not(.dark-mode) .prompt-actions .copy-main{background:#111827!important;color:#fff!important;border-color:#111827!important;}
+html body:not(.dark-mode) .poloja-detail{background:#f8fafc!important;color:#172033!important;border-color:#dbe4ef!important;}
+html body:not(.dark-mode) .poloja-detail h3{color:#172033!important;}
+html body:not(.dark-mode) .poloja-sub,
+html body:not(.dark-mode) .poloja-stats span,
+html body:not(.dark-mode) .poloja-play small,
+html body:not(.dark-mode) .poloja-play-arrow{color:#64748b!important;}
+html body:not(.dark-mode) .poloja-stats{background:#fff!important;border-color:#dbe4ef!important;}
+html body:not(.dark-mode) .poloja-stats div{border-bottom-color:#dbe4ef!important;}
+html body:not(.dark-mode) .poloja-stats b{color:#172033!important;}
+html body:not(.dark-mode) .poloja-description{background:#effcf8!important;color:#64748b!important;border-color:#c9f1e4!important;}
+html body:not(.dark-mode) .poloja-play{background:#fff!important;color:#172554!important;border-color:#dbe4ef!important;}
+html body:not(.dark-mode) .poloja-play strong{color:#172554!important;}
+html body:not(.dark-mode) .poloja-x{background:#eef2f7!important;color:#172033!important;border-color:#dbe2ea!important;}
+html body:not(.dark-mode) .info-modal p{color:#555!important;}
+html body:not(.dark-mode) .info-close{background:#f1f1f1!important;color:#444!important;}
+
+/* Dark / Moon — force every popup surface away from white */
+html body.dark-mode .prompt-modal-backdrop,
+html body.dark-mode .detail-overlay,
+html body.dark-mode .info-overlay{background:rgba(2,6,23,.72)!important;}
+html body.dark-mode .prompt-modal,
+html body.dark-mode .detail-modal,
+html body.dark-mode .info-modal{
+  background:#111827!important;
+  color:#e5e7eb!important;
+  border-color:#263244!important;
+  box-shadow:0 20px 60px rgba(0,0,0,.55)!important;
+}
+html body.dark-mode .prompt-modal h3,
+html body.dark-mode .detail-modal h3,
+html body.dark-mode .info-modal h3{color:#f8fafc!important;}
+html body.dark-mode .prompt-text{background:#0f172a!important;color:#e5e7eb!important;border-color:#334155!important;}
+html body.dark-mode .prompt-actions button{background:#172033!important;color:#e5e7eb!important;border-color:#334155!important;}
+html body.dark-mode .prompt-actions .copy-main{background:#f8fafc!important;color:#0f172a!important;border-color:#f8fafc!important;}
+html body.dark-mode .poloja-detail{background:#111827!important;color:#e5e7eb!important;border-color:#263244!important;}
+html body.dark-mode .poloja-detail h3{color:#f8fafc!important;}
+html body.dark-mode .poloja-sub,
+html body.dark-mode .poloja-stats span,
+html body.dark-mode .poloja-play small,
+html body.dark-mode .poloja-play-arrow{color:#94a3b8!important;}
+html body.dark-mode .poloja-stats{background:#0f172a!important;border-color:#334155!important;}
+html body.dark-mode .poloja-stats div{border-bottom-color:#334155!important;}
+html body.dark-mode .poloja-stats b{color:#e5e7eb!important;}
+html body.dark-mode .poloja-description{background:#0d2b25!important;color:#94a3b8!important;border-color:#145e50!important;}
+html body.dark-mode .poloja-description:before{color:#54d6ae!important;}
+html body.dark-mode .poloja-play{background:#172033!important;color:#dbeafe!important;border-color:#334155!important;}
+html body.dark-mode .poloja-play strong{color:#dbeafe!important;}
+html body.dark-mode .poloja-x{background:#172033!important;color:#f8fafc!important;border-color:#334155!important;}
+html body.dark-mode .info-modal p{color:#cbd5e1!important;}
+html body.dark-mode .info-modal a{color:#60a5fa!important;}
+html body.dark-mode .info-close{background:#172033!important;color:#f8fafc!important;border:1px solid #334155!important;}
+
+/* popup images / logos */
+html body.dark-mode .prompt-modal-image,
+html body.dark-mode .poloja-logo{background:#0f172a!important;border-color:#334155!important;}
+
+/* Copy Prompt — responsive auto text size only; no layout changes */
+.prompt-card button{
+  font-size:clamp(9px, 2.6vw, 12px)!important;
+  line-height:1.2!important;
+  white-space:nowrap!important;
+  max-width:100%!important;
+  overflow:hidden!important;
+  text-overflow:ellipsis!important;
+}
+@media(min-width:801px){
+  .prompt-card button{font-size:clamp(10px, .75vw, 12px)!important;}
+}
+@media(max-width:390px){
+  .prompt-card button{font-size:clamp(9px, 2.8vw, 11px)!important;}
+}
+</style>
+
+<style id="minhaj-apps-game-download-gap">
+/* Apps: keep the original spacing */
+.app-card .download{
+  margin-top:10px!important;
+}
+/* Game: only reduce the gap above the Download button */
+.game-card .game-download{
+  margin-top:4px!important;
+}
+.game-card{
+  row-gap:6px!important;
+}
+</style>
+
+<style id="minhaj-game-card-size-match-app-final">
+/* Game card background: exactly match Apps card sizing */
+.game-card.app-card{
+  margin-top:0!important;
+  gap:0!important;
+  padding:12px!important;
+  border-radius:22px!important;
+  box-sizing:border-box!important;
+}
+.game-card.app-card .game-icon{
+  width:58px!important;
+  height:58px!important;
+  min-width:58px!important;
+  flex:0 0 58px!important;
+  border-radius:12px!important;
+}
+.game-card.app-card .game-download{
+  margin-top:10px!important;
+}
+@media(max-width:800px){
+  .game-card.app-card{
+    margin-top:0!important;
+    gap:0!important;
+    padding:9px!important;
+  }
+  .game-card.app-card .game-icon{
+    width:48px!important;
+    height:48px!important;
+    min-width:48px!important;
+    flex-basis:48px!important;
+    border-radius:10px!important;
+  }
+  .game-card.app-card .game-download{margin-top:10px!important;}
+}
+</style>
+
+</body>
+  </html>
