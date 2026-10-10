@@ -4842,7 +4842,7 @@ function openKeyLogin(){
   privateKeyInput.value="";
   try{
     if(!history.state || history.state.minhajModal!=="privateLogin")
-      history.pushState({minhajModal:"privateLogin",minhajParentSection:location.hash||"#home"},"",location.href.split("#")[0]+"#private-login");
+      history.pushState({minhajModal:"privateLogin",minhajParentSection:location.hash||"#home",minhajParentUrl:location.pathname+location.search},"","/minhajapps/private-login/");
   }catch(e){}
 }
 function closeKeyLogin(fromPopState=false){
@@ -5143,5 +5143,31 @@ document.addEventListener("keydown",e=>{if(e.key==="Escape"){closeKeyLogin();clo
 <script id="minhaj-pretty-path-routes">
 /* Pretty section paths are handled by minhaj-nav-definitive-fix above. */
 </script>
+
+<script id="minhaj-final-url-cleanup">
+(function(){
+  function cleanClosedDetailUrl(){
+    var modal=document.getElementById('appModal');
+    if(modal && !modal.classList.contains('show') && /^\/minhajapps\/(app|game)\/[^/]+\/?$/.test(location.pathname)){
+      var st=history.state||{};
+      var parent=st.minhajParentUrl || (st.minhajModal==='game' ? '/minhajapps/game/' : '/minhajapps/');
+      if(/^\/minhajapps\/(app|game)\/[^/]+\/?$/.test(parent)) parent='/minhajapps/';
+      try{history.replaceState({minhajSection:st.minhajParentSection||'#home'},'',parent);}catch(e){}
+    }
+    if(!document.getElementById('privateLoginOverlay')?.classList.contains('show') && location.pathname==='/minhajapps/private-login/'){
+      var st2=history.state||{}; var back=st2.minhajParentUrl||'/minhajapps/';
+      if(back==='/minhajapps/private-login/') back='/minhajapps/';
+      try{history.replaceState({minhajSection:st2.minhajParentSection||'#home'},'',back);}catch(e){}
+    }
+  }
+  window.addEventListener('pageshow',cleanClosedDetailUrl);
+  window.addEventListener('popstate',function(){setTimeout(cleanClosedDetailUrl,0);});
+  document.addEventListener('click',function(e){
+    if(e.target.closest && e.target.closest('#appModalClose,#appModalX')) setTimeout(cleanClosedDetailUrl,0);
+    if(e.target.closest && e.target.closest('#privateLoginClose,.private-login-close,[data-close-private-login]')) setTimeout(cleanClosedDetailUrl,0);
+  },true);
+})();
+</script>
+
 </body>
 </html>
