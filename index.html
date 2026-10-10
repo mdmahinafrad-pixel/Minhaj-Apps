@@ -3767,7 +3767,7 @@ function openApp(app,skipHistory=false){
       var appParent = (history.state && history.state.minhajSection) || "#home";
       var parentUrl = location.pathname + location.search;
       var slug = appRouteSlug(app.name);
-      history.pushState({minhajModal:"app", minhajAppSlug:slug, minhajParentSection:appParent, minhajParentUrl:parentUrl},"","/minhajapps/"+slug+"/");
+      history.pushState({minhajModal:"app", minhajAppSlug:slug, minhajParentSection:appParent, minhajParentUrl:parentUrl},"","/minhajapps/app/"+slug+"/");
     }catch(e){}
   }
   appModalLogo.src=app.image || ""; appModalLogo.onerror=()=>{appModalLogo.style.visibility="hidden";}; appModalLogo.onload=()=>{appModalLogo.style.visibility="visible";}; appModalLogo.style.visibility=app.image ? "visible" : "hidden";
@@ -4469,7 +4469,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeInfo();});
     var publicHash=(hash==='#presets') ? '#game' : hash;
     if(link.closest('.drawer-links') && sideDrawer && sideDrawer.classList.contains('show')){
       closeMenu(true);
-      try{ history.replaceState({minhajSection:publicHash},'',location.href.split('#')[0]+(publicHash==='#home'?'':publicHash)); }catch(_){}
+      try{ history.replaceState({minhajSection:publicHash},'',sectionPath(publicHash)); }catch(_){}
       applySection(publicHash,true);
       return;
     }
@@ -4510,12 +4510,12 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeInfo();});
     var path=location.pathname.replace(/\/+$/,'');
     var pathKey=path.indexOf('/minhajapps/')===0 ? path.slice('/minhajapps/'.length) : '';
     var appRouteSlugFromQuery=queryRoute.indexOf('app:')===0 ? queryRoute.slice(4) : '';
-    var appRouteSlugFromPath=pathKey && pathKey.indexOf('/')===-1 ? pathKey : '';
+    var appRouteSlugFromPath=pathKey.indexOf('app/')===0 ? pathKey.slice(4).replace(/\/+$/,'') : (pathKey && pathKey.indexOf('/')===-1 ? pathKey : '');
     var requestedAppSlug=appRouteSlugFromQuery || appRouteSlugFromPath;
     if(requestedAppSlug && typeof apps!=='undefined' && Array.isArray(apps)){
       var routedApp=apps.find(function(app){return typeof appRouteSlug==='function' && appRouteSlug(app.name)===requestedAppSlug;});
       if(routedApp){
-        try{history.replaceState({minhajModal:'app',minhajAppSlug:requestedAppSlug,minhajDirectRoute:true,minhajParentSection:'#home'},'', '/minhajapps/'+requestedAppSlug+'/');}catch(e){}
+        try{history.replaceState({minhajModal:'app',minhajAppSlug:requestedAppSlug,minhajDirectRoute:true,minhajParentSection:'#home'},'', '/minhajapps/app/'+requestedAppSlug+'/');}catch(e){}
         applySection('#home',true);
         openApp(routedApp,true);
         return;
