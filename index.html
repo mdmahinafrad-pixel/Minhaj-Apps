@@ -4941,7 +4941,7 @@ document.addEventListener("keydown",e=>{if(e.key==="Escape"){closeKeyLogin();clo
       if(page){page.classList.add('show');page.setAttribute('aria-hidden','false');}
       document.body.classList.add('private-page-open');
       try{
-        history.replaceState({minhajPrivate:true,minhajParentSection:'#home'},'',location.href.split('#')[0]+'#private');
+        history.replaceState({minhajPrivate:true,minhajParentSection:'#home'},'',location.pathname+location.search);
       }catch(e){}
       setTimeout(hideKeyboard,100);
     }else{
@@ -5080,7 +5080,7 @@ document.addEventListener("keydown",e=>{if(e.key==="Escape"){closeKeyLogin();clo
          because that can expose the Home entry and leave Private Page. */
       closePrivateDownload(true);
       try{
-        history.replaceState({minhajPrivate:true,minhajParentSection:'#home'},'',location.href.split('#')[0]+'#private');
+        history.replaceState({minhajPrivate:true,minhajParentSection:'#home'},'',location.pathname+location.search);
       }catch(_){}
     }
   });
