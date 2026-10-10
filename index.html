@@ -5035,14 +5035,12 @@ document.addEventListener("keydown",e=>{if(e.key==="Escape"){closeKeyLogin();clo
     modal.style.visibility="hidden";
     modal.style.opacity="0";
     pendingUrl="";
-    if(!fromPopState && history.state && history.state.minhajModal==="privateDownload"){
-      try{history.back();}catch(e){}
-    }
+    // Download confirmation is only a popup; it must never create a URL/history entry.
+    // The address stays on the current clean page when this popup opens or closes.
   }
   function openPrivateDownload(link){
-    if(!modal.classList.contains("show")){
-      try{history.pushState({minhajModal:"privateDownload"},"",location.href.split("#")[0]+"#private-download");}catch(e){}
-    }
+    // Do not append #private-download (or any fragment) to the URL.
+    // Keep the current section/detail path unchanged while the confirmation popup is visible.
     pendingUrl=link.getAttribute("href") || "";
     const name=(link.querySelector(".private-btn-text")?.textContent || "this file").trim();
     title.textContent="Ready to Download";
