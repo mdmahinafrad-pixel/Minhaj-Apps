@@ -3544,7 +3544,7 @@ function openInstallTutorial(item){
       history.pushState(
         {minhajModal:"tutorial", minhajParentModal:"app"},
         "",
-        location.href.split("#")[0]+"#tutorial"
+        location.pathname+location.search
       );
     }catch(e){}
   }
@@ -3722,12 +3722,16 @@ function openGameByName(name){
   if(game) openGame(game);
 }
 
-function openGame(game){
+function openGame(game,skipHistory=false){
   currentTutorialItem = game;
-  if(!appModal.classList.contains("show")){
+  if(!appModal.classList.contains("show") && !skipHistory){
     try{
-      var gameParent = location.hash || "#home";
-      history.pushState({minhajModal:"game", minhajParentSection:gameParent},"",location.href.split("#")[0]+"#game");
+      var gameParent = (history.state && history.state.minhajSection) || getRouteSection() || "#home";
+      var gameParentUrl = location.pathname + location.search;
+      if (/^\/minhajapps\/game\/[^/]+\/?$/.test(location.pathname)) gameParentUrl = "/minhajapps/game/";
+      var gameSlug = appRouteSlug(game.name);
+      window.__minhajDetailParentUrl = gameParentUrl;
+      history.pushState({minhajModal:"game",minhajGameSlug:gameSlug,minhajParentSection:gameParent,minhajParentUrl:gameParentUrl},"","/minhajapps/game/"+gameSlug+"/");
     }catch(e){}
   }
   appModalLogo.src=game.image || "";
@@ -3764,9 +3768,11 @@ function openApp(app,skipHistory=false){
   currentTutorialItem = app;
   if(!appModal.classList.contains("show") && !skipHistory){
     try{
-      var appParent = (history.state && history.state.minhajSection) || "#home";
+      var appParent = (history.state && history.state.minhajSection) || getRouteSection() || "#home";
       var parentUrl = location.pathname + location.search;
+      if (/^\/minhajapps\/app\/[^/]+\/?$/.test(location.pathname)) parentUrl = "/minhajapps/";
       var slug = appRouteSlug(app.name);
+      window.__minhajDetailParentUrl = parentUrl;
       history.pushState({minhajModal:"app", minhajAppSlug:slug, minhajParentSection:appParent, minhajParentUrl:parentUrl},"","/minhajapps/app/"+slug+"/");
     }catch(e){}
   }
@@ -3799,14 +3805,26 @@ function closeApp(fromPopState=false){
   currentTutorialItem=null;
   appModal.classList.remove("show");
   appModal.setAttribute("aria-hidden","true");
-  if(!fromPopState && history.state && history.state.minhajModal==="app"){
+  if(!fromPopState && history.state && (history.state.minhajModal==="app" || history.state.minhajModal==="game")){
     try{
-      if(history.state.minhajDirectRoute){
-        var parentSection=history.state.minhajParentSection || "#home";
-        history.replaceState({minhajSection:parentSection},"",sectionPath(parentSection));
+      var detailState = history.state;
+      var parentSection = detailState.minhajParentSection || "#home";
+      var parentUrl = detailState.minhajParentUrl || window.__minhajDetailParentUrl || sectionPath(parentSection);
+      if(detailState.minhajDirectRoute){
+        history.replaceState({minhajSection:parentSection},"",parentUrl);
         setActiveNav(parentSection);
         if(typeof goToSection==="function") goToSection(parentSection,true);
-      }else history.back();
+      }else{
+        history.back();
+        /* Fallback for browsers where another modal handler has consumed the Back event. */
+        setTimeout(function(){
+          if(/^\/minhajapps\/(app|game)\/[^/]+\/?$/.test(location.pathname)){
+            history.replaceState({minhajSection:parentSection},"",parentUrl);
+            setActiveNav(parentSection);
+            if(typeof goToSection==="function") goToSection(parentSection,true);
+          }
+        },180);
+      }
     }catch(e){}
   }
 }
@@ -3883,7 +3901,7 @@ const promptClose=document.getElementById("promptClose");
 let currentPromptText="";
 function openPrompt(name){
   if(!promptModal.classList.contains("show")){
-    history.pushState({minhajModal:"prompt"},"",location.href.split("#")[0]+"#prompt");
+    history.pushState({minhajModal:"prompt"},"",location.pathname+location.search);
   }
   currentPromptText=makePrompt(name);
   promptModalTitle.textContent=name;
@@ -4259,7 +4277,8 @@ document.addEventListener('click',e=>{
   setActiveNav(href);
   goToSection(href);
   if(link.closest('.drawer-links')) closeMenu();
-  history.replaceState(null,'',href);
+  var publicSection = href === '#presets' ? '#game' : href;
+  history.replaceState({minhajSection:publicSection},'',sectionPath(publicSection));
 });
 window.addEventListener('hashchange',()=>{
   const hash=location.hash||'#home';
@@ -4509,6 +4528,18 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeInfo();});
     var infoKeys=['about','privacy','contact','disclaimer','developer'];
     var path=location.pathname.replace(/\/+$/,'');
     var pathKey=path.indexOf('/minhajapps/')===0 ? path.slice('/minhajapps/'.length) : '';
+    var gameRouteSlugFromQuery=queryRoute.indexOf('game:')===0 ? queryRoute.slice(5) : '';
+    var gameRouteSlugFromPath=pathKey.indexOf('game/')===0 ? pathKey.slice(5).replace(/\/+$/,'') : '';
+    var requestedGameSlug=gameRouteSlugFromQuery || gameRouteSlugFromPath;
+    if(requestedGameSlug && typeof games!=='undefined' && Array.isArray(games)){
+      var routedGame=games.find(function(game){return typeof appRouteSlug==='function' && appRouteSlug(game.name)===requestedGameSlug;});
+      if(routedGame){
+        try{history.replaceState({minhajModal:'game',minhajGameSlug:requestedGameSlug,minhajDirectRoute:true,minhajParentSection:'#game',minhajParentUrl:'/minhajapps/game/'},'', '/minhajapps/game/'+requestedGameSlug+'/');}catch(e){}
+        applySection('#game',true);
+        openGame(routedGame,true);
+        return;
+      }
+    }
     var appRouteSlugFromQuery=queryRoute.indexOf('app:')===0 ? queryRoute.slice(4) : '';
     var appRouteSlugFromPath=pathKey.indexOf('app/')===0 ? pathKey.slice(4).replace(/\/+$/,'') : (pathKey && pathKey.indexOf('/')===-1 ? pathKey : '');
     var requestedAppSlug=appRouteSlugFromQuery || appRouteSlugFromPath;
