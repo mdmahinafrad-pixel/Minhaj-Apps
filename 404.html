@@ -19,6 +19,14 @@
         return;
       }
 
+      if (route.indexOf("game/") === 0) {
+        var gameSlug = route.slice(5).replace(/\/+$/, "");
+        if (gameSlug && gameSlug.indexOf("/") === -1) {
+          window.location.replace(base + "?route=" + encodeURIComponent("game:" + gameSlug));
+        }
+        return;
+      }
+
       if (route.indexOf("app/") === 0) {
         var slug = route.slice(4).replace(/\/+$/, "");
         if (slug && slug.indexOf("/") === -1) {
