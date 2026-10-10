@@ -5,20 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, follow">
   <title>পেজ খুঁজে পাওয়া যায়নি | Minhaj Apps</title>
-  <script>
-    (function () {
+  <script>(function () {
       var base = "/minhajapps/";
+      var baseNoSlash = base.slice(0, -1);
       var path = window.location.pathname.replace(/\/+$/, "");
-      var routes = ["apps", "game", "ai-prompt", "about", "privacy", "contact", "disclaimer", "developer", "drawer-qr"];
-      var route = path.indexOf(base.replace(/\/$/, "")) === 0 ? path.slice(base.replace(/\/$/, "").length).replace(/^\/+/, "") : "";
-      if (routes.indexOf(route) !== -1) {
+      var route = path.indexOf(baseNoSlash) === 0
+        ? path.slice(baseNoSlash.length).replace(/^\/+/, "")
+        : "";
+
+      var sectionRoutes = ["apps", "game", "ai-prompt", "about", "privacy", "contact", "disclaimer", "developer", "drawer-qr"];
+      if (sectionRoutes.indexOf(route) !== -1) {
         window.location.replace(base + "?route=" + encodeURIComponent(route));
-      } else if (route && route.indexOf("/") === -1) {
-        /* App detail routes such as /capcut/ are resolved by index.html. */
+        return;
+      }
+
+      if (route.indexOf("app/") === 0) {
+        var slug = route.slice(4).replace(/\/+$/, "");
+        if (slug && slug.indexOf("/") === -1) {
+          window.location.replace(base + "?route=" + encodeURIComponent("app:" + slug));
+        }
+        return;
+      }
+
+      if (route && route.indexOf("/") === -1) {
         window.location.replace(base + "?route=" + encodeURIComponent("app:" + route));
       }
-    })();
-  </script>
+    })();</script>
   <style>
     * { box-sizing: border-box; }
     body { margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 24px; background: #f6f8fc; color: #1d2939; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; text-align: center; }
